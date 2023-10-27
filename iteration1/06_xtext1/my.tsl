@@ -1,0 +1,12 @@
+note: "magic"
+disabled: false
+handlers:
+  - do "#d"
+macros:
+  d:
+    note: "thing"
+    steps:
+      - do "#s"
+messages:
+  m:
+    payload: ""

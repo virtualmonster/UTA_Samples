@@ -1,0 +1,11 @@
+note: See failingCascade_IOError
+steps:
+  - send:
+      note: A cascade element has an IO type error
+      request:
+        url: '${SERVER_ENDPOINT}/testserver/javatest/JavaTest.html'
+        paths:
+          - tls/ca-path:
+              - dir: ../server
+      response:
+        message: page/failing-send-io-error.dtm.yaml#page1

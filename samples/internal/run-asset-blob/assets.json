@@ -1,0 +1,29 @@
+{
+	"content": [{
+			"id": "asset123",
+			"model_id": "model123",
+			"name": "All",
+			"path": "API/Logical/All.gts",
+			"description": "",
+			"type": "executable",
+			"external_type": "APISUITE",
+			"editable_type": "api",
+			"desktop_project_id": "00000170-e2ab-e791-0001-41cd2abccd04",
+			"has_parts": false,
+			"properties": {},
+			"spi_contributor": "integration-tester-spi-contributor",
+			"repository_id": "repo123",
+			"commit_id": "commit123"
+		}
+	],
+	"pageable": "INSTANCE",
+	"totalPages": 1,
+	"totalElements": 1,
+	"last": true,
+	"number": 0,
+	"size": 1,
+	"numberOfElements": 1,
+	"sort": [],
+	"first": true,
+	"empty": false
+}

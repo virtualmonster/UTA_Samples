@@ -1,0 +1,27 @@
+note: Example that verifies product availability
+steps:
+  - do:
+      note: |
+        A local stub will be run to simulate a trivial inventory service.
+        For more details of stub execution see ...
+      flags:
+        - local
+      url: stubs/inventory.dtv.yaml
+  - send:
+      note: |
+        Query a product and verify that 5 are available.
+        Verify that the returned store id is 6 digits.
+        Verify that the returned id is not null
+      request:
+        url: '${STUBBED_INVENTORY_SERVICE}/stock?id=${PRODUCT_ID}'
+      response:
+        paths:
+          - content/available:
+              - val: '5'
+          - content/store_id:
+              - regex: '^\d{6}'
+          - content/id:
+              - js: FIELD.get('value') !== null
+vars:
+  STUBBED_INVENTORY_SERVICE: http://inventory.127.0.0.1.nip.io
+  PRODUCT_ID: abc12

@@ -1,0 +1,9 @@
+steps:
+  - log: '${SYS_BASE_URI}'
+  - log: '${SYS_BASE_DIR_URI}'
+  - log: '${USING_SYS_VAR}'
+  - do: modules/sys-vars-module.dtx.yaml
+  - log: '${SYS_BASE_URI}'
+  - log: '${SYS_BASE_DIR_URI}'
+vars:
+  USING_SYS_VAR: '${SYS_BASE_DIR_URI}/test.txt'

@@ -1,0 +1,27 @@
+endpoints:
+  - url: '${HTTP_ENDPOINT}'
+    events:
+      - request:
+          message: ../page/unit-test-send.dtm.yaml#bind-path
+        response:
+          paths:
+            - headers/content-encoding:
+                - val: '${URL_PATH.substring(1)}'
+            - headers/content-type:
+                - val: text/html
+            - content:
+                - src: ../blob/hello/test.html
+      - request:
+          paths:
+            - method:
+                - val: POST
+            - content/secret:
+                - var: RECEIVED_SECRET
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+            - content:
+                - val: '{"received":"${RECEIVED_SECRET}"}'
+vars:
+  HTTP_ENDPOINT: http://encoding.127.0.0.1.nip.io

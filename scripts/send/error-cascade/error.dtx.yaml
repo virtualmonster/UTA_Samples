@@ -1,0 +1,12 @@
+note: A basic verification of cascade elements
+steps:
+  - send:
+      request:
+        url: '${HTTP2SSL_ENDPOINT}/testserver/javatest/JavaTest.html'
+        paths:
+          - tls/ca-path:
+              - dir: ../server
+          - headers/accept:
+              - val: text/html
+      response:
+        message: error_1.dtm.yaml#responseMsg

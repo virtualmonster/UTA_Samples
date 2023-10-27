@@ -1,0 +1,8 @@
+steps:
+  - do: modules/foo-bar-in.dtx.yaml
+  - verify:
+      - |
+        FOO_BAR_RESULT === 'MyFooMyBar'
+vars:
+  FOO: MyFoo
+  BAR: MyBar

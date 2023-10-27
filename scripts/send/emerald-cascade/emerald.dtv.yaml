@@ -1,0 +1,16 @@
+note: Stub
+endpoints:
+  - url: '${DEPLOYMENT_URL}'
+    events:
+      - request:
+          paths:
+            - url/path:
+                - regex: .*
+        response:
+          paths:
+            - headers/content-type:
+                - val: text/html
+            - content:
+                - val: Response data ABCD
+vars:
+  DEPLOYMENT_URL: http://commerce-preview.sbx0141.play.hclsofy.127.0.0.1.nip.io

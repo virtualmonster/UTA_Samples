@@ -1,0 +1,7 @@
+paths:
+  - url:
+      - val: jdbc:hsqldb:mem:accounts
+  - info/user:
+      - val: SA
+  - info/password:
+      - val: ""

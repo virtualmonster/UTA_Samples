@@ -1,0 +1,3 @@
+steps:
+  - log: About to trigger a failure
+  - fail: Triggered a failure

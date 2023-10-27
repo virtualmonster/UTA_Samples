@@ -1,0 +1,5 @@
+IDENTIFIER,URL,METHOD,REQUEST_BODY,REQUEST_CONTENT_TYPE,RESPONSE_BODY,RESPONSE_CONTENT_TYPE
+"Get root",http://json.127.0.0.1.nip.io:8080/,GET,,,json-blobs/root-response.json,application/json
+"Get abc",http://json.127.0.0.1.nip.io:8080/abc,GET,,,json-blobs/slash-abc-response.json,application/json
+"Send Alice",http://json.127.0.0.1.nip.io:8080/,POST,json-blobs/post-alice.json,application/json,json-blobs/post-alice-response.json,application/json
+"Send Bob",http://json.127.0.0.1.nip.io:8080/,POST,json-blobs/post-bob.json,application/json,json-blobs/post-bob-response.json,application/json

@@ -1,0 +1,6 @@
+note: nesting with parallel suite calling suites that execute tests sequentially
+concurrent: '0'
+tests:
+  - sequentialsuite.dts.yaml
+  - sequentialsuite.dts.yaml
+  - sequentialsuite.dts.yaml

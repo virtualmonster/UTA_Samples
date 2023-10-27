@@ -1,0 +1,23 @@
+note: Stub that receives and sends xml
+endpoints:
+  - url: '${SERVICE_ENDPOINT}/xml'
+    events:
+      - note: Handle xml content
+        request:
+          paths:
+            - method:
+                - val: POST
+            - headers/content-type:
+                - val: application/xml
+            - content/info/name:
+                - var: NAME
+        steps:
+          - log: 'Received xml for ${NAME}'
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/xml
+            - content/reply/message:
+                - val: 'Hello ${NAME}'
+vars:
+  SERVICE_ENDPOINT: http://xml.127.0.0.1.nip.io

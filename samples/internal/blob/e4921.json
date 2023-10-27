@@ -1,0 +1,20 @@
+{
+  "operator": "and",
+  "rules": [
+    {
+      "field": "status",
+      "operator": "EQUAL",
+      "value": "SCHEDULED"
+    },
+    {
+      "field": "test.type",
+      "operator": "NEQUAL",
+      "value": "APISTUB"
+    },
+    {
+      "field": "branch",
+      "operator": "EQUAL",
+      "value": "master"
+    }
+  ]
+}

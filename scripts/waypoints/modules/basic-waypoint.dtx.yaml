@@ -1,0 +1,14 @@
+flags:
+  - waypoint
+steps:
+  - log: 'In waypoint module. var B is ${B}'
+  - assign:
+      vars:
+        C: C_assigned_in_waypoint
+vars:
+  A: Some val
+  B:
+    modifier: in
+    val: B_default
+  C:
+    modifier: out

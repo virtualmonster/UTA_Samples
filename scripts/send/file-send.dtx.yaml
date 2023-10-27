@@ -1,0 +1,16 @@
+steps:
+  - log: Writing file
+  - send:
+      request:
+        url: '${FILE_URI}'
+        paths:
+          - headers/charset:
+              - val: UTF-8
+          - content:
+              - val: '${FILE_CONTENT}'
+  - log: File written
+vars:
+  FILE_URI:
+    modifier: in
+  FILE_CONTENT:
+    modifier: in

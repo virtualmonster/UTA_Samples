@@ -1,0 +1,19 @@
+actors:
+  CERT_USER:
+    tls:
+      keyfile: ../client/client-key.key
+      certfile: ../client/client-cert.pem
+steps:
+  - with:
+      actor: CERT_USER
+      steps:
+        - send:
+            request:
+              url: '${HTTP2SSL_CLIENT_AUTH_ENDPOINT}/testserver/hello'
+              paths:
+                - tls/ca-path:
+                    - dir: ../server
+            response:
+              paths:
+                - status-code:
+                    - val: '200'

@@ -1,0 +1,51 @@
+notes: |
+  SSE notifications are send
+steps:
+  - do '#login':
+      actor: user1, user2
+  - press tab until focus on 'new project' button
+      actor: user1
+  - press enter
+      actor: user1
+  - check focus on name
+      actor: user1
+  - type $project_name
+      actor: user1
+  - press enter:
+      actor: user1
+      browser:
+        - url: /rest/projects/
+          request: "#9c6"
+          status: 201
+          location: $_project_location
+          response: "#e95"
+          crawl:
+            - url: /rest/projects/?member=false&archived=false
+              response: "#7bf"
+  - check page contains $project_name:
+      actor: user2
+      browser:
+        - url: channel:sse
+          response: "#9c6"
+          crawl:
+            - url: /rest/projects/?member=false&archived=false
+              response: "#7bf"
+            - url: /rest/projects/?member=true&archived=false
+              response: "#286"
+values:
+  project_name: myproject
+  user1.username: peter.taylor
+  user1.password: peter.taylor
+  user2.username: dawn.peters
+  user2.password: dawn.peters
+macros:
+  login:
+    steps:
+      - open $deployment_url:
+          browser:
+            - response: "#071"
+              crawl:
+                - url: /live-events/sse
+                  store: channel:sse
+    values:
+      deployment_url: https://master-hcl.tp-k8s.nonprod.hclpnp.com

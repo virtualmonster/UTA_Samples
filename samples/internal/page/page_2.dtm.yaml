@@ -1,0 +1,68 @@
+messages:
+  main:
+    paths:
+      - headers/content-type:
+          - val: text/html
+      - content:
+          - paths:
+              - //form@action:
+                  - var: FORM_URL
+          - src: ../blob/669cb.html
+    cascade:
+      - request:
+          url: /auth/resources/qz169/login/isv/node_modules/patternfly/dist/css/patternfly.css
+          paths:
+            - headers/accept:
+                - val: text/css
+      - request:
+          url: /auth/resources/qz169/login/isv/node_modules/patternfly/dist/css/patternfly-additions.css
+          paths:
+            - headers/accept:
+                - val: text/css
+      - request:
+          url: /auth/resources/qz169/login/isv/lib/zocial/zocial.css
+          paths:
+            - headers/accept:
+                - val: text/css
+      - request:
+          url: /auth/resources/qz169/login/isv/css/login.css
+          paths:
+            - headers/accept:
+                - val: text/css
+      - request:
+          url: /auth/resources/qz169/login/isv/js/script.js
+      - request:
+          url: /auth/resources/qz169/login/isv/node_modules/patternfly/dist/img/bg-login.jpg
+          paths:
+            - headers/accept:
+                - val: image/jpeg
+      - request:
+          url: /auth/resources/qz169/login/isv/img/HCL-background.png
+          paths:
+            - headers/accept:
+                - val: image/png
+      - request:
+          url: /auth/resources/qz169/login/isv/img/WX-TC2682%20OneTest%20Logo-01.svg
+          paths:
+            - headers/accept:
+                - val: image/svg+xml
+      - request:
+          url: /auth/resources/qz169/login/isv/img/eye-filled.svg
+          paths:
+            - headers/accept:
+                - val: image/svg+xml
+      - request:
+          url: /auth/resources/qz169/login/isv/img/favicon.ico
+          paths:
+            - headers/accept:
+                - val: application/octet-stream
+  post:
+    paths:
+      - headers:
+          - paths:
+              - cookie:
+                  - val: KEYCLOAK_SESSION=testserver/fed09601-f470-494a-8a22-81d1c4baf7f9/fcc2c73d-9069-47d0-bed5-37226da4d966;KEYCLOAK_SESSION_LEGACY=testserver/fed09601-f470-494a-8a22-81d1c4baf7f9/fcc2c73d-9069-47d0-bed5-37226da4d966
+              - content-type:
+                  - val: application/x-www-form-urlencoded
+      - content:
+          - val: 'username=${USERNAME}&password=${_PASSWORD}'

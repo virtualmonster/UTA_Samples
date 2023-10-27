@@ -1,0 +1,23 @@
+steps:
+  - send:
+      request:
+        url: '${SYS_BASE_DIR_URI}/blob/reconcile-expect.json'
+      response:
+        message: reconcile.dtm.yaml#main
+  - log: 'A=${A||"missing"} B=${B||"missing"} C=${C||"missing"} D=${D||"missing"}
+      E=${E||"missing"}'
+  - send:
+      note: |
+        Reports that:
+         - 'a' has the wrong value
+         - 'b' is missing.
+         - 'c' should not be present
+        The following should not be reported
+         - 'd' is absent in both
+         - 'e' has the same value is both cases
+         - 'f' has no path in the message so not checked
+      request:
+        url: '${SYS_BASE_DIR_URI}/blob/reconcile-actual.json'
+      response:
+        category: verify
+        message: reconcile.dtm.yaml#main

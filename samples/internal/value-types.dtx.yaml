@@ -1,0 +1,19 @@
+steps:
+  - log: 'ARRAY          object=>${typeof ARRAY} ${ARRAY}'
+  - log: 'ARRAY[0]       number=>${typeof ARRAY[0]} ${ARRAY[0]}'
+  - log: 'FALSE          boolean=>${typeof FALSE} ${FALSE}'
+  - log: 'NULL           object=>${typeof NULL} ${NULL||"null"}'
+  - log: 'NUMBER         number=>${typeof NUMBER} ${NUMBER}'
+  - log: 'STRING         string=>${typeof STRING} ${STRING}'
+  - log: 'STRING_LITERAL string=>${typeof STRING_LITERAL} ${STRING_LITERAL}'
+  - log: 'TRUE           boolean=>${typeof TRUE} ${TRUE}'
+vars:
+  ARRAY: '${[3]}'
+  "FALSE": '${false}'
+  "NULL": '${null}'
+  NUMBER: '${1}'
+  STRING: string
+  STRING_LITERAL:
+    js: |-
+      '${template-like string need escaping}'
+  "TRUE": '${true}'

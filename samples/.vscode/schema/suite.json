@@ -1,0 +1,173 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "$id" : "https://www.hcl-software.com/schema/devops/test/Suite/2023/10",
+  "type" : "object",
+  "properties" : {
+    "note" : {
+      "type" : "string"
+    },
+    "flags" : {
+      "$ref" : "#/definitions/FlagArray"
+    },
+    "meta" : {
+      "type" : "object",
+      "additionalProperties" : {
+        "type" : "string"
+      }
+    },
+    "concurrent" : {
+      "format" : "val-integer",
+      "type" : "string"
+    },
+    "actors" : {
+      "type" : "object",
+      "additionalProperties" : {
+        "$ref" : "#/definitions/Actor"
+      }
+    },
+    "tests" : {
+      "$ref" : "#/definitions/DoStepArray"
+    },
+    "vars" : {
+      "type" : "object",
+      "additionalProperties" : {
+        "$ref" : "#/definitions/VarDef"
+      }
+    },
+    "timeout" : {
+      "format" : "val-duration",
+      "type" : "string"
+    },
+    "descendantDefaultTimeout" : {
+      "format" : "val-duration",
+      "type" : "string"
+    }
+  },
+  "additionalProperties" : false,
+  "definitions" : {
+    "Actor" : {
+      "type" : "object",
+      "properties" : {
+        "vars" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "string"
+          }
+        },
+        "open" : {
+          "$ref" : "#/definitions/ActorOpen"
+        },
+        "tls" : {
+          "$ref" : "#/definitions/ActorTls"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "ActorOpen" : {
+      "oneOf" : [ {
+        "title" : "size",
+        "format" : "val-dimension",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "browser" : {
+            "type" : "string"
+          },
+          "size" : {
+            "format" : "val-dimension",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "ActorTls" : {
+      "type" : "object",
+      "properties" : {
+        "keyfile" : {
+          "type" : "string"
+        },
+        "certfile" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "DoStep" : {
+      "oneOf" : [ {
+        "title" : "url",
+        "format" : "val-uri-reference-executable",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "url" : {
+            "format" : "val-uri-reference-executable",
+            "type" : "string"
+          },
+          "dataset" : {
+            "format" : "val-uri-reference-dataset",
+            "type" : "string"
+          },
+          "actors" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "DoStepArray" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/DoStep"
+      }
+    },
+    "Flag" : {
+      "enum" : [ "disabled", "local", "quick", "waypoint" ]
+    },
+    "FlagArray" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/Flag"
+      }
+    },
+    "VarDef" : {
+      "oneOf" : [ {
+        "title" : "val",
+        "format" : "val",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "val" : {
+            "format" : "val",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    }
+  }
+}

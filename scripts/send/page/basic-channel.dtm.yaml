@@ -1,0 +1,5 @@
+messages:
+  verify-sse:
+    paths:
+      - content/event:
+          - val: bar

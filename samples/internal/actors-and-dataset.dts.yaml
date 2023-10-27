@@ -1,0 +1,21 @@
+note: 'Suite that uses actors to define the type of browser to open, and data drive
+  a test that opens a browser.'
+concurrent: '0'
+actors:
+  FOO:
+    vars:
+      FOO: foo
+      BAR: bar
+    open:
+      browser: chrome
+  BAR:
+    open:
+      browser: edge
+  BAZ: {}
+tests:
+  - url: open-browser.dtx.yaml
+    dataset: data-driven-send.csv
+    actors:
+      - FOO
+      - BAR
+  - open-browser.dtx.yaml

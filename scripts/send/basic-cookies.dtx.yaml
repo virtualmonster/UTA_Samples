@@ -1,0 +1,41 @@
+steps:
+  - send:
+      note: Test server sends Set-Cookie based on our request
+      request:
+        url: '${HTTP_ENDPOINT}/testserver/setCookie'
+        paths:
+          - headers/set-cookie:
+              - val: ABC=DEF;
+      response:
+        message: page/basic-cookies.dtm.yaml#verify
+  - send:
+      note: Server echos the cookies we sent via JSON content
+      request:
+        url: '${HTTP_ENDPOINT}/testserver/params'
+      response:
+        paths:
+          - status-code:
+              - val: '200'
+          - content/cookies/ABC/0/value:
+              - val: DEF
+  - send:
+      note: Test server sends another cookie
+      request:
+        url: '${HTTP_ENDPOINT}/testserver/setCookie'
+        paths:
+          - headers/set-cookie:
+              - val: JSESSIONID=CookieValue; Path=/;
+      response:
+        message: page/basic-cookies.dtm.yaml#verify
+  - send:
+      note: Verify both cookies
+      request:
+        url: '${HTTP_ENDPOINT}/testserver/params'
+      response:
+        paths:
+          - status-code:
+              - val: '200'
+          - content/cookies/ABC/0/value:
+              - val: DEF
+          - content/cookies/JSESSIONID/0/value:
+              - val: CookieValue

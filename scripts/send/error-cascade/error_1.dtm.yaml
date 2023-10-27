@@ -1,0 +1,30 @@
+note: Force an FAIL in a child cascade element
+messages:
+  responseMsg:
+    paths:
+      - status-code:
+          - val: '200'
+    cascade:
+      - request:
+          url: /testserver/javatest/20kb1.jpg
+          paths:
+            - tls/ca-path:
+                - dir: ../server
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+      - note: Forced fail
+        request:
+          url: /dne/testserver/javatest/20kb1.jpg
+          paths:
+            - tls/ca-path:
+                - dir: ../server
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+  verify:
+    paths:
+      - status-code:
+          - val: '200'

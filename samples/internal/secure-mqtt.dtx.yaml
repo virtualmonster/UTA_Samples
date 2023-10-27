@@ -1,0 +1,20 @@
+actors:
+  CERT_USER:
+    tls:
+      keyfile: tls/generated-key.pem
+      certfile: tls/generated-cert.pem
+steps:
+  - do: modules/generate-cert.dtx.yaml
+  - log: Publishing message to secure MQTT broker
+  - with:
+      actor: CERT_USER
+      steps:
+        - send:
+            request:
+              url: camel:paho:test123?brokerUrl=ssl://mqtt.10.0.2.15.nip.io:8883
+              paths:
+                - content:
+                    - val: This is a test message
+vars:
+  KEY_FILE_URI: '${SYS_BASE_DIR_URI}/tls/generated-key.pem'
+  CERT_FILE_URI: '${SYS_BASE_DIR_URI}/tls/generated-cert.pem'

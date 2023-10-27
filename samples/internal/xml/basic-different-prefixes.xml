@@ -1,0 +1,12 @@
+<a xmlns="http://some.namespaces.com/def">
+  <b test="test attribute">b element</b>
+  <ns1:c xmlns:ns1="http://some.namespaces.com/abc"></ns1:c>
+  <d xmlns="">d element</d>
+  <ns2:e xmlns:ns2="http://some.namespaces.com/xyz">
+    <ns2:f>
+      <g>
+        <ns2:h>h element</ns2:h>
+      </g>
+    </ns2:f>
+  </ns2:e>
+</a>

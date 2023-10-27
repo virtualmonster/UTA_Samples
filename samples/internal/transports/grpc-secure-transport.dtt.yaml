@@ -1,0 +1,15 @@
+paths:
+  - tls/ca-path:
+      - dir: ../trust
+  - options/useTls:
+      - val: 'true'
+  - options/protoFilesDir:
+      - dir: ../etcd-grpc-camel/etcd-api/etcd/etcdserver/etcdserverpb
+  - options/protoPathDirs/0:
+      - dir: ../etcd-grpc-camel/etcd-api/etcd/etcdserver/etcdserverpb
+  - options/protoPathDirs/1:
+      - dir: ../etcd-grpc-camel/etcd-api
+  - options/protoPathDirs/2:
+      - dir: ../etcd-grpc-camel/third-party-proto/vendor/github.com/gogo/protobuf
+  - options/protoPathDirs/3:
+      - dir: ../etcd-grpc-camel/third-party-proto/vendor/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis

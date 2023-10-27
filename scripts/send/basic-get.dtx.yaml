@@ -1,0 +1,10 @@
+steps:
+  - do: unit-test-send.dtv.yaml
+  - send:
+      note: Basic GET request
+      request:
+        url: '${HELLO_HTTP_URL}/test.html'
+      response:
+        paths:
+          - status-code:
+              - val: '200'

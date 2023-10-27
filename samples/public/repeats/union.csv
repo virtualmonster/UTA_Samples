@@ -1,0 +1,14 @@
+TAB,ACCOUNT_ID,ACCOUNT_NAME,HOLDER_NAME,TRANSACTION_AMOUNT,TRANSACTION_NAME
+account,1,Current,,,
+holder,1,,Alice,,
+transaction,1,,,100,T1
+account,2,Joint,,,
+holder,2,,Bob,,
+holder,2,,Claire,,
+transaction,2,,,200,T2
+transaction,2,,,300,T3
+transaction,2,,,400,T4
+account,3,Credit,,,
+holder,3,,Derek,,
+transaction,3,,,500,T5
+transaction,3,,,600,T6

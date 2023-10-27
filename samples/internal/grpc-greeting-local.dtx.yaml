@@ -1,0 +1,10 @@
+note: Make a request to the sample grpc hello world server
+steps:
+  - do:
+      flags:
+        - local
+      url: grpc-greeting.dtv.yaml
+  - do: grpc-greeting.dtx.yaml
+vars:
+  GRPC_ENDPOINT: grpc://localhost:50051
+  GREETING_NS: helloworld

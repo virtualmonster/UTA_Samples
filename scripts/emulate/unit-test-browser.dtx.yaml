@@ -1,0 +1,13 @@
+note: this is an evolution of the test on github
+steps:
+  - open:
+      url: https://www.example.com
+      emulate:
+        - send:
+            request:
+              url: https://www.example.com
+              paths:
+                - headers/accept:
+                    - val: text/html
+            response:
+              message: msgs/unit-test.dtm.yaml#main

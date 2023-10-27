@@ -1,0 +1,16 @@
+note: this reports that the csv said the value should be different
+steps:
+  - sql:
+      dataset: holder.csv
+  - send:
+      request:
+        url: '${SYS_BASE_DIR_URI}/incorrect-holder.json'
+      response:
+        category: verify
+        paths:
+          - content:
+              - format: application/json
+              - paths:
+                  - '*':
+                      - repeat: {}
+                      - var: HOLDER_NAME

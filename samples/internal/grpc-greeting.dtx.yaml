@@ -1,0 +1,17 @@
+note: Make a request to the sample grpc hello world server
+steps:
+  - send:
+      note: Call the SayHello method of the Greeter service
+      request:
+        url: '${GRPC_ENDPOINT}/${GREETING_NS}.Greeter/SayHello'
+        paths:
+          - content:
+              - val: '{"name":"Joe Bloggs"}'
+      response:
+        paths:
+          - content/message:
+              - var: RESPONSE
+  - log: 'Response: ${RESPONSE}'
+vars:
+  GRPC_ENDPOINT: camel:grpc://localhost:50051
+  GREETING_NS: helloworld

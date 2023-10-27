@@ -1,0 +1,4 @@
+tests:
+  - test1.dtx.yaml
+  - test2_with_pause.dtx.yaml
+  - test3.dtx.yaml

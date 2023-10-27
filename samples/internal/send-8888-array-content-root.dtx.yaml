@@ -1,0 +1,18 @@
+note: The "name" of array elements ARE NOT treated as indexes.  They need to be unique
+  to prevent "equivalent" paths being merged.
+steps:
+  - send:
+      request:
+        url: http://localhost:8888/
+        paths:
+          - headers/content-type:
+              - val: application/json
+          - content:
+              - type: array
+              - paths:
+                  - a:
+                      - val: '10'
+                  - b:
+                      - val: '20'
+                  - c:
+                      - val: last

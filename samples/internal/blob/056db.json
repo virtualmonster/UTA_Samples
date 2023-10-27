@@ -1,0 +1,15 @@
+{
+  "operator": "or",
+  "rules": [
+    {
+      "field": "status",
+      "operator": "EQUAL",
+      "value": "RUNNING"
+    },
+    {
+      "field": "status",
+      "operator": "EQUAL",
+      "value": "IN_TRANSITION"
+    }
+  ]
+}

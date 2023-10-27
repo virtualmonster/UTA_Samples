@@ -1,0 +1,17 @@
+messages:
+  MSG:
+    note: 'content/id:[] and content/order/sku: [] paths are present so they may be
+      overridden.  We may want to circle back to that requirement.'
+    paths:
+      - headers/content-type:
+          - val: application/json
+      - content:
+          - val: '{"id":"100","name":"fred","order":{"sku":"999","qty":"1","desc":"Widget"}}'
+      - content/id: []
+      - content/order/sku: []
+  ARRAY:
+    paths:
+      - headers/content-type:
+          - val: application/json
+      - content:
+          - val: '[{"foo":"Foo"},{"bar":"Bar"}]'

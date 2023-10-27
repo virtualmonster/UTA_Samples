@@ -1,0 +1,20 @@
+steps:
+  - send:
+      request:
+        url: '${SERVICE_ENDPOINT}/xml'
+        paths:
+          - headers/content-type:
+              - val: application/xml
+          - content/info/name:
+              - val: '${INFO_NAME}'
+      response:
+        paths:
+          - content/reply/message:
+              - var: MESSAGE
+  - log: 'Received S{MESSAGE}'
+  - verify:
+      - |-
+        'Hello ' + INFO_NAME === MESSAGE
+vars:
+  SERVICE_ENDPOINT: http://xml.127.0.0.1.nip.io
+  INFO_NAME: Alice

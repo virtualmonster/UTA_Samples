@@ -1,0 +1,35 @@
+notes: |
+  Macro is referenced by URL (relative in this case - but could as easily reference another file).
+  The 'check focus on name' step should emit a warning at runtime 'Focus is not on name. Focused it to compensate'.
+  We should provide a way of linting tests where the 'click on home' step causes a warning 'home is not accessible using a keyboard'.
+  There is a password in plain text below... we can't do that, we need to provide a better approach
+  The values here are default values only - so can be overridden.
+  Notice there isnt a capital letter in sight.
+  Notice words in value names are separated by underscore.
+  Notice name, username, password not quoted but 'new project' is because it needs to be a single token.
+  Notice for the time being the concepts are simple enough to embed them in yaml (formmatted by vscode), but the login ref is a comment in yaml - which is wrong.
+steps:
+  - do #login
+  - press tab until focus on 'new project' button
+  - press enter
+  - check focus on name
+  - type $project_name
+  - press enter
+  - click on home
+  - check page contains $project_name
+values:
+  project_name: myproject
+macros:
+  login:
+    steps:
+      - open $deployment_url
+      - check focus on username
+      - type $username
+      - press tab
+      - check focus on password
+      - type $password
+      - press enter
+    values:
+      deployment_url: https://master-hcl.tp-k8s.nonprod.hclpnp.com
+      username: peter.taylor
+      password: peter.taylor

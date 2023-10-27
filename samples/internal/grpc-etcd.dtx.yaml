@@ -1,0 +1,34 @@
+note: Use GRPC to talk to an etcd server
+steps:
+  - do: modules/base64-functions.dtx.yaml
+  - send:
+      note: Put a value into etcd
+      transport: transports/grpc-transport.dtt.yaml
+      request:
+        url: '${ETCD_ENDPOINT}/${ETCD_GRPC_NS}.KV/Put'
+        paths:
+          - content:
+              - val: '{"key":"${btoa(KEY)}","value":"${btoa(VALUE)}"}'
+      response:
+        paths:
+          - content/header/revision:
+              - var: REVISION
+  - log: 'Revision: ${REVISION || "<null>"}'
+  - send:
+      note: Get a value from etcd
+      transport: transports/grpc-transport.dtt.yaml
+      request:
+        url: '${ETCD_ENDPOINT}/${ETCD_GRPC_NS}.KV/Range'
+        paths:
+          - content:
+              - val: '{"key":"${btoa(KEY)}"}'
+      response:
+        paths:
+          - content/kvs/0/value:
+              - var: READ
+  - log: 'Read value: ${atob(READ)}'
+vars:
+  ETCD_ENDPOINT: camel:grpc://localhost:2379
+  ETCD_GRPC_NS: etcdserverpb
+  VALUE: Set from Engine
+  KEY: bar

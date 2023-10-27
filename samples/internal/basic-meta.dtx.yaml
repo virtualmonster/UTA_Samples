@@ -1,0 +1,6 @@
+steps:
+  - log:
+      note: A note
+      meta:
+        a: b
+        c: d

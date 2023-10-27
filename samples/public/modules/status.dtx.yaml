@@ -1,0 +1,9 @@
+note: |
+  We need to show that a module can change a variable value
+  Currently such vars must be defined in the parent (hierarchy)
+steps:
+  - log: 'Within the status module. Status var value is ${STATUS}'
+  - assign:
+      vars:
+        STATUS: 'Y'
+  - log: 'Still within the status module. Status var value is now ${STATUS}'

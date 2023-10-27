@@ -1,0 +1,1 @@
+<a xmlns="http://some.namespaces.com/def"><b test="test attribute">b element</b><abc:c xmlns:abc="http://some.namespaces.com/abc"></abc:c><d xmlns="">d element</d><xyz:e xmlns:xyz="http://some.namespaces.com/xyz"><xyz:f><g><xyz:h>h element</xyz:h></g></xyz:f></xyz:e></a>

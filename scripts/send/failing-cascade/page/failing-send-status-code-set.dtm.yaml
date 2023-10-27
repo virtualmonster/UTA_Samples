@@ -1,0 +1,17 @@
+messages:
+  responseMsg:
+    paths:
+      - status-code:
+          - val: '200'
+    cascade:
+      - request:
+          url: '${CHILD_FETCH_PATH}'
+          paths:
+            - tls/ca-path:
+                - dir: ../../server
+            - headers/accept:
+                - val: image/gif
+        response:
+          paths:
+            - status-code:
+                - val: '200'

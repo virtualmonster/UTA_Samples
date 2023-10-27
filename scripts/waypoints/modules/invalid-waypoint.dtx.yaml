@@ -1,0 +1,24 @@
+note: This is invalid as a waypoint as it depends on an existing ui context
+flags:
+  - waypoint
+steps:
+  - log: In waypoint
+  - press:
+      note: accept google terms
+      target:
+        - properties:
+            - :xpath:
+                - val: "//button[div/text()='${COOKIE_TEXT}']"
+  - type:
+      target:
+        - properties:
+            - :xpath:
+                - val: "//*[@title='Search']"
+      value: today's news
+  - press: enter
+  - pause: 5s
+  - log: After UI actions
+vars:
+  B:
+    modifier: in
+    val: B_default

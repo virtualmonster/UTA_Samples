@@ -1,0 +1,502 @@
+messages:
+  main:
+    cascade:
+      - request:
+          url: /rest/currentuser/
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /management/info
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /results/rest/log/features
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /sse/live-update/
+          paths:
+            - headers/accept:
+                - val: text/event-stream
+        response:
+          message: page_4.dtm.yaml#sse
+      - request:
+          url: /rest/add-on
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /favicon.ico
+          paths:
+            - headers/accept:
+                - val: image/vnd.microsoft.icon
+      - request:
+          url: /rest/events/notifications?page=0&size=1&sort=time%2Cdesc&category=USER
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/events/notifications?page=0&size=1&sort=time%2Cdesc&category=SYSTEM
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/settings/InAppNotificationsReadCounter
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - status-code:
+                - val: '404'
+      - request:
+          url: /rest/spaces/?initial=true
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/add-on/PostmanExt/api/get/postman/TRANSLATION/postman_en.json?mime-type=application/json
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/add-on/PostmanExt/api/get/postman/ICON/style.css?mime-type=text/css
+          paths:
+            - headers/accept:
+                - val: text/css
+      - request:
+          url: /rest/add-on/JUnitExt/api/get/junit/ICON/style.css?mime-type=text/css
+          paths:
+            - headers/accept:
+                - val: text/css
+      - request:
+          url: /rest/add-on/CodeSweepExt/api/get/codesweep/ICON/style.css?mime-type=text/css
+          paths:
+            - headers/accept:
+                - val: text/css
+      - request:
+          url: /rest/add-on/JMeterExt/api/get/jmeter/ICON/style.css?mime-type=text/css
+          paths:
+            - headers/accept:
+                - val: text/css
+      - request:
+          url: /rest/add-on/JUnitExt/api/get/junit/TRANSLATION/junit_en.json?mime-type=application/json
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/add-on/CodeSweepExt/api/get/codesweep/TRANSLATION/codesweep_en.json?mime-type=application/json
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/add-on/JMeterExt/api/get/jmeter/TRANSLATION/jmeter_en.json?mime-type=application/json
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/licensing/configuration
+          message: '#spaceId'
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/spaces/1b8cfa7d-e9ff-4e36-8cfa-7de9ff1e3677/permissions?userId=34c55304-154f-4d16-b03b-2335f44f74a2
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/spaces/?parent=00000000-0000-0000-0000-000000000000&member=true&search=
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /content/16450887f869147320cc1649aff11baf.woff2
+      - request:
+          url: /rest/projects/?member=true&archived=false
+          message: '#spaceId'
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /content/images/no-project-image.svg
+          paths:
+            - headers/accept:
+                - val: image/svg+xml
+      - request:
+          url: /rest/licensing/configuration
+          message: '#spaceId'
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/licensing/configuration
+          message: '#spaceId'
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/spaces/?parent=00000000-0000-0000-0000-000000000000&member=true&search=
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/?member=true&archived=false
+          message: '#spaceId'
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/licensing/configuration
+          message: '#spaceId'
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/?member=true&archived=false
+          message: '#spaceId'
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/spaces/?parent=00000000-0000-0000-0000-000000000000&member=true&search=
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/licensing/configuration
+          message: '#spaceId'
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/?member=true&archived=false
+          message: '#spaceId'
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/spaces/?parent=00000000-0000-0000-0000-000000000000&member=true&search=
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/?member=false&archived=false
+          message: '#spaceId'
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/?member=true&archived=false
+          message: '#spaceId'
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/spaces/?parent=00000000-0000-0000-0000-000000000000&member=true&search=
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/?member=true&archived=false
+          message: '#spaceId'
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/?member=true&archived=false
+          message: '#spaceId'
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/spaces/?parent=00000000-0000-0000-0000-000000000000&member=true&search=
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/users/8e86b1b2-132c-46da-9d09-c0b965092375
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/31350/roles/?pending=true
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/users/034faac4-baa3-4935-9b18-2c3f5f7b11d4
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/15350/roles/?pending=true
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/28900/roles/?pending=true
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/29000/roles/?pending=true
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/users/575b46e9-d957-4748-9869-246fa491bf2e
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /manifest.webapp
+      - request:
+          url: /rest/projects/17100/roles/?pending=true
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/4550/roles/?pending=true
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /content/bb1b1d9dc07561cdf067faea7a76bfee.ttf
+      - request:
+          url: /rest/users/af3c17db-fac3-4980-87a1-fd90486c20ff
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/3700/roles/?pending=true
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/26900/roles/?pending=true
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/users/cc7d34d6-581e-40f5-be25-081fc3f71937
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/16300/roles/?pending=true
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/users/e9786495-b0bb-4881-9e60-87410c779a0d
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/32050/roles/?pending=true
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/users/802961e6-5de9-4437-9de8-c85cc8a07def
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/17200/roles/?pending=true
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/30300/roles/?pending=true
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/users/34c55304-154f-4d16-b03b-2335f44f74a2
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/27000/roles/?pending=true
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/27000/branches/
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/27000/results/filter?user_info=true&view=settings
+          paths:
+            - headers:
+                - paths:
+                    - content-type:
+                        - val: application/json
+                    - accept:
+                        - val: application/json
+            - content:
+                - src: ../blob/056db.json
+      - request:
+          url: /rest/projects/27000/results/filter?user_info=true&page=0&size=1&sort_by=startDate.DESC
+          paths:
+            - headers:
+                - paths:
+                    - content-type:
+                        - val: application/json
+                    - accept:
+                        - val: application/json
+            - content:
+                - src: ../blob/a07ba.json
+      - request:
+          url: /content/images/brand-image-256.png
+          paths:
+            - headers/accept:
+                - val: image/png
+      - request:
+          url: /rest/projects/27000/branches/master/statistics/?by=ALL&composition=SINGLE
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/27000/branches/master/statistics/?by=ALL&composition=GROUP
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/27000/assets/?assetTypes=executable&revision=master&deployable=true
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/27000/results/filter?reduceByTestOn=startDate.highest
+          paths:
+            - headers:
+                - paths:
+                    - content-type:
+                        - val: application/json
+                    - accept:
+                        - val: application/json
+            - content:
+                - src: ../blob/9f379.json
+      - request:
+          url: /rest/projects/27000
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/27000/roles/34c55304-154f-4d16-b03b-2335f44f74a2
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/spaces/?parent=00000000-0000-0000-0000-000000000000&member=true&search=
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/?member=true&archived=false
+          message: '#spaceId'
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/27000/branches/
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/27000/roles/
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /content/ad7bbee0618d5632071dbedba61b7a32.woff2
+      - request:
+          url: /rest/projects/27000/branches/
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/27000/branches/master/statistics/?by=ALL&composition=GROUP
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/27000/branches/master/statistics/?by=ALL&composition=SINGLE
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/27000/assets/?assetTypes=executable&revision=master&deployable=true
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/27000/results/filter?user_info=true&page=0&size=3&sort_by=startDate.DESC
+          paths:
+            - headers:
+                - paths:
+                    - content-type:
+                        - val: application/json
+                    - accept:
+                        - val: application/json
+            - content:
+                - src: ../blob/b3ab5.json
+      - request:
+          url: /rest/projects/27000/branches/master/statistics/?by=DAY&composition=SINGLE&startTime=2021-08-04T19:10:28.999Z&endTime=2021-08-10T19:10:28.999Z
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/27000/branches/master/statistics/?by=DAY&composition=GROUP&startTime=2021-08-04T19:10:28.999Z&endTime=2021-08-10T19:10:28.999Z
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/27000/results/filter?user_info=true&page=0&size=3&sort_by=startDate.ASC
+          paths:
+            - headers:
+                - paths:
+                    - content-type:
+                        - val: application/json
+                    - accept:
+                        - val: application/json
+            - content:
+                - src: ../blob/e4921.json
+      - request:
+          url: /rest/projects/27000/assets/?assetTypes=executable&revision=master&deployable=true
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/projects/27000/results/filter?reduceByTestOn=startDate.highest
+          paths:
+            - headers:
+                - paths:
+                    - content-type:
+                        - val: application/json
+                    - accept:
+                        - val: application/json
+            - content:
+                - src: ../blob/9f379.json
+      - request:
+          url: /rest/projects/27000/results/filter?reduceByTestOn=startDate.highest
+          paths:
+            - headers:
+                - paths:
+                    - content-type:
+                        - val: application/json
+                    - accept:
+                        - val: application/json
+            - content:
+                - src: ../blob/9f379.json
+  spaceId:
+    paths:
+      - headers/spaceId:
+          - val: 1b8cfa7d-e9ff-4e36-8cfa-7de9ff1e3677

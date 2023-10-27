@@ -1,0 +1,52 @@
+note: Simple stub that receives and sends JSON
+endpoints:
+  - url: '${STUBBED_ENDPOINT}'
+    events:
+      - note: Root get
+        request:
+          paths:
+            - method:
+                - val: GET
+            - url/path:
+                - val: /
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+            - content:
+                - val: '{"path":"/", "type":"Root GET"}'
+      - note: general get
+        request:
+          paths:
+            - method:
+                - val: GET
+            - url/path:
+                - var: URL_PATH
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+            - content:
+                - val: '{"path":"${URL_PATH}", "type":"Path GET"}'
+      - note: JSON post
+        request:
+          paths:
+            - method:
+                - val: POST
+            - content/name:
+                - var: NAME
+        where:
+          - verify:
+              - |-
+                "string" == typeof NAME && NAME.length > 0
+          - log: 'Name ${NAME} was valid'
+        steps:
+          - log: 'Received details for ${NAME}'
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+            - content:
+                - val: '{"postedName":"${NAME}", "type":"A POST"}'
+vars:
+  STUBBED_ENDPOINT: http://json.127.0.0.1.nip.io

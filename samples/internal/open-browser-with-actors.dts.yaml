@@ -1,0 +1,15 @@
+note: Suite that runs open-browser with a number of different actors
+actors:
+  FOO:
+    open:
+      browser: chrome
+      size: 640 X 480
+  BAR:
+    open:
+      browser: edge
+      size: 1280x640
+  BAZ:
+    vars:
+      FOO: foo
+tests:
+  - open-browser.dtx.yaml

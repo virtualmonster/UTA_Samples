@@ -1,0 +1,45 @@
+note: this is an evolution of the test on github
+steps:
+  - do: modules/ots-browser-login.dtx.yaml
+  - pause: 5s
+  - until:
+      target:
+        - properties:
+            - type:
+                - val: button
+            - value:
+                - val: new
+            - focus:
+                - val:
+                    category: verify
+                    expr: 'true'
+      steps:
+        - press: tab
+  - press: enter
+  - verify:
+      target:
+        - properties:
+            - type:
+                - val: input
+            - label:
+                - val: name
+            - focus:
+                - val:
+                    category: verify
+                    expr: 'true'
+  - type: '${PROJECT_NAME}'
+  - press: enter
+  - press:
+      target:
+        - properties:
+            - type:
+                - val: image
+            - alt:
+                - val: home
+  - verify:
+      target:
+        - properties:
+            - content:
+                - regex: '.*${PROJECT_NAME}.*'
+vars:
+  PROJECT_NAME: myproject

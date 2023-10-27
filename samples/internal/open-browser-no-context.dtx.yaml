@@ -1,0 +1,56 @@
+note: Open browsers both in the default context and a named context.  Use of actors
+  does not necessarily reflect the long-term plan for use in scripts
+actors:
+  CHROME:
+    open:
+      browser: chrome
+      size: 640x480
+  EDGE:
+    open:
+      browser: edge
+      size: 640x480
+steps:
+  - open:
+      url: https://www.bbc.co.uk
+  - pause: 5s
+  - with:
+      actor: CHROME
+      steps:
+        - open:
+            url: https://www.google.com
+  - with:
+      actor: EDGE
+      steps:
+        - open:
+            url: https://www.google.com
+        - press:
+            note: accept google terms
+            target:
+              - properties:
+                  - :xpath:
+                      - val: "//button[div/text()='${COOKIE_TEXT}']"
+        - type:
+            target:
+              - properties:
+                  - :xpath:
+                      - val: "//*[@title='Search']"
+            value: today's news
+        - press: enter
+        - pause: 5s
+        - press:
+            note: accept google terms
+            target:
+              - properties:
+                  - :xpath:
+                      - val: "//button[div/text()='${COOKIE_TEXT}']"
+        - type:
+            target:
+              - properties:
+                  - :xpath:
+                      - val: "//*[@title='Search']"
+            value: today's news
+        - press: enter
+        - pause: 5s
+vars:
+  DEPLOYMENT_URL: https://master-hcl.tp-k8s.nonprod.hclpnp.com
+  COOKIE_TEXT: Accept all

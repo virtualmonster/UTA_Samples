@@ -1,0 +1,4 @@
+steps:
+  - do: modules/unset-result.dtx.yaml
+  - verify:
+      - RESULT === null

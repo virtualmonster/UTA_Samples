@@ -1,0 +1,14 @@
+note: See failingCascade_StatusCode_Duplicate
+steps:
+  - send:
+      request:
+        url: '${HTTP2SSL_ENDPOINT}/testserver/statusCode/404'
+        paths:
+          - tls/ca-path:
+              - dir: ../server
+          - headers/accept:
+              - val: text/html
+      response:
+        paths:
+          - status-code:
+              - val: '200'

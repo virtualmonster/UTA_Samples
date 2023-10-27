@@ -1,0 +1,3 @@
+steps:
+  - log: '${SYS_BASE_URI}'
+  - log: '${SYS_BASE_DIR_URI}'

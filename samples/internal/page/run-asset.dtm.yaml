@@ -1,0 +1,11 @@
+messages:
+  MSG3:
+    paths:
+      - content/state:
+          - var: REPO_STATE
+      - headers/location: []
+  MSG7:
+    paths:
+      - content/status:
+          - var: RUN_STATUS
+      - headers/location: []

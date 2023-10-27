@@ -1,0 +1,35 @@
+note: Stub
+endpoints:
+  - url: '${ONETEST_ENDPOINT}'
+    events:
+      - request:
+          paths:
+            - method:
+                - val: POST
+            - url/path:
+                - val: /rest/tokens/
+            - content/refresh_token:
+                - var: _OFFLINE_TOKEN_IN
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+            - content:
+                - val: '{"access_token": "WRAPPED(${_OFFLINE_TOKEN_IN})"}'
+      - request:
+          message: page/unit-test-send.dtm.yaml#bind-path
+        response:
+          paths:
+            - content:
+                - src: 'blob/onetest/${URL_PATH}'
+  - url: '${HELLO_ENDPOINT}'
+    events:
+      - request:
+          message: page/unit-test-send.dtm.yaml#bind-path
+        response:
+          paths:
+            - content:
+                - src: 'blob/hello/${URL_PATH}'
+vars:
+  ONETEST_ENDPOINT: http://onetest.127.0.0.1.nip.io
+  HELLO_ENDPOINT: http://hello.127.0.0.1.nip.io

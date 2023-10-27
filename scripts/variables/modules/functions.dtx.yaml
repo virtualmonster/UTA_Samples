@@ -1,0 +1,13 @@
+vars:
+  add_10:
+    modifier: out
+    js: |
+      function(n) {
+        return n + 10
+      }
+  say_hello:
+    modifier: out
+    js: |
+      function(n) {
+         return 'Hello ' + n
+      }

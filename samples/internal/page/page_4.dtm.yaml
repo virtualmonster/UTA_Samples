@@ -1,0 +1,9 @@
+messages:
+  sse:
+    paths:
+      - connection:
+          - var: channel:1
+  crawl:
+    cascade:
+      - request:
+          url: /resources/the/browser/needs

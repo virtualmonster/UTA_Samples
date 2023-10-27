@@ -1,0 +1,33 @@
+steps:
+  - do:
+      flags:
+        - local
+      url: unit-test-send.dtv.yaml
+  - send:
+      note: create access-token for api calls
+      request:
+        url: '${ONETEST_HTTP_URL}/rest/tokens/'
+        paths:
+          - headers/content-type:
+              - val: application/x-www-form-urlencoded
+          - content:
+              - val: 'refresh_token=${_REFRESH_TOKEN}'
+      response:
+        paths:
+          - status-code:
+              - val: '200'
+          - content/access_token:
+              - var: _ACCESS_TOKEN
+  - intercept:
+      request:
+        paths:
+          - url:
+              - regex: '${ONETEST_HTTP_URL}.*'
+          - headers/authorization:
+              - val:
+                  category: value
+                  expr: 'Bearer ${_ACCESS_TOKEN}'
+  - send:
+      note: check if intercept attaching header
+      request:
+        url: '${ONETEST_HTTP_URL}/current-user.json'

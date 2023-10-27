@@ -1,0 +1,5 @@
+IDENTIFIER,METHOD,URL,REQUEST,RESPONSE
+"Get root",GET,http://json.127.0.0.1.nip.io:8080/,,json-blob/root-response.json
+"Get path",GET,http://json.127.0.0.1.nip.io:8080/abc,,json-blob/slash-abc-response.json
+"Post Bilbo",POST,http://json.127.0.0.1.nip.io:8080/,json-blob/post-bilbo.json,json-blob/post-bilbo-response.json
+"Post Frodo",POST,http://json.127.0.0.1.nip.io:8080/,json-blob/post-frodo.json,json-blob/post-frodo-response.json

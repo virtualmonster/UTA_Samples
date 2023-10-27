@@ -1,0 +1,5 @@
+messages:
+  verify:
+    paths:
+      - status-code:
+          - val: '200'

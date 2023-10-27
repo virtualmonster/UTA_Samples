@@ -1,0 +1,41 @@
+messages:
+  main:
+    cascade:
+      - request:
+          url: /a/get/with/accept
+          paths:
+            - headers/accept:
+                - val: 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+      - request:
+          url: /b/get/no/accept
+      - request:
+          url: /c/get/with/response/content
+        response:
+          paths:
+            - status-code:
+                - val: '204'
+            - headers/content-type:
+                - val: text/plain;charset=US-ASCII
+            - content:
+                - val: ABC
+      - request:
+          url: /d/post/with/content
+          paths:
+            - headers/content-type:
+                - val: text/css
+            - content:
+                - src: style.css
+      - request:
+          url: http://some.other.host/post/with/content
+          paths:
+            - headers/content-type:
+                - val: text/plain;charset=US-ASCII
+            - content:
+                - val: XYZ
+  another:
+    cascade:
+      - request:
+          url: /should/not/change
+          paths:
+            - headers/accept:
+                - val: text/plain

@@ -1,0 +1,11 @@
+note: GET example.com
+steps:
+  - send:
+      transport: transports/rit-proxy-transport.dtt.yaml
+      request:
+        url: https://www.example.com
+      response:
+        paths:
+          - content:
+              - var: RESP
+  - log: '${RESP}'

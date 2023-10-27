@@ -1,0 +1,8 @@
+messages:
+  bind-path:
+    paths:
+      - method:
+          - val: GET
+      - url/path:
+          - regex: '!.*((\.\.)|(%2E%2E)).*'
+          - var: URL_PATH

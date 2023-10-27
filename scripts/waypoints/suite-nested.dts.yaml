@@ -1,0 +1,3 @@
+tests:
+  - test-parent-wp.dtx.yaml
+  - test-child-wp.dtx.yaml

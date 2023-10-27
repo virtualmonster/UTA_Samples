@@ -1,0 +1,7 @@
+tests:
+  - value-types.dtx.yaml
+  - take-off.dtx.yaml
+  - sleep.dtx.yaml
+  - note: data drive a test per row
+    url: pay-by.dtx.yaml
+    dataset: payment-methods.csv

@@ -1,0 +1,7 @@
+note: |
+  An example of verifying a statement.
+  The expression provided in the verify step is evaluated as JavaScript
+steps:
+  - verify:
+      - |-
+        'pass' != 'fail'

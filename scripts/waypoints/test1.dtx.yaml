@@ -1,0 +1,6 @@
+steps:
+  - log: 'In test1. var C is ${C}'
+  - do: modules/basic-waypoint.dtx.yaml
+  - log: 'In test1. var C is now ${C}'
+vars:
+  C: default1

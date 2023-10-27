@@ -1,0 +1,45 @@
+notes: |
+  single quoted strings are expressions - with ${} syntax like javascript
+  schema versioning is done with `wiring` different versions in
+  handlers for stub message listeners
+handlers:
+  - url: http://mystub
+    case:
+      - request:
+          message: "#abc_requestv${env.crm.version}"
+          values:
+            txId: 101
+        lookup:
+          url: "jdbc:postgresql://${db.hostname}/test?user=${db._username}&password=${db._password}&ssl=true"
+          sql: "SELECT ${request.value}::text as message"
+        require:
+          - lookup.rows.length
+          - |
+            "string" == typeof request.value
+        then:
+          - response: "abc_responsev${env.crm.version}"
+            where:
+              - response.value = lookup.rows[0].message
+    default:
+      - status: 404
+messages:
+  abc_requestv1_1:
+    schema:
+      - url: /v2/openapi
+        require:
+          - |
+            "aksjdkjhvu3wf98wrlwkenf8wlrnsldfo9l3wnrlso9f" == sha265( response )
+    bind:
+      - TODO null / optional fields.
+      - BIDIR
+    payload: #123
+  abc_responsev1_1:
+    schema:
+      - url: /v2/openapi
+        require:
+          - |
+            "aksjdkjhvu3wf98wrlwkenf8wlrnsldfo9l3wnrlso9f" == sha265( response )
+    payload: #124
+blobs:
+  123:
+  124:

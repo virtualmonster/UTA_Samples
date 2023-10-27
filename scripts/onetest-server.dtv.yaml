@@ -1,0 +1,180 @@
+note: OneTest Server Stub
+endpoints:
+  - url: '${ONETEST_ENDPOINT}'
+    events:
+      - request:
+          paths:
+            - method:
+                - val: POST
+            - url/path:
+                - val: /rest/tokens/
+            - content/refresh_token:
+                - val: an-offline-token
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+            - content:
+                - val: '{"expires_in": 300, "access_token": "an-access-token"}'
+      - request:
+          paths:
+            - method:
+                - val: POST
+            - url/path:
+                - val: /rest/tokens/
+            - content/refresh_token:
+                - val: an-invalid-offline-token
+        response:
+          paths:
+            - status-code:
+                - val: '400'
+      - request:
+          paths:
+            - method:
+                - val: GET
+            - url/path:
+                - val: /rm/hello
+        response:
+          paths:
+            - headers/content-type:
+                - val: text/plain
+            - content:
+                - val: hello
+      - request:
+          paths:
+            - method:
+                - val: PUT
+            - url/path:
+                - val: /rm/remote-ping
+        response:
+          paths:
+            - status-code:
+                - val: '204'
+      - request:
+          paths:
+            - method:
+                - val: GET
+            - url/path:
+                - val: /big/files/file001
+        response:
+          paths:
+            - status-code:
+                - val: '200'
+            - headers/content-type:
+                - val: application/octet-stream
+            - content:
+                - val: some-content-not-so-big
+      - request:
+          paths:
+            - method:
+                - val: PUT
+            - url/path:
+                - val: /rm/upgrade-progress
+        response:
+          paths:
+            - status-code:
+                - val: '204'
+      - request:
+          paths:
+            - method:
+                - val: GET
+            - url/path:
+                - val: /sse/live-update/
+        response:
+          paths:
+            - headers/content-type:
+                - val: text/event-stream
+            - content:
+                - val: |+
+                    :
+
+                    id:an-id
+                    event:com.hcl.onetest.rm.agent.ping
+                    data:{"id":"an-id","source":"/rm/","type":"com.hcl.onetest.rm.agent.ping","datacontenttype":"application/json","data":{"ticket":"a-ticket","version":"a-version","timestamp":0},"specversion":"1.0"}
+
+      - request:
+          paths:
+            - method:
+                - val: POST
+            - url/path:
+                - val: /rest/projects/1200/rm/remote-gate/
+        response:
+          paths:
+            - status-code:
+                - val: '303'
+            - headers/location:
+                - val: /rest/projects/1200/sse/recorder-agent-a1e4c50d-cfdf-4404-a4c5-0dcfdf04049c/?onLostContactDeletePath=/rest/projects/1200/rm/remote-gate/a-recorder-agent-id/?key=recorder-agent-a1e4c50d-cfdf-4404-a4c5-0dcfdf04049c
+      - request:
+          paths:
+            - method:
+                - val: GET
+            - url/path:
+                - val: /rest/projects/1200/sse/recorder-agent-a1e4c50d-cfdf-4404-a4c5-0dcfdf04049c/
+        response:
+          paths:
+            - headers/content-type:
+                - val: text/event-stream
+            - content:
+                - val: |+
+                    :
+
+                    id:an-id
+                    event:agent-task
+                    data:{"taskId":"a-task-id","callable":"com.hcl.onetest.agent.recoder.ACallable","operation":"sayHello"}
+
+      - request:
+          paths:
+            - method:
+                - val: POST
+            - url/path:
+                - val: /rest/projects/1200/rm/remote-gate/a-recorder-agent-id/a-task-id/
+        response:
+          paths:
+            - status-code:
+                - val: '204'
+      - request:
+          paths:
+            - method:
+                - val: DELETE
+            - url/path:
+                - val: /rest/projects/1200/rm/remote-gate/a-recorder-agent-id/
+            - url/query:
+                - paths:
+                    - key:
+                        - val: recorder-agent-a1e4c50d-cfdf-4404-a4c5-0dcfdf04049c
+        response:
+          paths:
+            - status-code:
+                - val: '204'
+      - request:
+          paths:
+            - method:
+                - val: PATCH
+            - url/path:
+                - val: /rest/projects/1200/executions/0123/status
+        response:
+          paths:
+            - status-code:
+                - val: '204'
+      - request:
+          paths:
+            - method:
+                - val: PUT
+            - url/path:
+                - val: /rm/remote-status
+        response:
+          paths:
+            - status-code:
+                - val: '204'
+      - request:
+          paths:
+            - method:
+                - val: PATCH
+            - url/path:
+                - val: /rest/projects/1200/results/4567
+        response:
+          paths:
+            - status-code:
+                - val: '204'
+vars:
+  ONETEST_ENDPOINT: https://onetest.127.0.0.1.nip.io

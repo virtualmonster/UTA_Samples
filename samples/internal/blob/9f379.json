@@ -1,0 +1,120 @@
+{
+  "operator": "and",
+  "rules": [
+    {
+      "operator": "or",
+      "rules": [
+        {
+          "field": "status",
+          "operator": "EQUAL",
+          "value": "COMPLETE"
+        },
+        {
+          "field": "status",
+          "operator": "EQUAL",
+          "value": "COMPLETE_WITH_ERROR"
+        },
+        {
+          "field": "status",
+          "operator": "EQUAL",
+          "value": "STOPPED_BY_USER"
+        },
+        {
+          "field": "status",
+          "operator": "EQUAL",
+          "value": "STOPPED_AUTOMATICALLY"
+        },
+        {
+          "field": "status",
+          "operator": "EQUAL",
+          "value": "INCOMPLETE"
+        },
+        {
+          "field": "status",
+          "operator": "EQUAL",
+          "value": "LAUNCH_FAILED"
+        }
+      ]
+    },
+    {
+      "operator": "or",
+      "rules": [
+        {
+          "field": "test.id",
+          "operator": "EQUAL",
+          "value": "56b2b3e3-4951-49fb-b2b3-e3495109fba1"
+        },
+        {
+          "field": "test.id",
+          "operator": "EQUAL",
+          "value": "45f10220-3f70-45df-b102-203f7015df2c"
+        },
+        {
+          "field": "test.id",
+          "operator": "EQUAL",
+          "value": "46f657cb-e0e9-4da0-b657-cbe0e91da0db"
+        },
+        {
+          "field": "test.id",
+          "operator": "EQUAL",
+          "value": "90e8f449-51ba-494c-a8f4-4951bae94c46"
+        },
+        {
+          "field": "test.id",
+          "operator": "EQUAL",
+          "value": "bfeb175d-ce13-4925-ab17-5dce1309251d"
+        },
+        {
+          "field": "test.id",
+          "operator": "EQUAL",
+          "value": "448b870f-c585-4d52-8b87-0fc5854d5278"
+        },
+        {
+          "field": "test.id",
+          "operator": "EQUAL",
+          "value": "8d79cf9f-9028-45d9-b9cf-9f902815d910"
+        },
+        {
+          "field": "test.id",
+          "operator": "EQUAL",
+          "value": "59f075db-b73a-4c67-b075-dbb73adc671a"
+        },
+        {
+          "field": "test.id",
+          "operator": "EQUAL",
+          "value": "1cb4cebe-778d-43fe-b4ce-be778d43fead"
+        },
+        {
+          "field": "test.id",
+          "operator": "EQUAL",
+          "value": "8f6ce3ca-33b6-4b71-ace3-ca33b60b7178"
+        },
+        {
+          "field": "test.id",
+          "operator": "EQUAL",
+          "value": "63463336-9034-43dc-8633-36903453dc8d"
+        },
+        {
+          "field": "test.id",
+          "operator": "EQUAL",
+          "value": "a9693ee1-dc31-4423-a93e-e1dc31b423f4"
+        },
+        {
+          "field": "test.id",
+          "operator": "EQUAL",
+          "value": "254049d3-e56f-4fd7-8049-d3e56fdfd720"
+        },
+        {
+          "field": "test.id",
+          "operator": "EQUAL",
+          "value": "806f9eda-e29f-42aa-af9e-dae29ff2aa48"
+        }
+      ]
+    },
+    {
+      "field": "branch",
+      "operator": "EQUAL",
+      "value": "master"
+    }
+  ]
+}

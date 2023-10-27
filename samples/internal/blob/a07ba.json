@@ -1,0 +1,40 @@
+{
+  "operator": "and",
+  "rules": [
+    {
+      "field": "status",
+      "operator": "NEQUAL",
+      "value": "RUNNING"
+    },
+    {
+      "field": "status",
+      "operator": "NEQUAL",
+      "value": "IN_TRANSITION"
+    },
+    {
+      "field": "status",
+      "operator": "NEQUAL",
+      "value": "SCHEDULED"
+    },
+    {
+      "field": "status",
+      "operator": "NEQUAL",
+      "value": "CANCELED"
+    },
+    {
+      "field": "endDate",
+      "operator": "LESS_THAN_OR_EQUAL",
+      "value": 1628622615651
+    },
+    {
+      "field": "test.repoType",
+      "operator": "EQUAL",
+      "value": "TAM2"
+    },
+    {
+      "field": "test.type",
+      "operator": "NEQUAL",
+      "value": "APISTUB"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+TEST
+ddtests/testA.dtx.yaml
+ddtests/testB.dtx.yaml
+ddtests/testFail.dtx.yaml
+ddtests/testC.dtx.yaml

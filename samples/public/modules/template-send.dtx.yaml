@@ -1,0 +1,21 @@
+note: Test that sends requests based on variables
+steps:
+  - send:
+      request:
+        url: '${URL}'
+        paths:
+          - method:
+              - val: '${METHOD}'
+          - content:
+              - src: '${"GET" === METHOD ? null : REQUEST_BODY}'
+          - headers/content-type:
+              - val: '${REQUEST_CONTENT_TYPE}'
+      response:
+        paths:
+          - content:
+              - src: '${RESPONSE_BODY}'
+          - headers/content-type:
+              - val: '${RESPONSE_CONTENT_TYPE}'
+vars:
+  REQUEST_CONTENT_TYPE: application/json
+  RESPONSE_CONTENT_TYPE: application/json

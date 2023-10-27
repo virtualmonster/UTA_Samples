@@ -1,0 +1,3 @@
+steps:
+  - log: Sample log message
+  - fail: Something is wrong

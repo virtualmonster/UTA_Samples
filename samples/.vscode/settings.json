@@ -1,0 +1,25 @@
+{
+    "yaml.schemas": {
+        ".vscode/schema/environment.json": [
+            "/**/*.dte.yaml"
+        ],
+        ".vscode/schema/loadprofile.json": [
+            "/**/*.dtp.yaml"
+        ],
+        ".vscode/schema/messages.json": [
+            "/**/*.dtm.yaml"
+        ],
+        ".vscode/schema/script.json": [
+            "/**/*.dtx.yaml"
+        ],
+        ".vscode/schema/stub.json": [
+            "/**/*.dtv.yaml"
+        ],
+        ".vscode/schema/suite.json": [
+            "/**/*.dts.yaml"
+        ],
+        ".vscode/schema/transport.json": [
+            "/**/*.dtt.yaml"
+        ]
+    }
+}

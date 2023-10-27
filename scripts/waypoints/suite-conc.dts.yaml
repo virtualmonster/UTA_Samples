@@ -1,0 +1,6 @@
+concurrent: '0'
+tests:
+  - test-conc.dtx.yaml
+  - test-conc.dtx.yaml
+  - test-conc.dtx.yaml
+  - test-conc.dtx.yaml

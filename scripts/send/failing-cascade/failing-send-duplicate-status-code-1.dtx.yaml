@@ -1,0 +1,15 @@
+note: See failingCascade_StatusCode_Duplicate
+steps:
+  - send:
+      request:
+        url: '${HTTP2SSL_ENDPOINT}/testserver/statusCode/404'
+        paths:
+          - tls/ca-path:
+              - dir: ../server
+          - headers/accept:
+              - val: text/html
+      response:
+        message: page/failing-send-duplicate-status-code-1.dtm.yaml#responseMsg
+        paths:
+          - status-code:
+              - val: '404'

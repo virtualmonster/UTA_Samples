@@ -1,0 +1,25 @@
+note: Stub
+endpoints:
+  - url: '${HTTP_ENDPOINT}/test.html'
+    events:
+      - request:
+          message: ../page/unit-test-send.dtm.yaml#bind-path
+        response:
+          paths:
+            - headers/content-type:
+                - val: text/html
+            - content:
+                - src: ../blob/hello/test.html
+  - url: '${HTTPS_ENDPOINT}/test.html'
+    events:
+      - request:
+          message: ../page/unit-test-send.dtm.yaml#bind-path
+        response:
+          paths:
+            - headers/content-type:
+                - val: text/html
+            - content:
+                - src: ../blob/hello/test.html
+vars:
+  HTTP_ENDPOINT: http://test.127.0.0.1.nip.io
+  HTTPS_ENDPOINT: https://test.127.0.0.1.nip.io

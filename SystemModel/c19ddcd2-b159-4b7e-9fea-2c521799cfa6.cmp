@@ -1,0 +1,10 @@
+{
+  "id": "c19ddcd2-b159-4b7e-9fea-2c521799cfa6",
+  "name": "hgjs",
+  "type": "database",
+  "relationships": {
+    "depends-on": [
+      "f1543ee0-e762-4f72-9286-506a47f54c4c"
+    ]
+  }
+}

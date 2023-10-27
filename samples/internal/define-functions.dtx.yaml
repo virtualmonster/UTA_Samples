@@ -1,0 +1,13 @@
+note: 'Define javascript functions to use in values use variables enclosing them in
+  ${...}'
+steps:
+  - log: |
+      I'd like to say ${sayHello("Bob")}!
+      Which logs:
+      I'd like to say Hello Bob!!
+vars:
+  sayHello:
+    js: |
+      function (name) {
+        return "Hello " + name + "!";
+      };

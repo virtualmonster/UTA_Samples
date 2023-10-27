@@ -1,0 +1,4 @@
+note: sleep is important
+steps:
+  - do: modules/sleep.dtx.yaml
+  - fail: Did not sleep well

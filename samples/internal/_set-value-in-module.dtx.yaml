@@ -1,0 +1,9 @@
+note: initially had roundtrip issues
+steps:
+  - do: modules/_set-value.dtx.yaml
+  - log: 'SET was ${SET}'
+  - verify:
+      - |-
+        SET === "set"
+vars:
+  SET: unset

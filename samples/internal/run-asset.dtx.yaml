@@ -1,0 +1,111 @@
+note: principal bvt test
+steps:
+  - do: modules/install-oidc.dtx.yaml
+  - send:
+      note: create project
+      transport: transports/ca-transport.dtt.yaml
+      request:
+        url: '${DEPLOYMENT_URL}/rest/projects'
+        paths:
+          - headers/content-type:
+              - val: application/json
+          - content:
+              - val: '{"name":"Verification ${Date()}","description":"Used for Test
+                  Automation"}'
+      response:
+        paths:
+          - headers/location:
+              - var: PROJECT_URL
+  - send:
+      note: import repo
+      transport: transports/ca-transport.dtt.yaml
+      request:
+        url: '${DEPLOYMENT_URL}${PROJECT_URL}/repositories/'
+        paths:
+          - headers/content-type:
+              - val: application/json
+          - content:
+              - val: '{"auth_type":"HTTPS","uri":"https://github.com/ibm-rtvs/build-verify.git"}'
+      response:
+        message: page/run-asset.dtm.yaml#MSG3
+        paths:
+          - headers/location:
+              - var: REPO_URL
+  - until:
+      note: wait for repo to sync
+      condition: |-
+        'cloned' == REPO_STATE
+      steps:
+        - send:
+            note: update repo state
+            transport: transports/ca-transport.dtt.yaml
+            request:
+              url: '${DEPLOYMENT_URL}${REPO_URL}'
+            response:
+              message: page/run-asset.dtm.yaml#MSG3
+  - send:
+      note: find asset
+      transport: transports/ca-transport.dtt.yaml
+      request:
+        url: '${DEPLOYMENT_URL}${PROJECT_URL}/assets/'
+        paths:
+          - url/query:
+              - paths:
+                  - revision:
+                      - var: REPO_BRANCH
+                  - desktopProjectId:
+                      - val: 00000170-e2ab-e791-0001-41cd2abccd04
+                  - name:
+                      - val: All
+                  - requestedVersion:
+                      - optional
+                      - var: REPO_COMMIT
+      response:
+        paths:
+          - content/content/0/id:
+              - var: ASSET_ID
+  - send:
+      note: run asset
+      transport: transports/ca-transport.dtt.yaml
+      request:
+        url: '${DEPLOYMENT_URL}${PROJECT_URL}/executions/'
+        paths:
+          - headers/content-type:
+              - val: application/json
+          - content:
+              - val: '{"environment":"local","offlineToken":"${_REFRESH_TOKEN}","testAsset":{"assetId":"${ASSET_ID}","revision":"${REPO_BRANCH}"}}'
+      response:
+        message: page/run-asset.dtm.yaml#MSG7
+        paths:
+          - headers/location:
+              - var: RUN_URL
+  - while:
+      note: wait for run to complete
+      condition: "['IN_TRANSITION','RUNNING'].includes( RUN_STATUS )"
+      steps:
+        - send:
+            note: update run status
+            transport: transports/ca-transport.dtt.yaml
+            request:
+              url: '${DEPLOYMENT_URL}${RUN_URL}'
+            response:
+              message: page/run-asset.dtm.yaml#MSG7
+  - verify:
+      - |-
+        'COMPLETE' == RUN_STATUS
+  - if:
+      condition: |-
+        DELETE_PROJECT === "true"
+      steps:
+        - send:
+            transport: transports/ca-transport.dtt.yaml
+            request:
+              url: '${DEPLOYMENT_URL}${PROJECT_URL}'
+              paths:
+                - method:
+                    - val: DELETE
+vars:
+  DEPLOYMENT_URL: https://master-hcl.tp-k8s.nonprod.hclpnp.com
+  REPO_BRANCH: master
+  DELETE_PROJECT: 'false'
+  REPO_COMMIT: '${null}'

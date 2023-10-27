@@ -1,0 +1,16 @@
+steps:
+  - send:
+      request:
+        url: http://localhost:8888/
+        message: send-8888-template.dtm.yaml#MSG
+        paths:
+          - headers/content-type:
+              - val: application/json
+          - content/id:
+              - val: '23'
+          - content/order/sku:
+              - val: '111'
+  - send:
+      request:
+        url: http://localhost:8888/
+        message: send-8888-template.dtm.yaml#ARRAY

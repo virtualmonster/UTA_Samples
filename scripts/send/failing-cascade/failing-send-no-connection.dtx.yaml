@@ -1,0 +1,15 @@
+note: See failingCascade_ParentNoConnection
+steps:
+  - send:
+      request:
+        url: '${PARENT_FETCH_URL}'
+        paths:
+          - tls/ca-path:
+              - dir: ../server
+          - headers/accept:
+              - val: text/html
+      response:
+        message: page/failing-send-no-connection.dtm.yaml#responseMsg
+        paths:
+          - status-code:
+              - val: '200'

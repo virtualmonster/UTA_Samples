@@ -1,0 +1,474 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "$id" : "https://www.hcl-software.com/schema/devops/test/Transport/2023/10",
+  "type" : "object",
+  "properties" : {
+    "note" : {
+      "type" : "string"
+    },
+    "meta" : {
+      "type" : "object",
+      "additionalProperties" : {
+        "type" : "string"
+      }
+    },
+    "schema" : {
+      "format" : "val-uri-reference",
+      "type" : "string"
+    },
+    "paths" : {
+      "$ref" : "#/definitions/PathArray"
+    }
+  },
+  "additionalProperties" : false,
+  "definitions" : {
+    "Action" : {
+      "type" : "object",
+      "properties" : {
+        "dir" : {
+          "$ref" : "#/definitions/Dir"
+        },
+        "js" : {
+          "$ref" : "#/definitions/Js"
+        },
+        "regex" : {
+          "$ref" : "#/definitions/Regex"
+        },
+        "src" : {
+          "$ref" : "#/definitions/Src"
+        },
+        "val" : {
+          "$ref" : "#/definitions/Val"
+        },
+        "var" : {
+          "$ref" : "#/definitions/Var"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "Category" : {
+      "enum" : [ "filter", "value", "verify" ]
+    },
+    "Dir" : {
+      "oneOf" : [ {
+        "title" : "expr",
+        "format" : "val-uri-reference",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "category" : {
+            "$ref" : "#/definitions/Category"
+          },
+          "expr" : {
+            "format" : "val-uri-reference",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "Flag" : {
+      "enum" : [ "disabled", "local", "quick", "waypoint" ]
+    },
+    "FlagArray" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/Flag"
+      }
+    },
+    "Format" : {
+      "oneOf" : [ {
+        "title" : "mediaType",
+        "format" : "val-mediatype",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "mediaType" : {
+            "format" : "val-mediatype",
+            "type" : "string"
+          },
+          "pretty" : {
+            "format" : "val",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "Js" : {
+      "oneOf" : [ {
+        "title" : "expr",
+        "format" : "js",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "category" : {
+            "$ref" : "#/definitions/Category"
+          },
+          "expr" : {
+            "format" : "js",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "Namespaces" : {
+      "type" : "object",
+      "properties" : {
+        "meta" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "string"
+          }
+        },
+        "default" : {
+          "type" : "string"
+        },
+        "prefixes" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "string"
+          }
+        }
+      },
+      "additionalProperties" : false
+    },
+    "Path" : {
+      "oneOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "expr" : {
+            "format" : "val",
+            "type" : "string"
+          },
+          "items" : {
+            "$ref" : "#/definitions/PathItemArray"
+          }
+        },
+        "additionalProperties" : false
+      }, {
+        "type" : "object",
+        "additionalProperties" : {
+          "$ref" : "#/definitions/PathItemArray"
+        }
+      } ]
+    },
+    "PathArray" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/Path"
+      }
+    },
+    "PathItem" : {
+      "oneOf" : [ {
+        "enum" : [ "optional" ]
+      }, {
+        "type" : "object",
+        "properties" : {
+          "dir" : {
+            "$ref" : "#/definitions/Dir"
+          },
+          "format" : {
+            "$ref" : "#/definitions/Format"
+          },
+          "js" : {
+            "$ref" : "#/definitions/Js"
+          },
+          "namespaces" : {
+            "$ref" : "#/definitions/Namespaces"
+          },
+          "paths" : {
+            "$ref" : "#/definitions/Paths"
+          },
+          "regex" : {
+            "$ref" : "#/definitions/Regex"
+          },
+          "repeat" : {
+            "$ref" : "#/definitions/Repeat"
+          },
+          "schema" : {
+            "$ref" : "#/definitions/Schema"
+          },
+          "src" : {
+            "$ref" : "#/definitions/Src"
+          },
+          "type" : {
+            "$ref" : "#/definitions/Type"
+          },
+          "val" : {
+            "$ref" : "#/definitions/Val"
+          },
+          "var" : {
+            "$ref" : "#/definitions/Var"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "PathItemArray" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/PathItem"
+      }
+    },
+    "Paths" : {
+      "oneOf" : [ {
+        "title" : "paths",
+        "$ref" : "#/definitions/PathArray",
+        "type" : "array"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "paths" : {
+            "$ref" : "#/definitions/PathArray"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "Regex" : {
+      "oneOf" : [ {
+        "title" : "expr",
+        "format" : "val-regex",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "category" : {
+            "$ref" : "#/definitions/Category"
+          },
+          "expr" : {
+            "format" : "val-regex",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "Repeat" : {
+      "type" : "object",
+      "properties" : {
+        "meta" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "string"
+          }
+        },
+        "keys" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "where" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "$ref" : "#/definitions/Action"
+          }
+        },
+        "vars" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      },
+      "additionalProperties" : false
+    },
+    "Schema" : {
+      "oneOf" : [ {
+        "title" : "uri",
+        "format" : "val-uri-reference",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "uri" : {
+            "format" : "val-uri-reference",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "Src" : {
+      "oneOf" : [ {
+        "title" : "expr",
+        "format" : "val-uri-reference",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "category" : {
+            "$ref" : "#/definitions/Category"
+          },
+          "expr" : {
+            "format" : "val-uri-reference",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "Type" : {
+      "oneOf" : [ {
+        "title" : "name",
+        "format" : "val",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "name" : {
+            "format" : "val",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "Val" : {
+      "oneOf" : [ {
+        "title" : "expr",
+        "format" : "val",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "category" : {
+            "$ref" : "#/definitions/Category"
+          },
+          "expr" : {
+            "format" : "val",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "Var" : {
+      "oneOf" : [ {
+        "title" : "expr",
+        "format" : "var",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "category" : {
+            "$ref" : "#/definitions/Category"
+          },
+          "expr" : {
+            "format" : "var",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    }
+  }
+}

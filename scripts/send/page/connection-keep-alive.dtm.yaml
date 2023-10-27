@@ -1,0 +1,80 @@
+messages:
+  verify:
+    paths:
+      - status-code:
+          - val: '200'
+  page1:
+    paths:
+      - status-code:
+          - val: '200'
+    cascade:
+      - request:
+          url: /testserver/delay/50?request=1
+          paths:
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+      - request:
+          url: /testserver/delay/50?request=2
+          paths:
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+      - request:
+          url: /testserver/delay/50?request=3
+          paths:
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+      - request:
+          url: /testserver/delay/50?request=4
+          paths:
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+      - request:
+          url: /testserver/delay/50?request=5
+          paths:
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+      - request:
+          url: /testserver/delay/50?request=6
+          paths:
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+      - request:
+          url: /testserver/delay/50?request=7
+          paths:
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+      - request:
+          url: /testserver/delay/0?request=8
+          paths:
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+      - request:
+          url: /testserver/delay/0?request=9
+          paths:
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+      - request:
+          url: /testserver/delay/0?request=10
+          paths:
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'

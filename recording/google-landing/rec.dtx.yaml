@@ -1,0 +1,75 @@
+note: Generated from recorded traffic
+steps:
+  - with:
+      note: Google
+      steps:
+        - open:
+            note: Google
+            url: '${WEBSITE_ROOT_URL}/'
+            emulate:
+              - send:
+                  request:
+                    url: https://www.google.com/
+                    message: rec_1.dtm.yaml#req
+                  response:
+                    message: rec_1.dtm.yaml#res
+        - press:
+            shot: shot/qq6m3a.dti.jpeg#284
+            object: html.div
+            target:
+              - properties:
+                  - tagname:
+                      - val: div
+                  - content:
+                      - val: Accept all
+            emulate:
+              - send:
+                  request:
+                    url: https://www.google.com/gen_204?ei=JtMTZffxIaGq1QH_iqfABg&ved=0ahUKEwj3nJyFnMqBAxUhVTUKHX_FCWgQiZAHCHQ&uact=3&bl=x4mg&s=webhp
+                    message: rec_2.dtm.yaml#req
+                  response:
+                    message: rec_2.dtm.yaml#res
+        - press:
+            shot: shot/dvdawe.dti.jpeg#344
+            object: html.textarea
+            target:
+              - properties:
+                  - tagname:
+                      - val: textarea
+                  - type:
+                      - val: search
+            emulate:
+              - send:
+                  request:
+                    url: 'https://www.google.com/gen_204?atyp=csi&ei=JtMTZffxIaGq1QH_iqfABg&s=jsa&jsi=s,st.5079,t.0,at.16,et.click,n.vZr2rb,cn.1,ie.0,vi.1&zx=1695798059195&opi=89978449'
+                    message: rec_3.dtm.yaml#req
+                  response:
+                    message: rec_3.dtm.yaml#res
+        - type:
+            shot: shot/dara3z.dti.jpeg#443
+            object: html.textarea
+            target:
+              - properties:
+                  - tagname:
+                      - val: textarea
+                  - type:
+                      - val: search
+            value: computing
+        - press:
+            shot: shot/el6n4y.dti.jpeg#906
+            object: html.b
+            target:
+              - properties:
+                  - tagname:
+                      - val: b
+                  - content:
+                      - val: national curriculum
+            emulate:
+              - send:
+                  request:
+                    url: 'https://www.google.com/gen_204?atyp=i&ei=JtMTZffxIaGq1QH_iqfABg&ct=slh&v=t1&im=M&m=HV&pv=0.9408597307599149&me=1:1695798054840,V,0,0,1036,659:0,B,719:0,N,1,JtMTZffxIaGq1QH_iqfABg:0,R,1,1,0,0,1019,659:0,R,1,4,322,193,375,16:4933,x:6699,G,1,1,405,340:14,e,U&zx=1695798066486&opi=89978449'
+                    message: rec_4.dtm.yaml#req
+                  response:
+                    message: rec_4.dtm.yaml#res
+vars:
+  WEBSITE_ROOT_URL: https://www.google.com

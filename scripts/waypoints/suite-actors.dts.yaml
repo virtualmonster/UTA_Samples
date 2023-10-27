@@ -1,0 +1,8 @@
+actors:
+  A1: {}
+  A2: {}
+tests:
+  - url: test1.dtx.yaml
+    actors:
+      - A1
+      - A2

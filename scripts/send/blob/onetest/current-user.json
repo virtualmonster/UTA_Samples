@@ -1,0 +1,19 @@
+{
+   "activated":true,
+   "federated":false,
+   "authorities":[
+      "ROLE_ADMIN",
+      "ROLE_USER",
+      "SCOPE_email",
+      "SCOPE_openid",
+      "SCOPE_profile",
+      "SCOPE_testserver"
+   ],
+   "email":"jdoe@hcl.com",
+   "firstName":"John",
+   "userid":"b4b3efd4-f1df-44de-9158-bf4bead4b849",
+   "imageUrl":null,
+   "langKey":null,
+   "lastName":"Doe",
+   "username":"jdoe"
+}

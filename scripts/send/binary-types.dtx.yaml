@@ -1,0 +1,15 @@
+note: Ensure binary responses work
+steps:
+  - send:
+      note: Some large binary type
+      request:
+        url: '${HTTP2SSL_ENDPOINT}/testserver/binary/total/1600000/in/34000'
+        paths:
+          - tls/ca-path:
+              - dir: server
+      response:
+        paths:
+          - status-code:
+              - val: '200'
+          - content/size:
+              - val: '1600000'

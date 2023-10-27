@@ -1,0 +1,4 @@
+note: sleep is important
+steps:
+  - do: modules/sleep.dtx.yaml
+  - log: Completed sleep for 8 seconds

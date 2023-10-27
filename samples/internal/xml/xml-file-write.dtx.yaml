@@ -1,0 +1,42 @@
+steps:
+  - log: 'Writing file ${FILE_TO_WRITE}'
+  - send:
+      request:
+        url: '${FILE_TO_WRITE}'
+        paths:
+          - content:
+              - format:
+                  mediaType: application/xml
+                  pretty: '${PRETTY}'
+              - namespaces:
+                  default: http://some.namespaces.com/def
+                  prefixes:
+                    abc: http://some.namespaces.com/abc
+                    xyz: http://some.namespaces.com/xyz
+                    local: ""
+              - paths:
+                  - a/b:
+                      - val: b element
+                  - a/b/@test:
+                      - val: test attribute
+                  - a/abc:c:
+                      - optional
+                  - a/local:d:
+                      - val: d element
+                  - a/xyz:e/xyz:f/g/xyz:h:
+                      - val: h element
+  - log: 'File written. Will compare against ${FILE_TO_MATCH}'
+  - send:
+      request:
+        url: '${FILE_TO_WRITE}'
+      response:
+        paths:
+          - content:
+              - src: '${FILE_TO_MATCH}'
+vars:
+  PRETTY: 'true'
+  FILE_TO_WRITE:
+    js: |-
+      SYS_BASE_DIR_URI + "/.written-" + (Math.floor(Math.random() * 1000) + 1) + ".xml"
+  FILE_TO_MATCH:
+    js: "SYS_BASE_DIR_URI + ('true' === PRETTY ? '/basic-pretty.xml' : '/basic.xml')"

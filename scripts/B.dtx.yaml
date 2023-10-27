@@ -1,0 +1,3 @@
+steps:
+  - log: Hello B
+  - log: Goodbye B

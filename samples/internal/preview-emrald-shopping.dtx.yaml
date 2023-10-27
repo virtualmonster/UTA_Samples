@@ -1,0 +1,217 @@
+note: this is an evolution of the test on github
+steps:
+  - open:
+      url: '${DEPLOYMENT_URL}'
+  - until:
+      target:
+        - properties:
+            - tagname:
+                - val: input
+            - type:
+                - val: text
+            - placeholder:
+                - val: Search
+            - focus:
+                - val:
+                    category: verify
+                    expr: 'true'
+      steps:
+        - press: tab
+  - type: '${ITEM_NAME}'
+  - press: enter
+  - press:
+      target:
+        - properties:
+            - tagname:
+                - val: button
+            - type:
+                - val: button
+            - content:
+                - val: Add to cart
+  - press:
+      target:
+        - properties:
+            - tagname:
+                - val: button
+            - type:
+                - val: button
+            - content:
+                - val: View Full Cart
+  - press:
+      target:
+        - properties:
+            - tagname:
+                - val: button
+            - type:
+                - val: button
+            - content:
+                - val: Checkout
+  - press:
+      target:
+        - properties:
+            - tagname:
+                - val: button
+            - content:
+                - val: Create a New Address
+  - until:
+      target:
+        - properties:
+            - tagname:
+                - val: input
+            - name:
+                - val: nickName
+            - focus:
+                - val:
+                    category: verify
+                    expr: 'true'
+      steps:
+        - press: tab
+  - type: '${ADDRESS_NAME}'
+  - press: tab
+  - verify:
+      target:
+        - properties:
+            - tagname:
+                - val: input
+            - name:
+                - val: firstName
+            - focus:
+                - val:
+                    category: verify
+                    expr: 'true'
+  - type: Type First Name
+  - press: tab
+  - verify:
+      target:
+        - properties:
+            - tagname:
+                - val: input
+            - name:
+                - val: lastName
+            - focus:
+                - val:
+                    category: verify
+                    expr: 'true'
+  - type: Type Last Name
+  - press: tab
+  - type: Type Address Line1
+  - press: tab
+  - type: Type Address Line2
+  - press: tab
+  - type: MyCity
+  - press: tab
+  - type: My Country
+  - press: tab
+  - type: My State
+  - press: tab
+  - verify:
+      target:
+        - properties:
+            - tagname:
+                - val: input
+            - name:
+                - val: zipCode
+            - focus:
+                - val:
+                    category: verify
+                    expr: 'true'
+  - type: '10101010'
+  - until:
+      target:
+        - properties:
+            - tagname:
+                - val: input
+            - name:
+                - val: email1
+            - focus:
+                - val:
+                    category: verify
+                    expr: 'true'
+      steps:
+        - press: tab
+  - type: anemail@b.com
+  - press:
+      target:
+        - properties:
+            - tagname:
+                - val: button
+            - content:
+                - val: Save and select this address
+  - press:
+      target:
+        - properties:
+            - tagname:
+                - val: button
+            - content:
+                - val: Continue to Payment
+  - press:
+      target:
+        - properties:
+            - tagname:
+                - val: label
+            - content:
+                - val: VISA Credit Card
+  - press: tab
+  - verify:
+      target:
+        - properties:
+            - tagname:
+                - val: input
+            - name:
+                - val: account
+            - focus:
+                - val:
+                    category: verify
+                    expr: 'true'
+  - type: '4111111111111111'
+  - select:
+      target:
+        - properties:
+            - tagname:
+                - val: select
+            - id:
+                - val: expire_month
+      value: '12'
+  - select:
+      target:
+        - properties:
+            - tagname:
+                - val: select
+            - name:
+                - val: expire_year
+      value: '2028'
+  - press: tab
+  - type: '123'
+  - until:
+      target:
+        - properties:
+            - tagname:
+                - val: p
+            - content:
+                - val: Use This Address
+            - focus:
+                - val:
+                    category: verify
+                    expr: 'true'
+      steps:
+        - press: tab
+  - press: enter
+  - press:
+      target:
+        - properties:
+            - tagname:
+                - val: button
+            - content:
+                - val: Review Order
+  - press:
+      target:
+        - properties:
+            - tagname:
+                - val: button
+            - content:
+                - val: Place Order
+  - pause: 10s
+vars:
+  DEPLOYMENT_URL: https://commerce-preview.sbx0094.play.hclsofy.com/Emerald
+  ITEM_NAME: bunk bed
+  ADDRESS_NAME: AddressType1

@@ -1,0 +1,6 @@
+transport: '${DATABASE_VENDOR}/db.dtt.yaml'
+statement: |
+  SELECT "ACCOUNT_ID" AS "TRANSACTION_ACCOUNT_ID",
+         "AMOUNT" AS "TRANSACTION_AMOUNT",
+         "NAME" AS "TRANSACTION_NAME"
+  FROM "TRANSFER"

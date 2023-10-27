@@ -1,0 +1,2 @@
+connection: dbName
+statement: EXEC dbo.uspGetEmployeeManagers @BusinessEntityID = 50

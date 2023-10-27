@@ -1,0 +1,12 @@
+note: See failingCascade_StatusCode_NoExplicit_ResponseUnDefined
+steps:
+  - send:
+      request:
+        url: '${HTTP2SSL_ENDPOINT}${PARENT_FETCH_PATH}?parent'
+        paths:
+          - tls/ca-path:
+              - dir: ../server
+          - headers/accept:
+              - val: text/html
+      response:
+        message: page/failing-send-no-response.dtm.yaml#responseMsg

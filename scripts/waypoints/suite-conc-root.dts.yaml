@@ -1,0 +1,3 @@
+tests:
+  - test-setup.dtx.yaml
+  - suite-conc.dts.yaml

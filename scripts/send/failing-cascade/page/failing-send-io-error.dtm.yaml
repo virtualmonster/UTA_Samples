@@ -1,0 +1,118 @@
+messages:
+  verify:
+    paths:
+      - status-code:
+          - val: '200'
+  page1:
+    paths:
+      - status-code:
+          - val: '200'
+    cascade:
+      - request:
+          url: /testserver/javatest/20kb1.jpg
+          paths:
+            - tls/ca-path:
+                - dir: ../../server
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+      - request:
+          url: /testserver/io-error/
+          paths:
+            - tls/ca-path:
+                - dir: ../../server
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+      - request:
+          url: /testserver/javatest/20kb3.jpg
+          paths:
+            - tls/ca-path:
+                - dir: ../../server
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+      - request:
+          url: /testserver/javatest/20kb4.jpg
+          paths:
+            - tls/ca-path:
+                - dir: ../../server
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+      - request:
+          url: /testserver/javatest/20kb5.jpg
+          paths:
+            - tls/ca-path:
+                - dir: ../../server
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+      - request:
+          url: /testserver/javatest/20kb6.jpg
+          paths:
+            - tls/ca-path:
+                - dir: ../../server
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+      - request:
+          url: /testserver/javatest/20kb7.jpg
+          paths:
+            - tls/ca-path:
+                - dir: ../../server
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+      - request:
+          url: /testserver/javatest/20kb8.jpg
+          paths:
+            - tls/ca-path:
+                - dir: ../../server
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+      - request:
+          url: /testserver/javatest/20kb9.jpg
+          paths:
+            - tls/ca-path:
+                - dir: ../../server
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+      - request:
+          url: /testserver/javatest/20kb10.jpg
+          paths:
+            - tls/ca-path:
+                - dir: ../../server
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+      - request:
+          url: /testserver/javatest/20kb11.jpg
+          paths:
+            - tls/ca-path:
+                - dir: ../../server
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+      - request:
+          url: /testserver/javatest/20kb12.jpg
+          paths:
+            - tls/ca-path:
+                - dir: ../../server
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'

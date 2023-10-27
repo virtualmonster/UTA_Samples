@@ -1,0 +1,64 @@
+note: Generated from recorded traffic
+messages:
+  responseMsg:
+    paths:
+      - headers/content-type:
+          - val: text/html
+      - content:
+          - val: Response data ABCD
+    cascade:
+      - request:
+          url: /Emerald/asset-manifest.json
+          paths:
+            - headers/accept:
+                - val: '*/*'
+        response:
+          paths:
+            - headers/content-type:
+                - val: text/html
+            - content:
+                - val: Response data ABCD
+      - request:
+          url: /Emerald/favicon.ico
+          paths:
+            - headers/accept:
+                - val: image/x-icon
+        response:
+          paths:
+            - headers/content-type:
+                - val: text/html
+            - content:
+                - val: Response data ABCD
+      - request:
+          url: /Emerald/locales/en-US/translation.json
+          paths:
+            - headers/accept:
+                - val: '*/*'
+        response:
+          paths:
+            - headers/content-type:
+                - val: text/html
+            - content:
+                - val: Response data ABCD
+      - request:
+          url: /Emerald/service-worker.js
+          paths:
+            - headers/accept:
+                - val: '*/*'
+        response:
+          paths:
+            - headers/content-type:
+                - val: text/html
+            - content:
+                - val: Response data ABCD
+      - request:
+          url: /wcs/resources/store/11/usercontext/@self/contextdata?langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: text/html
+            - content:
+                - val: Response data ABCD

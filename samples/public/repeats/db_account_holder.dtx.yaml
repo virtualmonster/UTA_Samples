@@ -1,0 +1,37 @@
+steps:
+  - do: '${DATABASE_VENDOR}/init.dtx.yaml'
+  - sql:
+      transport: '${DATABASE_VENDOR}/db.dtt.yaml'
+      statement: |
+        SELECT a."ID" AS "ACCOUNT_ID",
+               a."NAME" AS "ACCOUNT_NAME",
+               h."NAME" AS "HOLDER_NAME"
+        FROM "HOLDER" h
+        JOIN "ACCOUNT" a ON a."ID" = h."ACCOUNT_ID"
+  - sql:
+      dataset: db-transactions.dtd.yaml
+  - if:
+      condition: |-
+        "hsqldb" == DATABASE_VENDOR
+      steps:
+        - sql:
+            note: TODO - need to be able to register this in db_setup to avoid leak
+              on fail
+            transport: '${DATABASE_VENDOR}/db.dtt.yaml'
+            statement: SHUTDOWN
+  - send:
+      request:
+        url: '${FILENAME}'
+        message: account_holder.dtm.yaml#main
+  - send:
+      request:
+        url: '${FILENAME}'
+      response:
+        paths:
+          - content:
+              - src: account_holder_transaction.json
+vars:
+  FILENAME:
+    js: |-
+      SYS_BASE_DIR_URI + "/.account_holder-" + (Math.floor(Math.random() * 1000) + 1) + ".json"
+  DATABASE_VENDOR: hsqldb

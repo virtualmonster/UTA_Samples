@@ -1,0 +1,11 @@
+note: initially had roundtrip issues
+flags:
+  - disabled
+steps:
+  - verify:
+      - |-
+        'COMPLETE' == RUN_STATUS
+  - if: {}
+  - verify: {}
+  - verify:
+      - 'true'

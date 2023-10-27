@@ -1,0 +1,5 @@
+messages:
+  responseMsg:
+    paths:
+      - status-code:
+          - val: '200'

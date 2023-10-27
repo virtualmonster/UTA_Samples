@@ -1,0 +1,172 @@
+note: Stub that stubs all endpoints used by run-asset
+endpoints:
+  - url: '${DEPLOYMENT_URL}/rest/tokens/'
+    events:
+      - note: Provide access token
+        request:
+          paths:
+            - method:
+                - val: POST
+            - content/refresh_token:
+                - var: REFRESH_TOKEN
+        steps:
+          - log: Access token requested
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+            - content:
+                - val: '{"access_token":"${STUB_ACCESS_TOKEN}"}'
+  - url: '${DEPLOYMENT_URL}/rest/projects'
+    events:
+      - note: Project creation
+        request:
+          paths:
+            - method:
+                - val: POST
+            - headers/content-type:
+                - val: application/json
+            - headers/authorization:
+                - val: 'Bearer ${STUB_ACCESS_TOKEN}'
+            - content/name:
+                - var: PROJECT_NAME
+        steps:
+          - log: Project creation requested
+        response:
+          paths:
+            - status-code:
+                - val: '201'
+            - headers/location:
+                - val: '${STUB_PROJECT_URL}'
+  - url: '${DEPLOYMENT_URL}${STUB_PROJECT_URL}/repositories/'
+    events:
+      - note: Repository import
+        request:
+          paths:
+            - method:
+                - val: POST
+            - headers/content-type:
+                - val: application/json
+            - headers/authorization:
+                - val: 'Bearer ${STUB_ACCESS_TOKEN}'
+            - content/name:
+                - var: PROJECT_NAME
+        steps:
+          - log: Repository import requested
+        response:
+          paths:
+            - status-code:
+                - val: '201'
+            - headers:
+                - paths:
+                    - content-type:
+                        - val: application/json
+                    - location:
+                        - val: '${STUB_REPO_URL}'
+            - content:
+                - val: '{"state":"not_cloned"}'
+  - url: '${DEPLOYMENT_URL}${STUB_REPO_URL}'
+    events:
+      - note: Get repository
+        request:
+          paths:
+            - method:
+                - val: GET
+        steps:
+          - log: Repository get requested
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+            - content:
+                - val: '{"state":"cloned"}'
+  - url: '${DEPLOYMENT_URL}${STUB_PROJECT_URL}/assets/'
+    events:
+      - note: Get assets
+        request:
+          paths:
+            - method:
+                - val: GET
+            - headers/authorization:
+                - val: 'Bearer ${STUB_ACCESS_TOKEN}'
+            - url/query:
+                - paths:
+                    - revision:
+                        - val: master
+                    - desktopProjectId:
+                        - val: 00000170-e2ab-e791-0001-41cd2abccd04
+                    - name:
+                        - val: All
+        steps:
+          - log: Assets get requested
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+            - content:
+                - src: run-asset-blob/assets.json
+  - url: '${DEPLOYMENT_URL}${STUB_PROJECT_URL}/executions/'
+    events:
+      - note: Start execution
+        request:
+          paths:
+            - method:
+                - val: POST
+            - headers/authorization:
+                - val: 'Bearer ${STUB_ACCESS_TOKEN}'
+            - content/testAsset/assetId:
+                - var: ASSET_ID
+        steps:
+          - log: 'Execution requested for ${ASSET_ID}'
+        response:
+          paths:
+            - status-code:
+                - val: '201'
+            - headers:
+                - paths:
+                    - content-type:
+                        - val: application/json
+                    - location:
+                        - val: '${STUB_PROJECT_URL}/executions/${STUB_EXECUTION_ID}'
+            - content:
+                - val: '{"status":"IN_TRANSITION"}'
+  - url: '${DEPLOYMENT_URL}${STUB_PROJECT_URL}/executions/${STUB_EXECUTION_ID}'
+    events:
+      - note: Get execution
+        request:
+          paths:
+            - method:
+                - val: GET
+            - headers/authorization:
+                - val: 'Bearer ${STUB_ACCESS_TOKEN}'
+        steps:
+          - log: Get execution requested
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+            - content:
+                - val: '{"status":"COMPLETE"}'
+  - url: '${DEPLOYMENT_URL}${STUB_PROJECT_URL}'
+    events:
+      - note: Delete project
+        request:
+          paths:
+            - method:
+                - val: DELETE
+            - headers/authorization:
+                - val: 'Bearer ${STUB_ACCESS_TOKEN}'
+        steps:
+          - log: Delete project requested
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+            - content:
+                - val: '{}'
+vars:
+  DEPLOYMENT_URL: https://master-hcl.tp-k8s.nonprod.hclpnp.com
+  STUB_ACCESS_TOKEN: pretendtoken
+  STUB_PROJECT_URL: /rest/projects/1234
+  STUB_REPO_URL: /rest/projects/1234/respositories/repo123/
+  STUB_EXECUTION_ID: exe123

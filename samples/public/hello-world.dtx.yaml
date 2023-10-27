@@ -1,0 +1,8 @@
+note: |
+  Hello World example.
+  Two messages are output. The first is on a single line. The second contains two lines.
+steps:
+  - log: Hello World!
+  - log: |-
+      Hello again
+      Hello once more

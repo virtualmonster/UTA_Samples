@@ -1,0 +1,13 @@
+flags:
+  - waypoint
+steps:
+  - log: In parent waypoint
+  - assign:
+      vars:
+        X: X_assigned_in_parent
+  - do: child-waypoint.dtx.yaml
+vars:
+  IN:
+    modifier: in
+  X:
+    modifier: out

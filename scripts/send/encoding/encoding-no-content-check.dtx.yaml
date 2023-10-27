@@ -1,0 +1,9 @@
+steps:
+  - do: encoding-stub.dtv.yaml
+  - send:
+      request:
+        url: '${UNIT_TEST_ENDPOINT}/${UNIT_TEST_ENCODING}'
+      response:
+        paths:
+          - status-code:
+              - val: '${EXPECTED_STATUS_CODE}'

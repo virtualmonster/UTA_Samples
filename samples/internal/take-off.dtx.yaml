@@ -1,0 +1,14 @@
+steps:
+  - log: take off in...
+  - while:
+      condition: --i > 0
+      steps:
+        - log: '${i}...'
+        - if:
+            condition: i==6
+            steps:
+              - log: we have a go for main engine start
+        - pause: 1s
+  - log: booster ignition and liftoff!
+vars:
+  i: '${11}'

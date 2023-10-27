@@ -1,0 +1,13 @@
+steps:
+  - verify:
+      - |
+        FOO_BAR_RESULT = FOO + BAR
+        true
+vars:
+  FOO:
+    modifier: in
+  BAR:
+    modifier: in
+    val: BAR default
+  FOO_BAR_RESULT:
+    modifier: out

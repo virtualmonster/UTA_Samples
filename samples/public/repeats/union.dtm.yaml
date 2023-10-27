@@ -1,0 +1,40 @@
+messages:
+  main:
+    paths:
+      - content:
+          - format: application/json
+          - paths:
+              - accounts:
+                  - paths:
+                      - '*':
+                          - repeat:
+                              keys:
+                                - ACCOUNT_ID
+                              where:
+                                TAB:
+                                  val: account
+                          - paths:
+                              - account_id:
+                                  - var: ACCOUNT_ID
+                              - account_name:
+                                  - var: ACCOUNT_NAME
+                              - holder_name:
+                                  - paths:
+                                      - '*':
+                                          - repeat:
+                                              where:
+                                                TAB:
+                                                  val: holder
+                                          - var: HOLDER_NAME
+                              - transactions:
+                                  - paths:
+                                      - '*':
+                                          - repeat:
+                                              where:
+                                                TAB:
+                                                  val: transaction
+                                          - paths:
+                                              - amount:
+                                                  - var: TRANSACTION_AMOUNT
+                                              - name:
+                                                  - var: TRANSACTION_NAME

@@ -1,0 +1,518 @@
+note: Generated from recorded traffic
+messages:
+  responseMsg:
+    paths:
+      - headers/content-type:
+          - val: text/html
+    cascade:
+      - request:
+          url: /Emerald/asset-manifest.json
+          paths:
+            - headers/accept:
+                - val: '*/*'
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/octet-stream
+      - request:
+          url: /Emerald/favicon.ico
+          paths:
+            - headers/accept:
+                - val: image/x-icon
+        response:
+          paths:
+            - headers/content-type:
+                - val: image/x-icon
+      - request:
+          url: /Emerald/locales/en-US/translation.json
+          paths:
+            - headers/accept:
+                - val: '*/*'
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/octet-stream
+      - request:
+          url: /Emerald/service-worker.js
+          paths:
+            - headers/accept:
+                - val: '*/*'
+        response:
+          paths:
+            - headers/content-type:
+                - val: text/html
+      - request:
+          url: /Emerald/static/css/main.38a27ca5.chunk.css
+          paths:
+            - headers/accept:
+                - val: text/css
+        response:
+          paths:
+            - headers/content-type:
+                - val: text/css
+      - request:
+          url: /Emerald/static/js/10.0652fdbd.chunk.js
+          paths:
+            - headers/accept:
+                - val: '*/*'
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/octet-stream
+            - content:
+                - src:
+                    flags:
+                      - disabled
+                    expr: blob/guvdz5.blob
+      - request:
+          url: /Emerald/static/js/16.4963e84c.chunk.js
+          paths:
+            - headers/accept:
+                - val: '*/*'
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/octet-stream
+      - request:
+          url: /Emerald/static/js/17.dbe1d886.chunk.js
+          paths:
+            - headers/accept:
+                - val: '*/*'
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/octet-stream
+      - request:
+          url: /Emerald/static/js/18.322b7672.chunk.js
+          paths:
+            - headers/accept:
+                - val: '*/*'
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/octet-stream
+      - request:
+          url: /Emerald/static/js/19.207745cc.chunk.js
+          paths:
+            - headers/accept:
+                - val: '*/*'
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/octet-stream
+      - request:
+          url: /Emerald/static/js/20.2a089149.chunk.js
+          paths:
+            - headers/accept:
+                - val: '*/*'
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/octet-stream
+      - request:
+          url: /Emerald/static/js/25.bc891912.chunk.js
+          paths:
+            - headers/accept:
+                - val: '*/*'
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/octet-stream
+      - request:
+          url: /Emerald/static/js/27.95e81994.chunk.js
+          paths:
+            - headers/accept:
+                - val: '*/*'
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/octet-stream
+      - request:
+          url: /Emerald/static/js/28.6f87fc64.chunk.js
+          paths:
+            - headers/accept:
+                - val: '*/*'
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/octet-stream
+      - request:
+          url: /Emerald/static/js/44.6d3dd340.chunk.js
+          paths:
+            - headers/accept:
+                - val: '*/*'
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/octet-stream
+      - request:
+          url: /Emerald/static/js/9.adf2e86d.chunk.js
+          paths:
+            - headers/accept:
+                - val: '*/*'
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/octet-stream
+      - request:
+          url: /Emerald/static/js/main.e47fcab3.chunk.js
+          paths:
+            - headers/accept:
+                - val: '*/*'
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/octet-stream
+      - request:
+          url: /Emerald/worker.js
+          paths:
+            - headers/accept:
+                - val: '*/*'
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/octet-stream
+      - request:
+          url: /EmeraldSAS/images/hero/hero-home_2000w.jpg
+          paths:
+            - headers/accept:
+                - val: image/jpeg
+        response:
+          paths:
+            - headers/content-type:
+                - val: image/jpeg
+      - request:
+          url: /EmeraldSAS/images/promotion/promo-large-2000px.jpg
+          paths:
+            - headers/accept:
+                - val: image/jpeg
+        response:
+          paths:
+            - headers/content-type:
+                - val: image/jpeg
+      - request:
+          url: /EmeraldSAS/images/promotion/promo-lg-1200px.jpg
+          paths:
+            - headers/accept:
+                - val: image/jpeg
+        response:
+          paths:
+            - headers/content-type:
+                - val: image/jpeg
+      - request:
+          url: /EmeraldSAS/images/rooms/livingroom.jpg
+          paths:
+            - headers/accept:
+                - val: image/jpeg
+        response:
+          paths:
+            - headers/content-type:
+                - val: image/jpeg
+      - request:
+          url: /EmeraldSAS/images/type-icons/hcl-logo-footer.svg
+          paths:
+            - headers/accept:
+                - val: image/svg+xml
+        response:
+          paths:
+            - headers/content-type:
+                - val: image/svg+xml
+      - request:
+          url: /EmeraldSAS/images/type-icons/hcl-logo.svg
+          paths:
+            - headers/accept:
+                - val: image/svg+xml
+        response:
+          paths:
+            - headers/content-type:
+                - val: image/svg+xml
+      - request:
+          url: /hclstore/EmeraldCAS/images/catalog/livingroom/category/furniture.jpg
+          paths:
+            - headers/accept:
+                - val: image/jpeg
+        response:
+          paths:
+            - headers/content-type:
+                - val: image/jpeg
+      - request:
+          url: /hclstore/EmeraldCAS/images/catalog/livingroom/category/livingroom-lighting.jpg
+          paths:
+            - headers/accept:
+                - val: image/jpeg
+        response:
+          paths:
+            - headers/content-type:
+                - val: image/jpeg
+      - request:
+          url: /hclstore/EmeraldCAS/images/catalog/swatches/sw_crimson.png
+          paths:
+            - headers/accept:
+                - val: image/png
+        response:
+          paths:
+            - headers/content-type:
+                - val: image/png
+      - request:
+          url: /hclstore/EmeraldCAS/images/catalog/swatches/sw_purple.png
+          paths:
+            - headers/accept:
+                - val: image/png
+        response:
+          paths:
+            - headers/content-type:
+                - val: image/png
+            - content:
+                - src:
+                    flags:
+                      - disabled
+                    expr: blob/7pcu4u.png
+      - request:
+          url: /hclstore/EmeraldCAS/images/catalog/swatches/sw_sky.png
+          paths:
+            - headers/accept:
+                - val: image/png
+        response:
+          paths:
+            - headers/content-type:
+                - val: image/png
+      - request:
+          url: /hclstore/EmeraldCAS/images/catalog/swatches/sw_tan.png
+          paths:
+            - headers/accept:
+                - val: image/png
+        response:
+          paths:
+            - headers/content-type:
+                - val: image/png
+      - request:
+          url: /search/resources/api/v2/categories?storeId=11&depthAndLimit=11%2C11&contractId=-11005&langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+      - request:
+          url: /search/resources/api/v2/categories?storeId=11&id=10516&id=10501&langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+      - request:
+          url: /search/resources/api/v2/categories?storeId=11&identifier=LivingRoom&contractId=-11005&langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+      - request:
+          url: /search/resources/api/v2/categories?storeId=11&parentCategoryId=10501&contractId=-11005&langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+      - request:
+          url: /search/resources/api/v2/products?storeId=11&id=14033&id=14100&id=14057&id=14111&id=14082&id=14178&id=14156&id=14220&langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+      - request:
+          url: /search/resources/api/v2/products?storeId=11&partNumber=LR-FNTR-0002&catalogId=11501&langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+      - request:
+          url: /search/resources/api/v2/urls?storeId=11&identifier=home&langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+      - request:
+          url: /search/resources/api/v2/urls?storeId=11&identifier=living-room&langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+            - content:
+                - src:
+                    flags:
+                      - disabled
+                    expr: blob/r5cohz.json
+      - request:
+          url: /search/resources/store/11/sitecontent/suggestions?suggestType=Category&suggestType=Brand&langId=-1&catalogId=11501
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+      - request:
+          url: /wcs/resources/store/0/adminLookup?q=findByStoreIdentifier&storeIdentifier=Emerald
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+      - request:
+          url: /wcs/resources/store/11/contract?q=eligible&langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+      - request:
+          url: /wcs/resources/store/11/espot/Featured_ProductRec?catalogId=11501&langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+      - request:
+          url: /wcs/resources/store/11/espot/FooterStoreLogo?catalogId=11501&DM_ReturnCatalogGroupId=true&DM_FilterResults=false&langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+            - content:
+                - src:
+                    flags:
+                      - disabled
+                    expr: blob/zi2cw5.json
+      - request:
+          url: /wcs/resources/store/11/espot/Free%20Delivery?catalogId=11501&DM_ReturnCatalogGroupId=true&DM_FilterResults=false&langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+      - request:
+          url: /wcs/resources/store/11/espot/HeaderStoreLogo?catalogId=11501&DM_ReturnCatalogGroupId=true&DM_FilterResults=false&langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+      - request:
+          url: /wcs/resources/store/11/espot/Home%20Hero?catalogId=11501&DM_ReturnCatalogGroupId=true&DM_FilterResults=false&langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+      - request:
+          url: /wcs/resources/store/11/espot/Home_CategoryRec?catalogId=11501&DM_ReturnCatalogGroupId=true&DM_FilterResults=false&langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+      - request:
+          url: /wcs/resources/store/11/espot/Home_ProductRec?catalogId=11501&DM_ReturnCatalogGroupId=true&DM_FilterResults=false&langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+            - content:
+                - src:
+                    flags:
+                      - disabled
+                    expr: blob/ygunvh.json
+      - request:
+          url: /wcs/resources/store/11/espot/Home_Promotion?catalogId=11501&DM_ReturnCatalogGroupId=true&DM_FilterResults=false&langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+      - request:
+          url: /wcs/resources/store/11/espot/LivingRoomHero?catalogId=11501&DM_ReturnCatalogGroupId=true&DM_FilterResults=false&langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+      - request:
+          url: /wcs/resources/store/11/features?langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+      - request:
+          url: /wcs/resources/store/11/online_store
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+      - request:
+          url: /wcs/resources/store/11/organization/@self/entitled_orgs?langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+      - request:
+          url: /wcs/resources/store/11/usercontext/@self/contextdata?langId=-1
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json

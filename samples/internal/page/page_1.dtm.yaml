@@ -1,0 +1,80 @@
+messages:
+  main:
+    cascade:
+      - request:
+          url: /content/vendors.b537ce6d8260fd207987.css
+          paths:
+            - headers/accept:
+                - val: text/css
+      - request:
+          url: /content/main.b537ce6d8260fd207987.css
+          paths:
+            - headers/accept:
+                - val: text/css
+      - request:
+          url: /app/vendors.b537ce6d8260fd207987.chunk.js
+      - request:
+          url: /app/main.b537ce6d8260fd207987.bundle.js
+      - request:
+          url: /content/images/banner-brand-icon-2.svg
+          paths:
+            - headers/accept:
+                - val: image/svg+xml
+      - request:
+          url: /rest/currentuser/
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - status-code:
+                - val: '401'
+      - request:
+          url: /management/info
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /results/rest/log/features
+          paths:
+            - headers/accept:
+                - val: application/json
+      - request:
+          url: /rest/add-on
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - status-code:
+                - val: '401'
+      - request:
+          url: /sse/live-update/
+          paths:
+            - headers/accept:
+                - val: text/event-stream
+        response:
+          paths:
+            - status-code:
+                - val: '401'
+      - request:
+          url: /content/3a0d4a58da62cf7c55bb243e98b172b5.ttf
+      - request:
+          url: /content/ac33e631c6c3018f32c15af0f170b560.woff2
+      - request:
+          url: /rest/currentuser/
+          paths:
+            - headers/accept:
+                - val: application/json
+        response:
+          paths:
+            - status-code:
+                - val: '401'
+      - request:
+          url: /sso/login?origin=%2F%23%2F
+        response:
+          paths:
+            - status-code:
+                - val: '302'
+            - headers/location:
+                - var: REDIRECT_URL

@@ -1,0 +1,38 @@
+steps:
+  - send:
+      request:
+        url: '${SYS_BASE_DIR_URI}/${FILE_TO_READ}'
+      response:
+        paths:
+          - content:
+              - format: application/xml
+              - namespaces:
+                  default: http://some.namespaces.com/def
+                  prefixes:
+                    abc: http://some.namespaces.com/abc
+                    xyz: http://some.namespaces.com/xyz
+                    local: ""
+              - paths:
+                  - a/b:
+                      - var: A_B
+                  - a/b/@test:
+                      - var: A_B_TEST
+                  - a/abc:c:
+                      - var: C
+                  - a/local:d:
+                      - var: D
+                  - a/xyz:e/xyz:f/g/xyz:h:
+                      - var: A_E_F_H
+  - verify:
+      - |-
+        A_B == 'b element'
+      - |-
+        A_B_TEST == 'test attribute'
+      - |-
+        C == ''
+      - |-
+        D == 'd element'
+      - |-
+        A_E_F_H == 'h element'
+vars:
+  FILE_TO_READ: basic-pretty.xml

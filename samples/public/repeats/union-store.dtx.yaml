@@ -1,0 +1,16 @@
+steps:
+  - send:
+      request:
+        url: '${SYS_BASE_DIR_URI}/account_holder_transaction.json'
+      response:
+        message: union.dtm.yaml#main
+  - log: |
+      TAB: ${TAB}
+      ACCOUNT_NAME: ${ACCOUNT_NAME}
+      ACCOUNT_ID: ${ACCOUNT_ID}
+      HOLDER_NAME: ${HOLDER_NAME}
+      TRANSACTION_AMOUNT: ${TRANSACTION_AMOUNT}
+      TRANSACTION_NAME: ${TRANSACTION_NAME}
+  - sql:
+      category: verify
+      dataset: union.csv

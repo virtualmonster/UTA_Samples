@@ -1,0 +1,25 @@
+note: "In a suite, quickFail attribute will skip furthur script executions once the\
+  \ first failed verdict is encountered. This can speed up execution if it doesn't\
+  \ make sense to continue if a single script failure is detected. Here, sleep-then-log.dtx.yaml\
+  \ is never executed because quickFail is set."
+flags:
+  - quick
+tests:
+  - modules/fail.dtx.yaml
+  - sleep-then-log.dtx.yaml
+  - sleep-then-log.dtx.yaml
+  - sleep-then-log.dtx.yaml
+  - sleep-then-log.dtx.yaml
+  - sleep-then-log.dtx.yaml
+  - sleep-then-log.dtx.yaml
+  - sleep-then-log.dtx.yaml
+  - sleep-then-log.dtx.yaml
+  - sleep-then-log.dtx.yaml
+  - sleep-then-log.dtx.yaml
+  - sleep-then-log.dtx.yaml
+  - sleep-then-log.dtx.yaml
+  - sleep-then-log.dtx.yaml
+  - sleep-then-log.dtx.yaml
+  - sleep-then-log.dtx.yaml
+  - sleep-then-log.dtx.yaml
+  - sleep-then-log.dtx.yaml

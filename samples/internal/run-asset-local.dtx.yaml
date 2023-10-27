@@ -1,0 +1,7 @@
+note: Invoke run-asset but stubbing everything locally
+steps:
+  - do:
+      flags:
+        - local
+      url: run-asset.dtv.yaml
+  - do: run-asset.dtx.yaml

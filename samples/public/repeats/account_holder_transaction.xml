@@ -1,0 +1,48 @@
+<accounts>
+  <account account_id="1" account_name="Current">
+    <holders>
+      <holder_name>Alice</holder_name>
+    </holders>
+    <transactions>
+      <transaction>
+        <amount>100</amount>
+        <name>T1</name>
+      </transaction>
+    </transactions>
+  </account>
+  <account account_id="2" account_name="Joint">
+    <holders>
+      <holder_name>Bob</holder_name>
+      <holder_name>Claire</holder_name>
+    </holders>
+    <transactions>
+      <transaction>
+        <amount>200</amount>
+        <name>T2</name>
+      </transaction>
+      <transaction>
+        <amount>300</amount>
+        <name>T3</name>
+      </transaction>
+      <transaction>
+        <amount>400</amount>
+        <name>T4</name>
+      </transaction>
+    </transactions>
+  </account>
+  <account account_id="3" account_name="Credit">
+    <holders>
+      <holder_name>Derek</holder_name>
+    </holders>
+    <transactions>
+      <transaction>
+        <amount>500</amount>
+        <name>T5</name>
+      </transaction>
+      <transaction>
+        <amount>600</amount>
+        <name>T6</name>
+      </transaction>
+    </transactions>
+  </account>
+</accounts>

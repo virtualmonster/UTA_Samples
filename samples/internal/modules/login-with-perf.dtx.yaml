@@ -1,0 +1,57 @@
+steps:
+  - verify:
+      target:
+        - properties:
+            - label:
+                - val: username
+            - focus:
+                - val: 'true'
+  - type: '${USERNAME}'
+  - press: tab
+  - verify:
+      target:
+        - properties:
+            - label:
+                - val: password
+            - focus:
+                - val: 'true'
+  - type: '${_PASSWORD}'
+  - press:
+      key: enter
+      emulate:
+        - send:
+            request:
+              url: '${FORM_URL}'
+              message: ../page/page_2.dtm.yaml#post
+            response:
+              paths:
+                - status-code:
+                    - val: '302'
+                - headers/location:
+                    - var: REDIRECT_URL
+        - send:
+            request:
+              url: '${REDIRECT_URL}'
+            response:
+              paths:
+                - status-code:
+                    - val: '302'
+                - headers/location:
+                    - var: DEPLOYMENT_URL
+        - send:
+            request:
+              url: '${DEPLOYMENT_URL}'
+            response:
+              message: ../page/page_3.dtm.yaml#main
+              paths:
+                - status-code:
+                    - val: '304'
+emulate:
+  - send:
+      request:
+        url: '${REDIRECT_URL}'
+      response:
+        message: ../page/page_2.dtm.yaml#main
+vars:
+  USERNAME: peter.taylor
+  _PASSWORD: peter.taylor

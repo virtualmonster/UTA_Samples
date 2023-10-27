@@ -1,0 +1,75 @@
+messages:
+  main:
+    cascade:
+      - request:
+          url: /favicon.ico
+          paths:
+            - headers/accept:
+                - val: 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+      - request:
+          url: /gen_204?ei=_iXxYfPkJNmm2roPxbSywA4&vet=10ahUKEwjz24CQns_1AhVZk1YBHUWaDOgQhJAHCBU..s&gl=GB&pc=SEARCH_HOMEPAGE&isMobile=false
+          paths:
+            - headers:
+                - paths:
+                    - content-type:
+                        - val: text/plain;charset=UTF-8
+                    - accept:
+                        - val: '*/*'
+            - content:
+                - val: ""
+        response:
+          paths:
+            - status-code:
+                - val: '204'
+      - request:
+          url: '/gen_204?s=webhp&t=aft&atyp=csi&ei=_iXxYfPkJNmm2roPxbSywA4&rt=wsrt.2208,aft.2041,afti.2041,prt.504&imn=4&ima=4&imad=0&aftp=842&bl=EqGx'
+          paths:
+            - headers:
+                - paths:
+                    - content-type:
+                        - val: text/plain;charset=UTF-8
+                    - accept:
+                        - val: '*/*'
+            - content:
+                - val: ""
+        response:
+          paths:
+            - status-code:
+                - val: '204'
+      - request:
+          url: /images/branding/googlelogo/1x/googlelogo_color_272x92dp.png
+          paths:
+            - headers/accept:
+                - val: 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+      - request:
+          url: /images/searchbox/desktop_searchbox_sprites318_hr.webp
+          paths:
+            - headers/accept:
+                - val: 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+      - request:
+          url: https://accounts.google.com/ListAccounts?gpsia=1&source=ChromiumBrowser&json=standard
+          paths:
+            - headers/content-type:
+                - val: text/plain;charset=US-ASCII
+            - content:
+                - val: This isn't the correct content
+      - request:
+          url: 'https://apis.google.com/_/scs/abc-static/_/js/k=gapi.gapi.en.fQLVS3SAB_U.O/m=gapi_iframes,googleapis_client/rt=j/sv=1/d=1/ed=1/rs=AHpOoo9-gtqpJORJvBFDdao_eAhWe8xjHw/cb=gapi.loaded_0'
+          paths:
+            - headers/accept:
+                - val: '*/*'
+      - request:
+          url: https://fonts.gstatic.com/s/i/productlogos/googleg/v6/24px.svg
+          paths:
+            - headers/accept:
+                - val: 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+      - request:
+          url: 'https://www.gstatic.com/og/_/js/k=og.qtm.en_US.jwekfjYLLn8.O/rt=j/m=qabr,q_dnp,qcwid,qapid,qald/exm=qaaw,qadd,qaid,qein,qhaw,qhbr,qhch,qhga,qhid,qhin,qhpr/d=1/ed=1/rs=AA2YrTszg452UcK7ZldyRIlElPI7lXM0HQ'
+          paths:
+            - headers/accept:
+                - val: '*/*'
+      - request:
+          url: 'https://www.gstatic.com/og/_/ss/k=og.qtm.kDNwmoEj9qY.L.W.O/m=qcwid/excm=qaaw,qadd,qaid,qein,qhaw,qhbr,qhch,qhga,qhid,qhin,qhpr/d=1/ed=1/ct=zgms/rs=AA2YrTuEQwqFGUJ-pjUBjgN-g4X61iJyqw'
+          paths:
+            - headers/accept:
+                - val: 'text/css,*/*;q=0.1'

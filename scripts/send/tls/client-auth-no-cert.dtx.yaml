@@ -1,0 +1,16 @@
+actors:
+  NO_CERT_USER: {}
+steps:
+  - with:
+      actor: NO_CERT_USER
+      steps:
+        - send:
+            request:
+              url: '${HTTP2SSL_CLIENT_AUTH_ENDPOINT}/testserver/hello'
+              paths:
+                - tls/ca-path:
+                    - dir: ../server
+            response:
+              paths:
+                - status-code:
+                    - val: '200'

@@ -1,0 +1,26 @@
+note: Multiple level cascade elements
+messages:
+  responseMsg:
+    paths:
+      - status-code:
+          - val: '200'
+      - headers/content-type:
+          - val: text/plain
+    cascade:
+      - request:
+          url: /testserver/javatest/20kb2.jpg
+          paths:
+            - tls/ca-path:
+                - dir: ../server
+            - headers/accept:
+                - val: image/gif
+        response:
+          message: '#verify'
+          paths:
+            - headers/content-type:
+                - val: image/jpeg
+  verify:
+    paths:
+      - status-code:
+          - val: '200'
+      - headers/content-type: []

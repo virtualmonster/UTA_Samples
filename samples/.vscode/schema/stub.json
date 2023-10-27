@@ -1,0 +1,1494 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "$id" : "https://www.hcl-software.com/schema/devops/test/Stub/2023/10",
+  "type" : "object",
+  "properties" : {
+    "note" : {
+      "type" : "string"
+    },
+    "flags" : {
+      "$ref" : "#/definitions/FlagArray"
+    },
+    "meta" : {
+      "type" : "object",
+      "additionalProperties" : {
+        "type" : "string"
+      }
+    },
+    "endpoints" : {
+      "$ref" : "#/definitions/EndpointArray"
+    },
+    "vars" : {
+      "type" : "object",
+      "additionalProperties" : {
+        "$ref" : "#/definitions/ModifiedVarDef"
+      }
+    }
+  },
+  "additionalProperties" : false,
+  "definitions" : {
+    "Action" : {
+      "type" : "object",
+      "properties" : {
+        "dir" : {
+          "$ref" : "#/definitions/Dir"
+        },
+        "js" : {
+          "$ref" : "#/definitions/Js"
+        },
+        "regex" : {
+          "$ref" : "#/definitions/Regex"
+        },
+        "src" : {
+          "$ref" : "#/definitions/Src"
+        },
+        "val" : {
+          "$ref" : "#/definitions/Val"
+        },
+        "var" : {
+          "$ref" : "#/definitions/Var"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "AssignStep" : {
+      "type" : "object",
+      "properties" : {
+        "note" : {
+          "type" : "string"
+        },
+        "flags" : {
+          "$ref" : "#/definitions/FlagArray"
+        },
+        "meta" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "string"
+          }
+        },
+        "vars" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "$ref" : "#/definitions/VarDef"
+          }
+        }
+      },
+      "additionalProperties" : false
+    },
+    "Category" : {
+      "enum" : [ "filter", "value", "verify" ]
+    },
+    "Dir" : {
+      "oneOf" : [ {
+        "title" : "expr",
+        "format" : "val-uri-reference",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "category" : {
+            "$ref" : "#/definitions/Category"
+          },
+          "expr" : {
+            "format" : "val-uri-reference",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "DoStep" : {
+      "oneOf" : [ {
+        "title" : "url",
+        "format" : "val-uri-reference-executable",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "url" : {
+            "format" : "val-uri-reference-executable",
+            "type" : "string"
+          },
+          "dataset" : {
+            "format" : "val-uri-reference-dataset",
+            "type" : "string"
+          },
+          "actors" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "Endpoint" : {
+      "type" : "object",
+      "properties" : {
+        "note" : {
+          "type" : "string"
+        },
+        "flags" : {
+          "$ref" : "#/definitions/FlagArray"
+        },
+        "transport" : {
+          "format" : "val-uri-reference-transport",
+          "type" : "string"
+        },
+        "url" : {
+          "format" : "val-uri",
+          "type" : "string"
+        },
+        "events" : {
+          "$ref" : "#/definitions/InterceptStepArray"
+        },
+        "otherwise" : {
+          "$ref" : "#/definitions/StepArray"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "EndpointArray" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/Endpoint"
+      }
+    },
+    "FailStep" : {
+      "oneOf" : [ {
+        "title" : "note",
+        "format" : "val",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "format" : "val",
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "Flag" : {
+      "enum" : [ "disabled", "local", "quick", "waypoint" ]
+    },
+    "FlagArray" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/Flag"
+      }
+    },
+    "Format" : {
+      "oneOf" : [ {
+        "title" : "mediaType",
+        "format" : "val-mediatype",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "mediaType" : {
+            "format" : "val-mediatype",
+            "type" : "string"
+          },
+          "pretty" : {
+            "format" : "val",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "IfStep" : {
+      "type" : "object",
+      "properties" : {
+        "note" : {
+          "type" : "string"
+        },
+        "flags" : {
+          "$ref" : "#/definitions/FlagArray"
+        },
+        "meta" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "string"
+          }
+        },
+        "shot" : {
+          "format" : "val-uri-reference-shot",
+          "type" : "string"
+        },
+        "object" : {
+          "type" : "string"
+        },
+        "target" : {
+          "$ref" : "#/definitions/TargetArray"
+        },
+        "relativeTo" : {
+          "type" : "object",
+          "properties" : {
+            "above" : {
+              "$ref" : "#/definitions/Target"
+            },
+            "below" : {
+              "$ref" : "#/definitions/Target"
+            },
+            "inside" : {
+              "$ref" : "#/definitions/Target"
+            },
+            "left_of" : {
+              "$ref" : "#/definitions/Target"
+            },
+            "near" : {
+              "$ref" : "#/definitions/Target"
+            },
+            "right_of" : {
+              "$ref" : "#/definitions/Target"
+            }
+          },
+          "additionalProperties" : false
+        },
+        "condition" : {
+          "format" : "js",
+          "type" : "string"
+        },
+        "steps" : {
+          "$ref" : "#/definitions/StepArray"
+        },
+        "emulate" : {
+          "$ref" : "#/definitions/StepArray"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "InterceptStep" : {
+      "type" : "object",
+      "properties" : {
+        "note" : {
+          "type" : "string"
+        },
+        "flags" : {
+          "$ref" : "#/definitions/FlagArray"
+        },
+        "meta" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "string"
+          }
+        },
+        "request" : {
+          "$ref" : "#/definitions/Request"
+        },
+        "where" : {
+          "$ref" : "#/definitions/StepArray"
+        },
+        "steps" : {
+          "$ref" : "#/definitions/StepArray"
+        },
+        "response" : {
+          "$ref" : "#/definitions/Response"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "InterceptStepArray" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/InterceptStep"
+      }
+    },
+    "Js" : {
+      "oneOf" : [ {
+        "title" : "expr",
+        "format" : "js",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "category" : {
+            "$ref" : "#/definitions/Category"
+          },
+          "expr" : {
+            "format" : "js",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "JsArray" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/Js"
+      }
+    },
+    "LogStep" : {
+      "oneOf" : [ {
+        "title" : "note",
+        "format" : "val",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "format" : "val",
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "ModifiedVarDef" : {
+      "oneOf" : [ {
+        "title" : "val",
+        "format" : "val",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "modifier" : {
+            "$ref" : "#/definitions/VarModifier"
+          },
+          "val" : {
+            "format" : "val",
+            "type" : "string"
+          },
+          "js" : {
+            "format" : "js",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "Namespaces" : {
+      "type" : "object",
+      "properties" : {
+        "meta" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "string"
+          }
+        },
+        "default" : {
+          "type" : "string"
+        },
+        "prefixes" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "string"
+          }
+        }
+      },
+      "additionalProperties" : false
+    },
+    "OpenStep" : {
+      "type" : "object",
+      "properties" : {
+        "note" : {
+          "type" : "string"
+        },
+        "flags" : {
+          "$ref" : "#/definitions/FlagArray"
+        },
+        "meta" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "string"
+          }
+        },
+        "shot" : {
+          "format" : "val-uri-reference-shot",
+          "type" : "string"
+        },
+        "url" : {
+          "format" : "val-uri",
+          "type" : "string"
+        },
+        "emulate" : {
+          "$ref" : "#/definitions/StepArray"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "Path" : {
+      "oneOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "expr" : {
+            "format" : "val",
+            "type" : "string"
+          },
+          "items" : {
+            "$ref" : "#/definitions/PathItemArray"
+          }
+        },
+        "additionalProperties" : false
+      }, {
+        "type" : "object",
+        "additionalProperties" : {
+          "$ref" : "#/definitions/PathItemArray"
+        }
+      } ]
+    },
+    "PathArray" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/Path"
+      }
+    },
+    "PathItem" : {
+      "oneOf" : [ {
+        "enum" : [ "optional" ]
+      }, {
+        "type" : "object",
+        "properties" : {
+          "dir" : {
+            "$ref" : "#/definitions/Dir"
+          },
+          "format" : {
+            "$ref" : "#/definitions/Format"
+          },
+          "js" : {
+            "$ref" : "#/definitions/Js"
+          },
+          "namespaces" : {
+            "$ref" : "#/definitions/Namespaces"
+          },
+          "paths" : {
+            "$ref" : "#/definitions/Paths"
+          },
+          "regex" : {
+            "$ref" : "#/definitions/Regex"
+          },
+          "repeat" : {
+            "$ref" : "#/definitions/Repeat"
+          },
+          "schema" : {
+            "$ref" : "#/definitions/Schema"
+          },
+          "src" : {
+            "$ref" : "#/definitions/Src"
+          },
+          "type" : {
+            "$ref" : "#/definitions/Type"
+          },
+          "val" : {
+            "$ref" : "#/definitions/Val"
+          },
+          "var" : {
+            "$ref" : "#/definitions/Var"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "PathItemArray" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/PathItem"
+      }
+    },
+    "Paths" : {
+      "oneOf" : [ {
+        "title" : "paths",
+        "$ref" : "#/definitions/PathArray",
+        "type" : "array"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "paths" : {
+            "$ref" : "#/definitions/PathArray"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "PauseStep" : {
+      "oneOf" : [ {
+        "title" : "duration",
+        "format" : "val-duration",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "duration" : {
+            "format" : "val-duration",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "PressStep" : {
+      "oneOf" : [ {
+        "title" : "key",
+        "format" : "val",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "shot" : {
+            "format" : "val-uri-reference-shot",
+            "type" : "string"
+          },
+          "object" : {
+            "type" : "string"
+          },
+          "target" : {
+            "$ref" : "#/definitions/TargetArray"
+          },
+          "relativeTo" : {
+            "type" : "object",
+            "properties" : {
+              "above" : {
+                "$ref" : "#/definitions/Target"
+              },
+              "below" : {
+                "$ref" : "#/definitions/Target"
+              },
+              "inside" : {
+                "$ref" : "#/definitions/Target"
+              },
+              "left_of" : {
+                "$ref" : "#/definitions/Target"
+              },
+              "near" : {
+                "$ref" : "#/definitions/Target"
+              },
+              "right_of" : {
+                "$ref" : "#/definitions/Target"
+              }
+            },
+            "additionalProperties" : false
+          },
+          "key" : {
+            "format" : "val",
+            "type" : "string"
+          },
+          "use" : {
+            "$ref" : "#/definitions/Use"
+          },
+          "offset" : {
+            "format" : "val",
+            "type" : "string"
+          },
+          "emulate" : {
+            "$ref" : "#/definitions/StepArray"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "Regex" : {
+      "oneOf" : [ {
+        "title" : "expr",
+        "format" : "val-regex",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "category" : {
+            "$ref" : "#/definitions/Category"
+          },
+          "expr" : {
+            "format" : "val-regex",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "Repeat" : {
+      "type" : "object",
+      "properties" : {
+        "meta" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "string"
+          }
+        },
+        "keys" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "where" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "$ref" : "#/definitions/Action"
+          }
+        },
+        "vars" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      },
+      "additionalProperties" : false
+    },
+    "RepeatStep" : {
+      "type" : "object",
+      "properties" : {
+        "note" : {
+          "type" : "string"
+        },
+        "flags" : {
+          "$ref" : "#/definitions/FlagArray"
+        },
+        "meta" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "string"
+          }
+        },
+        "keys" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "where" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "$ref" : "#/definitions/Action"
+          }
+        },
+        "steps" : {
+          "$ref" : "#/definitions/StepArray"
+        },
+        "vars" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      },
+      "additionalProperties" : false
+    },
+    "Request" : {
+      "type" : "object",
+      "properties" : {
+        "url" : {
+          "format" : "val-uri",
+          "type" : "string"
+        },
+        "message" : {
+          "format" : "val-uri-reference-message",
+          "type" : "string"
+        },
+        "schema" : {
+          "format" : "val-uri-reference",
+          "type" : "string"
+        },
+        "paths" : {
+          "$ref" : "#/definitions/PathArray"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "Response" : {
+      "type" : "object",
+      "properties" : {
+        "category" : {
+          "$ref" : "#/definitions/Category"
+        },
+        "message" : {
+          "format" : "val-uri-reference-message",
+          "type" : "string"
+        },
+        "schema" : {
+          "format" : "val-uri-reference",
+          "type" : "string"
+        },
+        "paths" : {
+          "$ref" : "#/definitions/PathArray"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "Schema" : {
+      "oneOf" : [ {
+        "title" : "uri",
+        "format" : "val-uri-reference",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "uri" : {
+            "format" : "val-uri-reference",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "SelectStep" : {
+      "oneOf" : [ {
+        "title" : "value",
+        "format" : "val",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "shot" : {
+            "format" : "val-uri-reference-shot",
+            "type" : "string"
+          },
+          "object" : {
+            "type" : "string"
+          },
+          "target" : {
+            "$ref" : "#/definitions/TargetArray"
+          },
+          "relativeTo" : {
+            "type" : "object",
+            "properties" : {
+              "above" : {
+                "$ref" : "#/definitions/Target"
+              },
+              "below" : {
+                "$ref" : "#/definitions/Target"
+              },
+              "inside" : {
+                "$ref" : "#/definitions/Target"
+              },
+              "left_of" : {
+                "$ref" : "#/definitions/Target"
+              },
+              "near" : {
+                "$ref" : "#/definitions/Target"
+              },
+              "right_of" : {
+                "$ref" : "#/definitions/Target"
+              }
+            },
+            "additionalProperties" : false
+          },
+          "value" : {
+            "format" : "val",
+            "type" : "string"
+          },
+          "emulate" : {
+            "$ref" : "#/definitions/StepArray"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "SendStep" : {
+      "type" : "object",
+      "properties" : {
+        "note" : {
+          "type" : "string"
+        },
+        "flags" : {
+          "$ref" : "#/definitions/FlagArray"
+        },
+        "meta" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "string"
+          }
+        },
+        "transport" : {
+          "format" : "val-uri-reference-transport",
+          "type" : "string"
+        },
+        "request" : {
+          "$ref" : "#/definitions/Request"
+        },
+        "response" : {
+          "$ref" : "#/definitions/Response"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "SqlStep" : {
+      "type" : "object",
+      "properties" : {
+        "note" : {
+          "type" : "string"
+        },
+        "flags" : {
+          "$ref" : "#/definitions/FlagArray"
+        },
+        "meta" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "string"
+          }
+        },
+        "transport" : {
+          "format" : "val-uri-reference-transport",
+          "type" : "string"
+        },
+        "category" : {
+          "$ref" : "#/definitions/Category"
+        },
+        "statement" : {
+          "format" : "val",
+          "type" : "string"
+        },
+        "dataset" : {
+          "format" : "val-uri-reference-dataset",
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "Src" : {
+      "oneOf" : [ {
+        "title" : "expr",
+        "format" : "val-uri-reference",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "category" : {
+            "$ref" : "#/definitions/Category"
+          },
+          "expr" : {
+            "format" : "val-uri-reference",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "Step" : {
+      "type" : "object",
+      "properties" : {
+        "assign" : {
+          "$ref" : "#/definitions/AssignStep"
+        },
+        "do" : {
+          "$ref" : "#/definitions/DoStep"
+        },
+        "fail" : {
+          "$ref" : "#/definitions/FailStep"
+        },
+        "if" : {
+          "$ref" : "#/definitions/IfStep"
+        },
+        "intercept" : {
+          "$ref" : "#/definitions/InterceptStep"
+        },
+        "log" : {
+          "$ref" : "#/definitions/LogStep"
+        },
+        "open" : {
+          "$ref" : "#/definitions/OpenStep"
+        },
+        "pause" : {
+          "$ref" : "#/definitions/PauseStep"
+        },
+        "press" : {
+          "$ref" : "#/definitions/PressStep"
+        },
+        "repeat" : {
+          "$ref" : "#/definitions/RepeatStep"
+        },
+        "select" : {
+          "$ref" : "#/definitions/SelectStep"
+        },
+        "send" : {
+          "$ref" : "#/definitions/SendStep"
+        },
+        "sql" : {
+          "$ref" : "#/definitions/SqlStep"
+        },
+        "type" : {
+          "$ref" : "#/definitions/TypeStep"
+        },
+        "until" : {
+          "$ref" : "#/definitions/UntilStep"
+        },
+        "verify" : {
+          "$ref" : "#/definitions/VerifyStep"
+        },
+        "while" : {
+          "$ref" : "#/definitions/WhileStep"
+        },
+        "with" : {
+          "$ref" : "#/definitions/WithStep"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "StepArray" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/Step"
+      }
+    },
+    "Target" : {
+      "type" : "object",
+      "properties" : {
+        "meta" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "string"
+          }
+        },
+        "object" : {
+          "type" : "string"
+        },
+        "properties" : {
+          "$ref" : "#/definitions/PathArray"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "TargetArray" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/Target"
+      }
+    },
+    "Type" : {
+      "oneOf" : [ {
+        "title" : "name",
+        "format" : "val",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "name" : {
+            "format" : "val",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "TypeStep" : {
+      "oneOf" : [ {
+        "title" : "value",
+        "format" : "val",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "shot" : {
+            "format" : "val-uri-reference-shot",
+            "type" : "string"
+          },
+          "object" : {
+            "type" : "string"
+          },
+          "target" : {
+            "$ref" : "#/definitions/TargetArray"
+          },
+          "relativeTo" : {
+            "type" : "object",
+            "properties" : {
+              "above" : {
+                "$ref" : "#/definitions/Target"
+              },
+              "below" : {
+                "$ref" : "#/definitions/Target"
+              },
+              "inside" : {
+                "$ref" : "#/definitions/Target"
+              },
+              "left_of" : {
+                "$ref" : "#/definitions/Target"
+              },
+              "near" : {
+                "$ref" : "#/definitions/Target"
+              },
+              "right_of" : {
+                "$ref" : "#/definitions/Target"
+              }
+            },
+            "additionalProperties" : false
+          },
+          "value" : {
+            "format" : "val",
+            "type" : "string"
+          },
+          "emulate" : {
+            "$ref" : "#/definitions/StepArray"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "UntilStep" : {
+      "type" : "object",
+      "properties" : {
+        "note" : {
+          "type" : "string"
+        },
+        "flags" : {
+          "$ref" : "#/definitions/FlagArray"
+        },
+        "meta" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "string"
+          }
+        },
+        "shot" : {
+          "format" : "val-uri-reference-shot",
+          "type" : "string"
+        },
+        "object" : {
+          "type" : "string"
+        },
+        "target" : {
+          "$ref" : "#/definitions/TargetArray"
+        },
+        "relativeTo" : {
+          "type" : "object",
+          "properties" : {
+            "above" : {
+              "$ref" : "#/definitions/Target"
+            },
+            "below" : {
+              "$ref" : "#/definitions/Target"
+            },
+            "inside" : {
+              "$ref" : "#/definitions/Target"
+            },
+            "left_of" : {
+              "$ref" : "#/definitions/Target"
+            },
+            "near" : {
+              "$ref" : "#/definitions/Target"
+            },
+            "right_of" : {
+              "$ref" : "#/definitions/Target"
+            }
+          },
+          "additionalProperties" : false
+        },
+        "condition" : {
+          "format" : "js",
+          "type" : "string"
+        },
+        "steps" : {
+          "$ref" : "#/definitions/StepArray"
+        },
+        "emulate" : {
+          "$ref" : "#/definitions/StepArray"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "Use" : {
+      "enum" : [ "click", "double_click", "drag", "hover", "long_press", "right_click" ]
+    },
+    "Val" : {
+      "oneOf" : [ {
+        "title" : "expr",
+        "format" : "val",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "category" : {
+            "$ref" : "#/definitions/Category"
+          },
+          "expr" : {
+            "format" : "val",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "Var" : {
+      "oneOf" : [ {
+        "title" : "expr",
+        "format" : "var",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "category" : {
+            "$ref" : "#/definitions/Category"
+          },
+          "expr" : {
+            "format" : "var",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "VarDef" : {
+      "oneOf" : [ {
+        "title" : "val",
+        "format" : "val",
+        "type" : "string"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "val" : {
+            "format" : "val",
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "VarModifier" : {
+      "enum" : [ "in", "out" ]
+    },
+    "VerifyStep" : {
+      "oneOf" : [ {
+        "title" : "expr",
+        "$ref" : "#/definitions/JsArray",
+        "type" : "array"
+      }, {
+        "type" : "object",
+        "properties" : {
+          "note" : {
+            "type" : "string"
+          },
+          "flags" : {
+            "$ref" : "#/definitions/FlagArray"
+          },
+          "meta" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "shot" : {
+            "format" : "val-uri-reference-shot",
+            "type" : "string"
+          },
+          "object" : {
+            "type" : "string"
+          },
+          "target" : {
+            "$ref" : "#/definitions/TargetArray"
+          },
+          "relativeTo" : {
+            "type" : "object",
+            "properties" : {
+              "above" : {
+                "$ref" : "#/definitions/Target"
+              },
+              "below" : {
+                "$ref" : "#/definitions/Target"
+              },
+              "inside" : {
+                "$ref" : "#/definitions/Target"
+              },
+              "left_of" : {
+                "$ref" : "#/definitions/Target"
+              },
+              "near" : {
+                "$ref" : "#/definitions/Target"
+              },
+              "right_of" : {
+                "$ref" : "#/definitions/Target"
+              }
+            },
+            "additionalProperties" : false
+          },
+          "expr" : {
+            "$ref" : "#/definitions/JsArray"
+          },
+          "emulate" : {
+            "$ref" : "#/definitions/StepArray"
+          }
+        },
+        "additionalProperties" : false
+      } ]
+    },
+    "WhileStep" : {
+      "type" : "object",
+      "properties" : {
+        "note" : {
+          "type" : "string"
+        },
+        "flags" : {
+          "$ref" : "#/definitions/FlagArray"
+        },
+        "meta" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "string"
+          }
+        },
+        "shot" : {
+          "format" : "val-uri-reference-shot",
+          "type" : "string"
+        },
+        "object" : {
+          "type" : "string"
+        },
+        "target" : {
+          "$ref" : "#/definitions/TargetArray"
+        },
+        "relativeTo" : {
+          "type" : "object",
+          "properties" : {
+            "above" : {
+              "$ref" : "#/definitions/Target"
+            },
+            "below" : {
+              "$ref" : "#/definitions/Target"
+            },
+            "inside" : {
+              "$ref" : "#/definitions/Target"
+            },
+            "left_of" : {
+              "$ref" : "#/definitions/Target"
+            },
+            "near" : {
+              "$ref" : "#/definitions/Target"
+            },
+            "right_of" : {
+              "$ref" : "#/definitions/Target"
+            }
+          },
+          "additionalProperties" : false
+        },
+        "condition" : {
+          "format" : "js",
+          "type" : "string"
+        },
+        "steps" : {
+          "$ref" : "#/definitions/StepArray"
+        },
+        "emulate" : {
+          "$ref" : "#/definitions/StepArray"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "WithStep" : {
+      "type" : "object",
+      "properties" : {
+        "note" : {
+          "type" : "string"
+        },
+        "flags" : {
+          "$ref" : "#/definitions/FlagArray"
+        },
+        "meta" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "string"
+          }
+        },
+        "shot" : {
+          "format" : "val-uri-reference-shot",
+          "type" : "string"
+        },
+        "context" : {
+          "format" : "val",
+          "type" : "string"
+        },
+        "actor" : {
+          "type" : "string"
+        },
+        "steps" : {
+          "$ref" : "#/definitions/StepArray"
+        }
+      },
+      "additionalProperties" : false
+    }
+  }
+}

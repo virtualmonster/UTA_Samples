@@ -1,0 +1,12 @@
+flags:
+  - waypoint
+steps:
+  - log: In child waypoint
+  - assign:
+      vars:
+        X: X_assigned_in_child
+vars:
+  IN:
+    modifier: in
+  X:
+    modifier: out

@@ -1,0 +1,13 @@
+steps:
+  - send:
+      request:
+        url: '${HTTP1SSL_ENDPOINT}/testserver/hello'
+        paths:
+          - tls/ca-path:
+              - dir: '${TRUST_DIR}'
+          - tls/save-cert:
+              - var: SAVE_CERT
+      response:
+        paths:
+          - status-code:
+              - val: '200'

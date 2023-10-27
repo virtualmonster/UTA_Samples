@@ -1,0 +1,5 @@
+steps:
+  - log: 'Pay my bill using ${CARD_TYPE} with ${_CARD_NUMBER}'
+vars:
+  CARD_TYPE: ""
+  _CARD_NUMBER: ""

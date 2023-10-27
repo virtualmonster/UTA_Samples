@@ -1,0 +1,4 @@
+tests:
+  - test1.dtx.yaml
+  - test2.dtx.yaml
+  - test3.dtx.yaml

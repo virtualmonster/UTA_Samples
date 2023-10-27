@@ -1,0 +1,5 @@
+steps:
+  - do: modules/child-waypoint.dtx.yaml
+  - log: Setup done
+vars:
+  IN: conc

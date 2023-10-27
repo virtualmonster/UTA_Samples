@@ -1,0 +1,31 @@
+note: |-
+  single quoted strings are expressions - with ${} syntax like javascript
+  schema versioning is done with `wiring` different versions in
+  handlers for stub message listeners
+endpoints:
+  - url: '${STUBBED_ENDPOINT}'
+    events:
+      - request:
+          message: '#abc_requestv${env.crm.version}'
+        where:
+          - sql:
+              note: 'jdbc:postgresql://${db.hostname}/test?user=${db._username}&password=${db._password}&ssl=true'
+              statement: 'SELECT ${request.value}::text as message'
+          - verify:
+              - |-
+                MESSAGE_VALUE = lookup.rows[0].message;
+                lookup.rows.length
+              - |-
+                "string" == typeof request.value
+        steps:
+          - send:
+              response:
+                message: 'abc_responsev${env.crm.version}'
+    otherwise:
+      - send:
+          response:
+            paths:
+              - status-code:
+                  - val: '404'
+vars:
+  STUBBED_ENDPOINT: http://some.live.system3.com

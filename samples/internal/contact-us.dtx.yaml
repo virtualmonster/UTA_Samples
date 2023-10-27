@@ -1,0 +1,37 @@
+note: test that starts a stub
+steps:
+  - do: contact-us.dtv.yaml
+  - log: After stub
+  - send:
+      note: Valid request
+      request:
+        url: '${STUBBED_ENDPOINT}'
+        paths:
+          - headers/content-type:
+              - val: application/x-www-form-urlencoded
+          - content:
+              - val: 'name=${TEST_USER}'
+      response:
+        paths:
+          - content:
+              - var: REPLY
+  - log: 'Test received reply ${REPLY}'
+  - verify:
+      - |-
+        'Thanks ' + TEST_USER + ' for your details!' === REPLY
+  - send:
+      note: Empty request
+      request:
+        url: '${STUBBED_ENDPOINT}'
+        paths:
+          - headers/content-type:
+              - val: application/x-www-form-urlencoded
+          - content:
+              - val: name=
+      response:
+        paths:
+          - status-code:
+              - val: '404'
+vars:
+  STUBBED_ENDPOINT: http://some.live.system.com
+  TEST_USER: Test

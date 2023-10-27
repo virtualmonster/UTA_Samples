@@ -1,0 +1,6 @@
+steps:
+  - log: In test-conc
+  - do: modules/child-waypoint.dtx.yaml
+  - pause: 5s
+vars:
+  IN: conc

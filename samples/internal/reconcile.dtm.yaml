@@ -1,0 +1,16 @@
+messages:
+  main:
+    paths:
+      - content:
+          - format: application/json
+          - paths:
+              - a:
+                  - var: A
+              - b:
+                  - var: B
+              - c:
+                  - var: C
+              - d:
+                  - var: D
+              - e:
+                  - var: E

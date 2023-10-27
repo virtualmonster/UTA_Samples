@@ -1,0 +1,66 @@
+note: Unit test for UI actions
+steps:
+  - do: contact-us.dtv.yaml
+  - log: After stub
+  - with:
+      meta:
+        record: 'true'
+      steps:
+        - open:
+            url: '${TEST_ENDPOINT}'
+        - type:
+            object: html.inputtext
+            target:
+              - properties:
+                  - tagname:
+                      - val: input
+                  - type:
+                      - val: text
+                  - placeholder:
+                      - val: Name
+            value: Tester
+        - type:
+            object: html.inputemail
+            target:
+              - properties:
+                  - tagname:
+                      - val: input
+                  - type:
+                      - val: email
+                  - placeholder:
+                      - val: Email address
+            value: unit-test@uta.test
+        - type:
+            object: html.inputtext
+            target:
+              - properties:
+                  - tagname:
+                      - val: input
+                  - type:
+                      - val: text
+                  - placeholder:
+                      - val: Subject
+            value: Complaint
+        - type:
+            object: html.textarea
+            target:
+              - properties:
+                  - tagname:
+                      - val: textarea
+                  - type:
+                      - val: text
+                  - placeholder:
+                      - val: Message
+            value: Hi from unit test
+        - press:
+            object: html.inputsubmit
+            target:
+              - properties:
+                  - tagname:
+                      - val: input
+                  - type:
+                      - val: submit
+                  - value:
+                      - val: Submit
+vars:
+  TEST_ENDPOINT: http://some.live.system.com

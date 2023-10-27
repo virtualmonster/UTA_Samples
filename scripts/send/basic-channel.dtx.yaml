@@ -1,0 +1,71 @@
+steps:
+  - log: BeforeChannelAttach
+  - send:
+      note: Fill the channel named '1' with messages in the background (server sends
+        every 20 ms)
+      request:
+        url: '${HTTP2SSL_ENDPOINT}/testserver/sse/sse.php?count=25&delay=2'
+        paths:
+          - tls/ca-path:
+              - dir: server
+      response:
+        paths:
+          - connection:
+              - var: channel:sse
+  - log: AfterChannelAttach
+  - pause:
+      note: Any messages sent to the channel during this period are queued (roughly
+        4-5 messages)
+      duration: 80ms
+  - log: BeforeFirstConsume
+  - send:
+      note: Consumes the first message in the channel
+      request:
+        url: channel:sse
+      response:
+        message: page/basic-channel.dtm.yaml#verify-sse
+  - log: AfterFirstConsume
+  - log: BeforeLoop
+  - while:
+      note: Consume any queued messages until we are real-time
+      condition: ITERATION++ < 20
+      steps:
+        - log: StartInsideIteration
+        - send:
+            note: 'OnNext message, possibly blocking script if no messages are available'
+            request:
+              url: channel:sse
+            response:
+              message: page/basic-channel.dtm.yaml#verify-sse
+        - log: AfterInsideIteration
+  - log: BeforeWebSocket
+  - send:
+      note: 'Testing web-socket, pipe writes from channel coming from SSE receives'
+      request:
+        url: '${WS_ENDPOINT}/testserver/ws/socket'
+        paths:
+          - content:
+              - val: channel:sse
+      response:
+        paths:
+          - connection:
+              - var: channel:ws
+  - send:
+      note: Consume the first message from the web socket
+      request:
+        url: channel:ws
+      response:
+        paths:
+          - content/data:
+              - regex: .*The message number 22.*
+  - send:
+      note: Consume the second message from the web socket.
+      request:
+        url: channel:ws
+      response:
+        paths:
+          - content/data:
+              - regex: .*The message number 23.*
+  - log: AfterWebSocket
+vars:
+  ITERATION: '${0}'

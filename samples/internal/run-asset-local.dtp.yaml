@@ -1,0 +1,5 @@
+groups:
+  - note: Invoke run-asset 100 times in parallel
+    dataset: 100rows.csv
+    scripts:
+      - run-asset-local.dtx.yaml

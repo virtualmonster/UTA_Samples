@@ -1,0 +1,29 @@
+note: This is intended as POC to show genreation of repeated elements in conjunction
+  with the hack in StandardPathProcessor.EvaluatorNode that allows repeats to be defined
+  by using a particular format of name as its path.  Together they demonstrate the
+  concept of PathNodeCursor.
+steps:
+  - sql:
+      dataset: names.csv
+  - send:
+      request:
+        url: file:///tmp/accounts.json
+        paths:
+          - headers/content-type:
+              - val: application/json
+          - content:
+              - type: array
+              - paths:
+                  - '*':
+                      - repeat: {}
+                      - paths:
+                          - name:
+                              - var: NAMES
+                          - letters:
+                              - type: array
+                              - paths:
+                                  - '*':
+                                      - repeat:
+                                          vars:
+                                            - NAMES
+                                      - val: '${NAMES.toUpperCase()}'

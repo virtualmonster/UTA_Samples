@@ -1,0 +1,94 @@
+note: this is an evolution of the test on github
+steps:
+  - open:
+      url: '${DEPLOYMENT_URL}'
+  - verify:
+      target:
+        - properties:
+            - label:
+                - val: Full Name
+                - var: CAPTURE_FULL_NAME
+  - type:
+      target:
+        - properties:
+            - label:
+                - val: Full Name
+      relativeTo:
+        above:
+          properties:
+            - label:
+                - val: Foo
+      value: Madhu
+  - type:
+      target:
+        - properties:
+            - label:
+                - val: Email
+      value: abc@123
+  - select:
+      target:
+        - properties:
+            - type:
+                - optional
+                - val: list
+            - label:
+                - optional
+                - val: 'Gender:'
+            - value:
+                - optional
+                - val: Male
+  - select:
+      target:
+        - properties:
+            - type:
+                - val: radio
+            - value:
+                - val: Above 7
+  - select:
+      target:
+        - properties:
+            - type:
+                - val: checkbox
+            - value:
+                - val: Java
+  - select:
+      target:
+        - properties:
+            - type:
+                - val: list
+            - label:
+                - val: 'Automation Tools:'
+            - value:
+                - val: JMeter
+  - press:
+      note: submit
+      target:
+        - properties:
+            - :xpath:
+                - val: "//input[@id='submit']"
+  - press:
+      target:
+        - properties:
+            - type:
+                - val: button
+            - value:
+                - val: Run >
+  - press:
+      target:
+        - properties:
+            - type:
+                - val: canvas
+      offset: '(112px,53px)'
+  - press:
+      target:
+        - properties:
+            - type:
+                - val: canvas
+      offset: '(22px,21px)'
+  - press:
+      target:
+        - properties:
+            - type:
+                - val: span
+            - value:
+                - val: own

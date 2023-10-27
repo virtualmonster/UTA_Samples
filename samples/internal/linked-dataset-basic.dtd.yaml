@@ -1,0 +1,2 @@
+connection: dbName
+statement: SELECT * FROM GEMSTONES

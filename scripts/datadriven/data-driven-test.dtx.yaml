@@ -1,0 +1,10 @@
+steps:
+  - do:
+      note: Drive the same test multiple times based on the csv
+      url: simple-log.dtx.yaml
+      dataset: data-driven-log.csv
+  - log: Divider
+  - do:
+      note: Drive different tests based on the csv
+      url: '${TEST}'
+      dataset: data-driven-multi-test.csv

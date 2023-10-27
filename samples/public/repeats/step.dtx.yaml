@@ -1,0 +1,16 @@
+steps:
+  - log: 'range.. ${""+range(3)}'
+  - sql:
+      dataset: account.csv
+  - repeat:
+      steps:
+        - log: '${ACCOUNT_ID} ${ACCOUNT_NAME}'
+      vars:
+        - ACCOUNT_NAME
+        - ACCOUNT_ID
+vars:
+  range:
+    js: |
+      function (n) {
+        return Array.from(Array(n).keys());
+      };

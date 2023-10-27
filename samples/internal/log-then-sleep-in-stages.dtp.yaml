@@ -1,0 +1,21 @@
+groups:
+  - note: an example of running stuff in parallel
+    stages:
+      - note: stage 1
+        users: '15'
+        duration: 1min
+    dataset: log-then-sleep.csv
+    scripts:
+      - log-then-sleep.dtx.yaml
+      - log-then-sleep.dtx.yaml
+  - note: a second thing running in parallel
+    stages:
+      - note: stage 1
+        users: '10'
+        duration: 1min
+      - note: stage 2
+        users: '20'
+        duration: 2min
+    dataset: log-then-sleep-lower.csv
+    scripts:
+      - log-then-sleep.dtx.yaml

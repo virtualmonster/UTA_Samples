@@ -1,0 +1,33 @@
+note: 'We can use repeats to build simple objects (rather than just arrays, however
+  this transformation is not reversible due to paths evaluated.)'
+steps:
+  - send:
+      request:
+        url: '${FILENAME}'
+        paths:
+          - content:
+              - format: application/json
+              - type: object
+              - paths:
+                  - ${KEY}:
+                      - repeat:
+                          vars:
+                            - KEY
+                            - VALUE
+                      - var: VALUE
+  - send:
+      request:
+        url: '${FILENAME}'
+      response:
+        paths:
+          - content:
+              - format: text/plain
+              - val: '{"A":"1","B":"2"}'
+vars:
+  FILENAME:
+    js: |-
+      SYS_BASE_DIR_URI + "/.object-map-" + (Math.floor(Math.random() * 1000) + 1) + ".json"
+  KEY:
+    js: '["A","B"]'
+  VALUE:
+    js: '["1","2"]'

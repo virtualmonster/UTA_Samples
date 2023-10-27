@@ -1,0 +1,51 @@
+note: Demo serving static and dynamic content
+endpoints:
+  - url: '${STUBBED_ENDPOINT}'
+    events:
+      - note: landing page
+        request:
+          paths:
+            - method:
+                - val: GET
+            - url/path:
+                - val: /
+        response:
+          paths:
+            - headers/content-type:
+                - val: text/html
+            - content:
+                - src: blob/index.html
+      - note: general get
+        request:
+          paths:
+            - method:
+                - val: GET
+            - url/path:
+                - regex: '!.*((\.\.)|(%2E%2E)).*'
+                - var: URL_PATH
+        response:
+          paths:
+            - content:
+                - src: 'blob/${URL_PATH}'
+      - note: form post
+        request:
+          paths:
+            - method:
+                - val: POST
+            - content/name:
+                - var: NAME
+        where:
+          - verify:
+              - |-
+                "string" == typeof NAME && NAME.length > 0
+          - log: 'Name ${NAME} was valid'
+        steps:
+          - log: 'Received details for ${NAME}'
+        response:
+          paths:
+            - headers/content-type:
+                - val: text/plain;charset=US-ASCII
+            - content:
+                - val: 'Thanks ${NAME} for your details!'
+vars:
+  STUBBED_ENDPOINT: http://contact-us.127.0.0.1.nip.io

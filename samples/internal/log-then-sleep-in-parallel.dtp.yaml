@@ -1,0 +1,5 @@
+groups:
+  - note: an example of running stuff in parallel
+    dataset: log-then-sleep.csv
+    scripts:
+      - log-then-sleep.dtx.yaml

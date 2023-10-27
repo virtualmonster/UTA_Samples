@@ -1,0 +1,22 @@
+note: Simple stub that echos back what is posted to it
+endpoints:
+  - url: '${STUBBED_ENDPOINT}'
+    events:
+      - request:
+          paths:
+            - method:
+                - val: POST
+            - headers/content-type:
+                - var: application/json
+            - content/x:
+                - var: X_VAL
+            - content/y:
+                - var: Y_VAL
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+            - content:
+                - val: '{"result":${X_VAL + Y_VAL}}'
+vars:
+  STUBBED_ENDPOINT: http://add.127.0.0.1.nip.io

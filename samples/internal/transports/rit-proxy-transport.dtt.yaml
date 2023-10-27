@@ -1,0 +1,7 @@
+paths:
+  - proxy/host:
+      - val: localhost
+  - proxy/port:
+      - val: '3128'
+  - tls/ca-path:
+      - dir: ../trust

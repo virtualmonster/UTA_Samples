@@ -1,0 +1,15 @@
+steps:
+  - log: Reading file
+  - send:
+      request:
+        url: '${FILE_URI}'
+      response:
+        paths:
+          - content:
+              - format: application/json
+          - content/name:
+              - val: Bob
+  - log: File read
+vars:
+  FILE_URI:
+    modifier: in

@@ -1,0 +1,20 @@
+steps:
+  - sql:
+      dataset: account_holder.csv
+  - sql:
+      dataset: transaction.csv
+  - send:
+      request:
+        url: '${FILENAME}'
+        message: account_holder.dtm.yaml#main
+  - send:
+      request:
+        url: '${FILENAME}'
+      response:
+        paths:
+          - content:
+              - src: account_holder_transaction.json
+vars:
+  FILENAME:
+    js: |-
+      SYS_BASE_DIR_URI + "/.account_holder-" + (Math.floor(Math.random() * 1000) + 1) + ".json"

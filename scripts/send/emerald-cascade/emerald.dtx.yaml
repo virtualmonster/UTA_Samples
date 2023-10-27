@@ -1,0 +1,11 @@
+note: Generated from recorded traffic
+steps:
+  - do: emerald.dtv.yaml
+  - send:
+      request:
+        url: '${DEPLOYMENT_URL}/Emerald'
+        paths:
+          - headers/accept:
+              - val: text/html
+      response:
+        message: emerald_1.dtm.yaml#responseMsg

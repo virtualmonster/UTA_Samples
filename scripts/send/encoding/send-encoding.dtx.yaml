@@ -1,0 +1,18 @@
+steps:
+  - do: encoding-stub.dtv.yaml
+  - send:
+      request:
+        url: '${UNIT_TEST_ENDPOINT}'
+        paths:
+          - headers/content-encoding:
+              - val: '${UNIT_TEST_ENCODING}'
+          - headers/content-type:
+              - val: application/json
+          - content:
+              - val: '{"secret":"qwerty"}'
+      response:
+        paths:
+          - status-code:
+              - val: '200'
+          - content/received:
+              - val: qwerty

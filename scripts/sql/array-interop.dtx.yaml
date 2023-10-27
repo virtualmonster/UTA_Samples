@@ -1,0 +1,4 @@
+steps:
+  - sql:
+      dataset: names.csv
+  - log: '${NAMES[2]}'

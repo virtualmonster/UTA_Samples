@@ -1,0 +1,5 @@
+note: Suite that runs a stub and then invokes a test multiple times based on dataset
+tests:
+  - json-stub.dtv.yaml
+  - url: data-driven-send.dtx.yaml
+    dataset: data-driven-send.csv

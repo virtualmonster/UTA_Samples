@@ -1,0 +1,2 @@
+steps:
+  - fail: Something is wrong

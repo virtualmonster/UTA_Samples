@@ -1,0 +1,2 @@
+steps:
+  - do: ../dirb/b.dtx.yaml

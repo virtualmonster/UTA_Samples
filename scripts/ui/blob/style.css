@@ -1,0 +1,86 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+*,:after,:before{
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box
+}
+body,html{
+    background:#f1f1f1;
+    font-family:Merriweather,sans-serif;
+    padding:1em
+}
+h1{
+    text-align:center;
+    color:#a8a8a8;
+    text-shadow:1px 1px 0 #fff
+}
+form{
+    max-width:600px;
+    text-align:center;
+    margin:20px auto
+}
+form select{
+    background:#fff;
+}
+form select optgroup{
+    font-family:Merriweather,sans-serif;
+}
+form input,form textarea,form select{
+    border:0;
+    outline:0;
+    padding:1em;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    border-radius:8px;
+    display:block;
+    width:100%;
+    margin-top:1em;
+    font-family:Merriweather,sans-serif;
+    -moz-box-shadow:0 1px 1px rgba(0,0,0,.1);
+    -webkit-box-shadow:0 1px 1px rgba(0,0,0,.1);
+    box-shadow:0 1px 1px rgba(0,0,0,.1);
+    resize:none
+}
+form input:focus,form textarea,form select:focus{
+    -moz-box-shadow:0 0 2px #006ab6!important;
+    -webkit-box-shadow:0 0 2px #006ab6!important;
+    box-shadow:0 0 2px #006ab6!important
+}
+form #input-submit{
+    color:#fff;
+    background:#006ab6;
+    cursor:pointer
+}
+form #input-submit:hover{
+    -moz-box-shadow:0 1px 1px 1px rgba(170,170,170,.6);
+    -webkit-box-shadow:0 1px 1px 1px rgba(170,170,170,.6);
+    box-shadow:0 1px 1px 1px rgba(170,170,170,.6)
+}
+form textarea{
+    height:126px
+}
+.half{
+    float:left;
+    width:48%;
+    margin-bottom:1em
+}
+.right{
+    width:50%
+}
+.left{
+    margin-right:2%
+}
+@media (max-width:480px){
+    .half{
+        width:100%;
+        float:none;
+        margin-bottom:0
+    }
+}
+.cf:after,.cf:before{
+    content:" ";
+    display:table
+}
+.cf:after{
+    clear:both
+}

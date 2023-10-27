@@ -1,0 +1,41 @@
+steps:
+  - sql:
+      note: tables
+      transport: db.dtt.yaml
+      statement: |
+        CREATE TABLE "ACCOUNT"(
+            "ID" NUMERIC(5) IDENTITY PRIMARY KEY,
+            "NAME" CHARACTER VARYING(12) NOT NULL
+        );
+        CREATE TABLE "HOLDER"(
+            "ID" NUMERIC(5) IDENTITY PRIMARY KEY,
+            "ACCOUNT_ID" NUMERIC(5) NOT NULL,
+            "NAME" CHARACTER VARYING(12) NOT NULL
+        );
+        CREATE TABLE "TRANSFER"(
+            "ID" NUMERIC(5) IDENTITY PRIMARY KEY,
+            "ACCOUNT_ID" NUMERIC(5) NOT NULL,
+            "AMOUNT" NUMERIC(5) NOT NULL,
+            "NAME" CHARACTER VARYING(12) NOT NULL
+        );
+  - sql:
+      note: foreign key constraints
+      transport: db.dtt.yaml
+      statement: |
+        ALTER TABLE "HOLDER" ADD CONSTRAINT "HOLDER_ACCOUNT_ID_FK" FOREIGN KEY("ACCOUNT_ID") REFERENCES "ACCOUNT"("ID") ON DELETE CASCADE;
+        ALTER TABLE "TRANSFER" ADD CONSTRAINT "TRANSFER_ACCOUNT_ID_FK" FOREIGN KEY("ACCOUNT_ID") REFERENCES "ACCOUNT"("ID") ON DELETE CASCADE;
+  - sql:
+      transport: db.dtt.yaml
+      statement: |
+        INSERT INTO "ACCOUNT" VALUES (?,?)
+      dataset: ../account.csv
+  - sql:
+      transport: db.dtt.yaml
+      statement: |
+        INSERT INTO "HOLDER" ("ACCOUNT_ID", "NAME") VALUES (?,?)
+      dataset: ../holder.csv
+  - sql:
+      transport: db.dtt.yaml
+      statement: |
+        INSERT INTO "TRANSFER" ("ACCOUNT_ID", "AMOUNT", "NAME") VALUES (?,?,?)
+      dataset: ../transaction.csv

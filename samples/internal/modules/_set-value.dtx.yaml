@@ -1,0 +1,5 @@
+steps:
+  - verify:
+      - |-
+        SET = "set";
+        true

@@ -1,0 +1,36 @@
+messages:
+  main:
+    paths:
+      - content:
+          - format:
+              mediaType: application/xml
+              pretty: 'true'
+          - paths:
+              - accounts:
+                  - paths:
+                      - account/*:
+                          - repeat:
+                              keys:
+                                - ACCOUNT_ID
+                          - paths:
+                              - '@account_id':
+                                  - var: ACCOUNT_ID
+                              - '@account_name':
+                                  - var: ACCOUNT_NAME
+                              - holders:
+                                  - paths:
+                                      - holder_name/*:
+                                          - repeat: {}
+                                          - var: HOLDER_NAME
+                              - transactions:
+                                  - paths:
+                                      - transaction/*:
+                                          - repeat:
+                                              where:
+                                                TRANSACTION_ACCOUNT_ID:
+                                                  var: ACCOUNT_ID
+                                          - paths:
+                                              - amount:
+                                                  - var: TRANSACTION_AMOUNT
+                                              - name:
+                                                  - var: TRANSACTION_NAME

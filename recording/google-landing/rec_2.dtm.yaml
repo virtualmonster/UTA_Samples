@@ -1,0 +1,1206 @@
+note: Generated from recorded traffic
+messages:
+  req:
+    paths:
+      - headers/:authority:
+          - val: www.google.com
+      - headers/:method:
+          - val: POST
+      - headers/:path:
+          - val: /gen_204?ei=JtMTZffxIaGq1QH_iqfABg&ved=0ahUKEwj3nJyFnMqBAxUhVTUKHX_FCWgQiZAHCHQ&uact=3&bl=x4mg&s=webhp
+      - headers/:scheme:
+          - val: https
+      - headers/accept:
+          - val: '*/*'
+      - headers/accept-encoding:
+          - val: 'gzip, deflate, br'
+      - headers/accept-language:
+          - val: 'en-US,en;q=0.9'
+      - headers/content-length:
+          - val: '0'
+      - headers/content-type:
+          - val: text/plain;charset=UTF-8
+      - headers/cookie:
+          - val: AEC=Ackid1Q-b_NF1PladEwrWBXsRhhW3Cb4x-zxukWfRypIBoA78jpZCga0Jw
+      - headers/cookie:
+          - val: __Secure-ENID=15.SE=Pus7AWuJh19iPJ8_jQvPNJEa3Wv-H535VZWly1fYL325Nbb6J9OQsvPhgP90ED5CYb4d3UL-7XOaY5keraR_HfWZuthAsFPkzMwoSzL-ZLZtQvQ318VfhH9hH9fyt8M1RDY90qgaX-bctHdaLktgRj5ahx-VLOXfDhZ0kPdgI7k
+      - headers/cookie:
+          - val: CONSENT=PENDING+376
+      - headers/origin:
+          - val: https://www.google.com
+      - headers/referer:
+          - val: https://www.google.com/
+      - headers/sec-ch-ua:
+          - val: |-
+              "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+      - headers/sec-ch-ua-arch:
+          - val: |-
+              "x86"
+      - headers/sec-ch-ua-bitness:
+          - val: |-
+              "64"
+      - headers/sec-ch-ua-full-version:
+          - val: |-
+              "117.0.5938.92"
+      - headers/sec-ch-ua-full-version-list:
+          - val: |-
+              "Google Chrome";v="117.0.5938.92", "Not;A=Brand";v="8.0.0.0", "Chromium";v="117.0.5938.92"
+      - headers/sec-ch-ua-mobile:
+          - val: ?0
+      - headers/sec-ch-ua-model:
+          - val: |-
+              ""
+      - headers/sec-ch-ua-platform:
+          - val: |-
+              "Windows"
+      - headers/sec-ch-ua-platform-version:
+          - val: |-
+              "14.0.0"
+      - headers/sec-ch-ua-wow64:
+          - val: ?0
+      - headers/sec-fetch-dest:
+          - val: empty
+      - headers/sec-fetch-mode:
+          - val: no-cors
+      - headers/sec-fetch-site:
+          - val: same-origin
+      - headers/user-agent:
+          - val: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+              like Gecko) Chrome/117.0.0.0 Safari/537.36'
+      - headers/x-client-data:
+          - val: CPDZygE=
+  res:
+    paths:
+      - status-code:
+          - val: '204'
+      - headers/:status:
+          - val: '204'
+      - headers/alt-svc:
+          - val: 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'
+      - headers/content-length:
+          - val: '0'
+      - headers/content-security-policy:
+          - val: "object-src 'none';base-uri 'self';script-src 'nonce-0hvnmBHwTSDSfyuJUtYXyQ'\
+              \ 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https:\
+              \ http:;report-uri https://csp.withgoogle.com/csp/gws/other"
+      - headers/content-type:
+          - val: text/html; charset=UTF-8
+      - headers/cross-origin-opener-policy:
+          - val: |-
+              same-origin-allow-popups; report-to="gws"
+      - headers/date:
+          - val: 'Wed, 27 Sep 2023 07:00:57 GMT'
+      - headers/origin-trial:
+          - val: Ap+qNlnLzJDKSmEHjzM5ilaa908GuehlLqGb6ezME5lkhelj20qVzfv06zPmQ3LodoeujZuphAolrnhnPA8w4AIAAABfeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJQZXJtaXNzaW9uc1BvbGljeVVubG9hZCIsImV4cGlyeSI6MTY4NTY2Mzk5OX0=
+      - headers/origin-trial:
+          - val: AvudrjMZqL7335p1KLV2lHo1kxdMeIN0dUI15d0CPz9dovVLCcXk8OAqjho1DX4s6NbHbA/AGobuGvcZv0drGgQAAAB9eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJCYWNrRm9yd2FyZENhY2hlTm90UmVzdG9yZWRSZWFzb25zIiwiZXhwaXJ5IjoxNjkxNTM5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZX0=
+      - headers/permissions-policy:
+          - val: unload=()
+      - headers/report-to:
+          - val: '{"group":"gws","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/gws/other"}]}'
+      - headers/server:
+          - val: gws
+      - headers/x-frame-options:
+          - val: SAMEORIGIN
+      - headers/x-xss-protection:
+          - val: '0'
+    cascade:
+      - request:
+          url: /gen_204?ei=JtMTZffxIaGq1QH_iqfABg&vet=10ahUKEwj3nJyFnMqBAxUhVTUKHX_FCWgQhJAHCBw..h&bl=x4mg&s=webhp&cdot=2680
+          paths:
+            - headers/:authority:
+                - val: www.google.com
+            - headers/:method:
+                - val: POST
+            - headers/:path:
+                - val: /gen_204?ei=JtMTZffxIaGq1QH_iqfABg&vet=10ahUKEwj3nJyFnMqBAxUhVTUKHX_FCWgQhJAHCBw..h&bl=x4mg&s=webhp&cdot=2680
+            - headers/:scheme:
+                - val: https
+            - headers/accept:
+                - val: '*/*'
+            - headers/accept-encoding:
+                - val: 'gzip, deflate, br'
+            - headers/accept-language:
+                - val: 'en-US,en;q=0.9'
+            - headers/content-length:
+                - val: '0'
+            - headers/content-type:
+                - val: text/plain;charset=UTF-8
+            - headers/cookie:
+                - val: AEC=Ackid1Q-b_NF1PladEwrWBXsRhhW3Cb4x-zxukWfRypIBoA78jpZCga0Jw
+            - headers/cookie:
+                - val: __Secure-ENID=15.SE=Pus7AWuJh19iPJ8_jQvPNJEa3Wv-H535VZWly1fYL325Nbb6J9OQsvPhgP90ED5CYb4d3UL-7XOaY5keraR_HfWZuthAsFPkzMwoSzL-ZLZtQvQ318VfhH9hH9fyt8M1RDY90qgaX-bctHdaLktgRj5ahx-VLOXfDhZ0kPdgI7k
+            - headers/cookie:
+                - val: CONSENT=PENDING+376
+            - headers/cookie:
+                - val: SOCS=CAISHAgBEhJnd3NfMjAyMzA5MTktMF9SQzEaAmVuIAEaBgiA4c2oBg
+            - headers/origin:
+                - val: https://www.google.com
+            - headers/referer:
+                - val: https://www.google.com/
+            - headers/sec-ch-ua:
+                - val: |-
+                    "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+            - headers/sec-ch-ua-arch:
+                - val: |-
+                    "x86"
+            - headers/sec-ch-ua-bitness:
+                - val: |-
+                    "64"
+            - headers/sec-ch-ua-full-version:
+                - val: |-
+                    "117.0.5938.92"
+            - headers/sec-ch-ua-full-version-list:
+                - val: |-
+                    "Google Chrome";v="117.0.5938.92", "Not;A=Brand";v="8.0.0.0", "Chromium";v="117.0.5938.92"
+            - headers/sec-ch-ua-mobile:
+                - val: ?0
+            - headers/sec-ch-ua-model:
+                - val: |-
+                    ""
+            - headers/sec-ch-ua-platform:
+                - val: |-
+                    "Windows"
+            - headers/sec-ch-ua-platform-version:
+                - val: |-
+                    "14.0.0"
+            - headers/sec-ch-ua-wow64:
+                - val: ?0
+            - headers/sec-fetch-dest:
+                - val: empty
+            - headers/sec-fetch-mode:
+                - val: no-cors
+            - headers/sec-fetch-site:
+                - val: same-origin
+            - headers/user-agent:
+                - val: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+                    (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
+            - headers/x-client-data:
+                - val: CPDZygE=
+        response:
+          paths:
+            - status-code:
+                - val: '204'
+            - headers/:status:
+                - val: '204'
+            - headers/alt-svc:
+                - val: 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'
+            - headers/content-length:
+                - val: '0'
+            - headers/content-security-policy:
+                - val: "object-src 'none';base-uri 'self';script-src 'nonce-9XfgNKTPcOmz4DC30kYoCw'\
+                    \ 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline'\
+                    \ https: http:;report-uri https://csp.withgoogle.com/csp/gws/other"
+            - headers/content-type:
+                - val: text/html; charset=UTF-8
+            - headers/cross-origin-opener-policy:
+                - val: |-
+                    same-origin-allow-popups; report-to="gws"
+            - headers/date:
+                - val: 'Wed, 27 Sep 2023 07:00:57 GMT'
+            - headers/origin-trial:
+                - val: Ap+qNlnLzJDKSmEHjzM5ilaa908GuehlLqGb6ezME5lkhelj20qVzfv06zPmQ3LodoeujZuphAolrnhnPA8w4AIAAABfeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJQZXJtaXNzaW9uc1BvbGljeVVubG9hZCIsImV4cGlyeSI6MTY4NTY2Mzk5OX0=
+            - headers/origin-trial:
+                - val: AvudrjMZqL7335p1KLV2lHo1kxdMeIN0dUI15d0CPz9dovVLCcXk8OAqjho1DX4s6NbHbA/AGobuGvcZv0drGgQAAAB9eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJCYWNrRm9yd2FyZENhY2hlTm90UmVzdG9yZWRSZWFzb25zIiwiZXhwaXJ5IjoxNjkxNTM5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZX0=
+            - headers/p3p:
+                - val: |-
+                    CP="This is not a P3P policy! See g.co/p3phelp for more info."
+            - headers/permissions-policy:
+                - val: unload=()
+            - headers/report-to:
+                - val: '{"group":"gws","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/gws/other"}]}'
+            - headers/server:
+                - val: gws
+            - headers/set-cookie:
+                - val: 'NID=511=LGAq-19GdlDvXWlMbozd91vmBWqYHyyYoTvcHkO1m84sDaz3HVvJs9-WE6L-6nfFDgWpaJqBummvpC7QaZODDjU5tNa3u7YLXpNtVlqanM8XSRAVfiguJ-F1ImeExbzw0VQo3UnQacfsIOUmKAKs_6rMjbKYf17gx0pPKst8CV8;
+                    expires=Sat, 26-Oct-2024 23:19:12 GMT; path=/; domain=.google.com;
+                    Secure; HttpOnly; SameSite=none'
+            - headers/set-cookie:
+                - val: '__Secure-ENID=delete; expires=Thu, 01-Jan-1970 00:00:00 GMT;
+                    path=/; domain=.google.com; Secure'
+            - headers/x-frame-options:
+                - val: SAMEORIGIN
+            - headers/x-xss-protection:
+                - val: '0'
+      - request:
+          url: '/xjs/_/js/k=xjs.s.en_GB.KNJ2J15-M6s.O/am=CAAAAAAAAAAAAAAAAgCgBsIhgA0wQCAAAgAAEACAgAIRBDAAQIBH2UgMACABgBKYAOKAHABgCdUAAAAAAAj7IQIAAAAAFgABAFITwIAQsAgIAAAAgDwAAQ8AMIiwAAAAAAAAAAAAAAQwQTC4IAFQEAABAAAAAAAAAAAApLLJi4EE/d=1/ed=1/dg=2/br=1/rs=ACT90oF7P6JrTrn_gIStHJmUIsNo_H8q_A/ee=cEt90b:ws9Tlc;qddgKe:x4FYXe,d7YSfd;yxTchf:KUM7Z;dtl0hd:lLQWFe;eHDfl:ofjVkb;qaS3gd:yiLg6e;nAFL3:NTMZac,s39S4;oGtAuc:sOXFj;iFQyKf:vfuNJf,QIhFr;SNUn3:ZwDk9d,x8cHvb;io8t5d:sgY6Zb;Oj465e:KG2eXe,KG2eXe;Erl4fe:FloWmf,FloWmf;JsbNhc:Xd8iUd;sP4Vbe:VwDzFe;kMFpHd:OTA3Ae;uY49fb:COQbmf;Pjplud:PoEs9b,EEDORb;QGR0gd:Mlhmy;a56pNe:JEfCwb;Me32dd:MEeYgc;wR5FRb:TtcOte,O1Gjze;pXdRYb:JKoKVe;dIoSBb:ZgGg9b;EmZ2Bf:zr1jrb;NSEoX:lazG7b;eBAeSb:Ck63tb;WCEKNd:I46Hvd;wV5Pjc:L8KGxe;EVNhjf:pw70Gc;sTsDMc:kHVSUb;wQlYve:aLUfP;zOsCQe:Ko78Df;KcokUb:KiuZBf;YV5bee:IvPZ6d;kbAm9d:MkHyGd;ZWEUA:afR4Cf;g8nkx:U4MzKc;lzgfYb:PI40bd;w9w86d:dt4g2b;GleZL:J1A7Od;bcPXSc:gSZLJb;JXS8fb:Qj0suc;IoGlCf:b5lhvb;VN6jIc:ddQyuf;vfVwPd:lcrkwe;ESrPQc:mNTJvc;pNsl2d:j9Yuyc;VGRfx:VFqbr;BjwMce:cXX2Wb;R9Ulx:CR7Ufe;kY7VAf:d91TEb;xBbsrc:NEW1Qc;KpRAue:Tia57b;jY0zg:Q6tNgc;l8Azde:j4Ca9b;oSUNyd:fTfGO,fTfGO,pnvXVc;SMDL4c:fTfGO,pnvXVc;aZ61od:arTwJ;ZrFutb:W4Cdfc;K8vqCc:MyIcle;NPKaK:SdcwHb;LBgRLc:XVMNvd,SdcwHb;rQSrae:C6D5Fc;kCQyJ:ueyPK;KQzWid:mB4wNe;EABSZ:MXZt9d;qavrXe:zQzcXe,mYbt1d;TxfV6d:YORN0b;UDrY1c:eps46d;F9mqte:UoRcbe;Nyt6ic:jn2sGd;w3bZCb:ZPGaIb;G0KhTb:LIaoZ;XUezZ:sa7lqb;aAJE9c:WHW6Ef;V2HTTe:RolTY;Wfmdue:g3MJlb;imqimf:jKGL2e;BgS6mb:fidj5d;UVmjEd:EesRsb;z97YGf:oug9te;AfeaP:TkrAjf;eBZ5Nd:audvde;CxXAWb:YyRLvc;SLtqO:Kh1xYe;tosKvd:ZCqP3;VOcgDe:YquhTb;uuQkY:u2V3ud;WDGyFe:jcVOxd;trZL0b:qY8PFe;VxQ32b:k0XsBb;DULqB:RKfG5c;Np8Qkd:Dpx6qc;qZx2Fc:j0xrE;cFTWae:gT8qnd;gaub4:TN6bMe;DpcR3d:zL72xf;hjRo6e:F62sG;yGxLoc:FmAr0c;oUlnpc:RagDlc;R2kc8b:ALJqWb;pj82le:mg5CW;dLlj2:Qqt3Gf;qGV2uc:HHi04c;gtVSi:ekUOYd;UyG7Kb:wQd0G;LsNahb:ucGLNb;xbe2wc:wbTLEd;Q1Ow7b:x5CSu;bFZ6gf:RsDQqe;okUaUd:wItadb;G6wU6e:hezEbd;uknmt:GkPrzb;U96pRd:FsR04;PqHfGe:im2cZe;Fmv9Nc:O1Tzwc;hK67qb:QWEO5b;BMxAGc:E5bFse;R4IIIb:QWfeKf;whEZac:F4AmNb;tH4IIe:Ymry6;lkq0A:JyBE3e;daB6be:lMxGPd;LEikZe:byfTOb,lsjVmc/m=cdos,hsm,jsa,mb4ZUb,d,csi,cEt90b,SNUn3,qddgKe,sTsDMc,dtl0hd,eHDfl'
+          paths:
+            - headers/:authority:
+                - val: www.google.com
+            - headers/:method:
+                - val: GET
+            - headers/:path:
+                - val: '/xjs/_/js/k=xjs.s.en_GB.KNJ2J15-M6s.O/am=CAAAAAAAAAAAAAAAAgCgBsIhgA0wQCAAAgAAEACAgAIRBDAAQIBH2UgMACABgBKYAOKAHABgCdUAAAAAAAj7IQIAAAAAFgABAFITwIAQsAgIAAAAgDwAAQ8AMIiwAAAAAAAAAAAAAAQwQTC4IAFQEAABAAAAAAAAAAAApLLJi4EE/d=1/ed=1/dg=2/br=1/rs=ACT90oF7P6JrTrn_gIStHJmUIsNo_H8q_A/ee=cEt90b:ws9Tlc;qddgKe:x4FYXe,d7YSfd;yxTchf:KUM7Z;dtl0hd:lLQWFe;eHDfl:ofjVkb;qaS3gd:yiLg6e;nAFL3:NTMZac,s39S4;oGtAuc:sOXFj;iFQyKf:vfuNJf,QIhFr;SNUn3:ZwDk9d,x8cHvb;io8t5d:sgY6Zb;Oj465e:KG2eXe,KG2eXe;Erl4fe:FloWmf,FloWmf;JsbNhc:Xd8iUd;sP4Vbe:VwDzFe;kMFpHd:OTA3Ae;uY49fb:COQbmf;Pjplud:PoEs9b,EEDORb;QGR0gd:Mlhmy;a56pNe:JEfCwb;Me32dd:MEeYgc;wR5FRb:TtcOte,O1Gjze;pXdRYb:JKoKVe;dIoSBb:ZgGg9b;EmZ2Bf:zr1jrb;NSEoX:lazG7b;eBAeSb:Ck63tb;WCEKNd:I46Hvd;wV5Pjc:L8KGxe;EVNhjf:pw70Gc;sTsDMc:kHVSUb;wQlYve:aLUfP;zOsCQe:Ko78Df;KcokUb:KiuZBf;YV5bee:IvPZ6d;kbAm9d:MkHyGd;ZWEUA:afR4Cf;g8nkx:U4MzKc;lzgfYb:PI40bd;w9w86d:dt4g2b;GleZL:J1A7Od;bcPXSc:gSZLJb;JXS8fb:Qj0suc;IoGlCf:b5lhvb;VN6jIc:ddQyuf;vfVwPd:lcrkwe;ESrPQc:mNTJvc;pNsl2d:j9Yuyc;VGRfx:VFqbr;BjwMce:cXX2Wb;R9Ulx:CR7Ufe;kY7VAf:d91TEb;xBbsrc:NEW1Qc;KpRAue:Tia57b;jY0zg:Q6tNgc;l8Azde:j4Ca9b;oSUNyd:fTfGO,fTfGO,pnvXVc;SMDL4c:fTfGO,pnvXVc;aZ61od:arTwJ;ZrFutb:W4Cdfc;K8vqCc:MyIcle;NPKaK:SdcwHb;LBgRLc:XVMNvd,SdcwHb;rQSrae:C6D5Fc;kCQyJ:ueyPK;KQzWid:mB4wNe;EABSZ:MXZt9d;qavrXe:zQzcXe,mYbt1d;TxfV6d:YORN0b;UDrY1c:eps46d;F9mqte:UoRcbe;Nyt6ic:jn2sGd;w3bZCb:ZPGaIb;G0KhTb:LIaoZ;XUezZ:sa7lqb;aAJE9c:WHW6Ef;V2HTTe:RolTY;Wfmdue:g3MJlb;imqimf:jKGL2e;BgS6mb:fidj5d;UVmjEd:EesRsb;z97YGf:oug9te;AfeaP:TkrAjf;eBZ5Nd:audvde;CxXAWb:YyRLvc;SLtqO:Kh1xYe;tosKvd:ZCqP3;VOcgDe:YquhTb;uuQkY:u2V3ud;WDGyFe:jcVOxd;trZL0b:qY8PFe;VxQ32b:k0XsBb;DULqB:RKfG5c;Np8Qkd:Dpx6qc;qZx2Fc:j0xrE;cFTWae:gT8qnd;gaub4:TN6bMe;DpcR3d:zL72xf;hjRo6e:F62sG;yGxLoc:FmAr0c;oUlnpc:RagDlc;R2kc8b:ALJqWb;pj82le:mg5CW;dLlj2:Qqt3Gf;qGV2uc:HHi04c;gtVSi:ekUOYd;UyG7Kb:wQd0G;LsNahb:ucGLNb;xbe2wc:wbTLEd;Q1Ow7b:x5CSu;bFZ6gf:RsDQqe;okUaUd:wItadb;G6wU6e:hezEbd;uknmt:GkPrzb;U96pRd:FsR04;PqHfGe:im2cZe;Fmv9Nc:O1Tzwc;hK67qb:QWEO5b;BMxAGc:E5bFse;R4IIIb:QWfeKf;whEZac:F4AmNb;tH4IIe:Ymry6;lkq0A:JyBE3e;daB6be:lMxGPd;LEikZe:byfTOb,lsjVmc/m=cdos,hsm,jsa,mb4ZUb,d,csi,cEt90b,SNUn3,qddgKe,sTsDMc,dtl0hd,eHDfl'
+            - headers/:scheme:
+                - val: https
+            - headers/accept:
+                - val: '*/*'
+            - headers/accept-encoding:
+                - val: 'gzip, deflate, br'
+            - headers/accept-language:
+                - val: 'en-US,en;q=0.9'
+            - headers/cookie:
+                - val: AEC=Ackid1Q-b_NF1PladEwrWBXsRhhW3Cb4x-zxukWfRypIBoA78jpZCga0Jw
+            - headers/cookie:
+                - val: __Secure-ENID=15.SE=Pus7AWuJh19iPJ8_jQvPNJEa3Wv-H535VZWly1fYL325Nbb6J9OQsvPhgP90ED5CYb4d3UL-7XOaY5keraR_HfWZuthAsFPkzMwoSzL-ZLZtQvQ318VfhH9hH9fyt8M1RDY90qgaX-bctHdaLktgRj5ahx-VLOXfDhZ0kPdgI7k
+            - headers/cookie:
+                - val: CONSENT=PENDING+376
+            - headers/cookie:
+                - val: SOCS=CAISHAgBEhJnd3NfMjAyMzA5MTktMF9SQzEaAmVuIAEaBgiA4c2oBg
+            - headers/referer:
+                - val: https://www.google.com/
+            - headers/sec-ch-ua:
+                - val: |-
+                    "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+            - headers/sec-ch-ua-arch:
+                - val: |-
+                    "x86"
+            - headers/sec-ch-ua-bitness:
+                - val: |-
+                    "64"
+            - headers/sec-ch-ua-full-version:
+                - val: |-
+                    "117.0.5938.92"
+            - headers/sec-ch-ua-full-version-list:
+                - val: |-
+                    "Google Chrome";v="117.0.5938.92", "Not;A=Brand";v="8.0.0.0", "Chromium";v="117.0.5938.92"
+            - headers/sec-ch-ua-mobile:
+                - val: ?0
+            - headers/sec-ch-ua-model:
+                - val: |-
+                    ""
+            - headers/sec-ch-ua-platform:
+                - val: |-
+                    "Windows"
+            - headers/sec-ch-ua-platform-version:
+                - val: |-
+                    "14.0.0"
+            - headers/sec-ch-ua-wow64:
+                - val: ?0
+            - headers/sec-fetch-dest:
+                - val: script
+            - headers/sec-fetch-mode:
+                - val: no-cors
+            - headers/sec-fetch-site:
+                - val: same-origin
+            - headers/user-agent:
+                - val: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+                    (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
+            - headers/x-client-data:
+                - val: CPDZygE=
+        response:
+          paths:
+            - headers/:status:
+                - val: '200'
+            - headers/accept-ranges:
+                - val: bytes
+            - headers/alt-svc:
+                - val: 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'
+            - headers/cache-control:
+                - val: 'public, immutable, max-age=31536000'
+            - headers/content-length:
+                - val: '283813'
+            - headers/content-security-policy-report-only:
+                - val: require-trusted-types-for 'script'; report-uri https://csp.withgoogle.com/csp/gws-team
+            - headers/content-type:
+                - val: text/javascript; charset=UTF-8
+            - headers/cross-origin-opener-policy:
+                - val: |-
+                    same-origin; report-to="gws-team"
+            - headers/cross-origin-resource-policy:
+                - val: cross-origin
+            - headers/date:
+                - val: 'Wed, 27 Sep 2023 07:00:57 GMT'
+            - headers/expires:
+                - val: 'Thu, 26 Sep 2024 07:00:57 GMT'
+            - headers/last-modified:
+                - val: 'Tue, 26 Sep 2023 20:53:43 GMT'
+            - headers/report-to:
+                - val: '{"group":"gws-team","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/gws-team"}]}'
+            - headers/server:
+                - val: sffe
+            - headers/vary:
+                - val: 'Accept-Encoding, Origin'
+            - headers/x-content-type-options:
+                - val: nosniff
+            - headers/x-xss-protection:
+                - val: '0'
+            - content:
+                - src: blob/ik4xzs.bin
+      - request:
+          url: /gen_204?atyp=i&ct=bxjs&cad=&b=1&ei=JtMTZffxIaGq1QH_iqfABg&zx=1695798057497&opi=89978449
+          paths:
+            - headers/:authority:
+                - val: www.google.com
+            - headers/:method:
+                - val: GET
+            - headers/:path:
+                - val: /gen_204?atyp=i&ct=bxjs&cad=&b=1&ei=JtMTZffxIaGq1QH_iqfABg&zx=1695798057497&opi=89978449
+            - headers/:scheme:
+                - val: https
+            - headers/accept:
+                - val: 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+            - headers/accept-encoding:
+                - val: 'gzip, deflate, br'
+            - headers/accept-language:
+                - val: 'en-US,en;q=0.9'
+            - headers/cookie:
+                - val: AEC=Ackid1Q-b_NF1PladEwrWBXsRhhW3Cb4x-zxukWfRypIBoA78jpZCga0Jw
+            - headers/cookie:
+                - val: __Secure-ENID=15.SE=Pus7AWuJh19iPJ8_jQvPNJEa3Wv-H535VZWly1fYL325Nbb6J9OQsvPhgP90ED5CYb4d3UL-7XOaY5keraR_HfWZuthAsFPkzMwoSzL-ZLZtQvQ318VfhH9hH9fyt8M1RDY90qgaX-bctHdaLktgRj5ahx-VLOXfDhZ0kPdgI7k
+            - headers/cookie:
+                - val: CONSENT=PENDING+376
+            - headers/cookie:
+                - val: SOCS=CAISHAgBEhJnd3NfMjAyMzA5MTktMF9SQzEaAmVuIAEaBgiA4c2oBg
+            - headers/referer:
+                - val: https://www.google.com/
+            - headers/sec-ch-ua:
+                - val: |-
+                    "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+            - headers/sec-ch-ua-arch:
+                - val: |-
+                    "x86"
+            - headers/sec-ch-ua-bitness:
+                - val: |-
+                    "64"
+            - headers/sec-ch-ua-full-version:
+                - val: |-
+                    "117.0.5938.92"
+            - headers/sec-ch-ua-full-version-list:
+                - val: |-
+                    "Google Chrome";v="117.0.5938.92", "Not;A=Brand";v="8.0.0.0", "Chromium";v="117.0.5938.92"
+            - headers/sec-ch-ua-mobile:
+                - val: ?0
+            - headers/sec-ch-ua-model:
+                - val: |-
+                    ""
+            - headers/sec-ch-ua-platform:
+                - val: |-
+                    "Windows"
+            - headers/sec-ch-ua-platform-version:
+                - val: |-
+                    "14.0.0"
+            - headers/sec-ch-ua-wow64:
+                - val: ?0
+            - headers/sec-fetch-dest:
+                - val: image
+            - headers/sec-fetch-mode:
+                - val: no-cors
+            - headers/sec-fetch-site:
+                - val: same-origin
+            - headers/user-agent:
+                - val: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+                    (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
+            - headers/x-client-data:
+                - val: CPDZygE=
+        response:
+          paths:
+            - status-code:
+                - val: '204'
+            - headers/:status:
+                - val: '204'
+            - headers/alt-svc:
+                - val: 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'
+            - headers/content-length:
+                - val: '0'
+            - headers/content-security-policy:
+                - val: "object-src 'none';base-uri 'self';script-src 'nonce-xYPz0G6KFE3aRGhDrpzryA'\
+                    \ 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline'\
+                    \ https: http:;report-uri https://csp.withgoogle.com/csp/gws/other"
+            - headers/content-type:
+                - val: text/html; charset=UTF-8
+            - headers/cross-origin-opener-policy:
+                - val: |-
+                    same-origin-allow-popups; report-to="gws"
+            - headers/date:
+                - val: 'Wed, 27 Sep 2023 07:00:57 GMT'
+            - headers/origin-trial:
+                - val: Ap+qNlnLzJDKSmEHjzM5ilaa908GuehlLqGb6ezME5lkhelj20qVzfv06zPmQ3LodoeujZuphAolrnhnPA8w4AIAAABfeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJQZXJtaXNzaW9uc1BvbGljeVVubG9hZCIsImV4cGlyeSI6MTY4NTY2Mzk5OX0=
+            - headers/origin-trial:
+                - val: AvudrjMZqL7335p1KLV2lHo1kxdMeIN0dUI15d0CPz9dovVLCcXk8OAqjho1DX4s6NbHbA/AGobuGvcZv0drGgQAAAB9eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJCYWNrRm9yd2FyZENhY2hlTm90UmVzdG9yZWRSZWFzb25zIiwiZXhwaXJ5IjoxNjkxNTM5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZX0=
+            - headers/p3p:
+                - val: |-
+                    CP="This is not a P3P policy! See g.co/p3phelp for more info."
+            - headers/permissions-policy:
+                - val: unload=()
+            - headers/report-to:
+                - val: '{"group":"gws","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/gws/other"}]}'
+            - headers/server:
+                - val: gws
+            - headers/set-cookie:
+                - val: 'NID=511=Bkxy6o_3Xnp4fyQpYQ7C6LeKIIMYpxSR05_rIACYqjJVqOLiw7pFN9YhZfKu6fav_g7oDF9C3-cWjrhAaqAwH0NX3hh2brZwRWso1QlVEC4lheCmiR3n1CGPWdpD5fee6RRtX-qKuyf4IwQ3eV1kzCaIVEWyqJhgYu9MIXWgqzc;
+                    expires=Sat, 26-Oct-2024 23:19:12 GMT; path=/; domain=.google.com;
+                    Secure; HttpOnly; SameSite=none'
+            - headers/set-cookie:
+                - val: '__Secure-ENID=delete; expires=Thu, 01-Jan-1970 00:00:00 GMT;
+                    path=/; domain=.google.com; Secure'
+            - headers/x-frame-options:
+                - val: SAMEORIGIN
+            - headers/x-xss-protection:
+                - val: '0'
+      - request:
+          url: https://consent.google.com/save?continue=https://www.google.com/&gl=UK&m=0&pc=shp&x=5&src=2&hl=en&bl=gws_20230919-0_RC1&uxe=eomcrt&cm=2&set_eom=false&set_aps=true&set_sc=true
+          paths:
+            - headers/:authority:
+                - val: consent.google.com
+            - headers/:method:
+                - val: POST
+            - headers/:path:
+                - val: /save?continue=https://www.google.com/&gl=UK&m=0&pc=shp&x=5&src=2&hl=en&bl=gws_20230919-0_RC1&uxe=eomcrt&cm=2&set_eom=false&set_aps=true&set_sc=true
+            - headers/:scheme:
+                - val: https
+            - headers/accept:
+                - val: '*/*'
+            - headers/accept-encoding:
+                - val: 'gzip, deflate, br'
+            - headers/accept-language:
+                - val: 'en-US,en;q=0.9'
+            - headers/content-length:
+                - val: '0'
+            - headers/cookie:
+                - val: AEC=Ackid1Q-b_NF1PladEwrWBXsRhhW3Cb4x-zxukWfRypIBoA78jpZCga0Jw
+            - headers/cookie:
+                - val: __Secure-ENID=15.SE=Pus7AWuJh19iPJ8_jQvPNJEa3Wv-H535VZWly1fYL325Nbb6J9OQsvPhgP90ED5CYb4d3UL-7XOaY5keraR_HfWZuthAsFPkzMwoSzL-ZLZtQvQ318VfhH9hH9fyt8M1RDY90qgaX-bctHdaLktgRj5ahx-VLOXfDhZ0kPdgI7k
+            - headers/cookie:
+                - val: CONSENT=PENDING+376
+            - headers/cookie:
+                - val: SOCS=CAISHAgBEhJnd3NfMjAyMzA5MTktMF9SQzEaAmVuIAEaBgiA4c2oBg
+            - headers/origin:
+                - val: https://www.google.com
+            - headers/referer:
+                - val: https://www.google.com/
+            - headers/sec-ch-ua:
+                - val: |-
+                    "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+            - headers/sec-ch-ua-mobile:
+                - val: ?0
+            - headers/sec-ch-ua-platform:
+                - val: |-
+                    "Windows"
+            - headers/sec-fetch-dest:
+                - val: empty
+            - headers/sec-fetch-mode:
+                - val: cors
+            - headers/sec-fetch-site:
+                - val: same-site
+            - headers/user-agent:
+                - val: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+                    (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
+            - headers/x-client-data:
+                - val: CPDZygE=
+        response:
+          paths:
+            - status-code:
+                - val: '204'
+            - headers/:status:
+                - val: '204'
+            - headers/accept-ch:
+                - val: 'Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version,
+                    Sec-CH-UA-Full-Version-List, Sec-CH-UA-Model, Sec-CH-UA-WoW64,
+                    Sec-CH-UA-Form-Factor, Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version'
+            - headers/access-control-allow-credentials:
+                - val: 'true'
+            - headers/access-control-allow-origin:
+                - val: https://www.google.com
+            - headers/alt-svc:
+                - val: 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'
+            - headers/cache-control:
+                - val: 'no-cache, no-store, max-age=0, must-revalidate'
+            - headers/content-length:
+                - val: '0'
+            - headers/content-security-policy:
+                - val: |-
+                    script-src 'report-sample' 'nonce-_YBcfcpUfT5TwlSMt2Ij_g' 'unsafe-inline';object-src 'none';base-uri 'self';report-uri /_/ConsentHttp/cspreport;worker-src 'self'
+            - headers/content-security-policy:
+                - val: script-src 'unsafe-inline' 'self' https://apis.google.com https://ssl.gstatic.com
+                    https://www.google.com https://www.googletagmanager.com https://www.gstatic.com
+                    https://www.google-analytics.com;report-uri /_/ConsentHttp/cspreport/allowlist
+            - headers/content-security-policy:
+                - val: require-trusted-types-for 'script';report-uri /_/ConsentHttp/cspreport
+            - headers/content-type:
+                - val: text/html; charset=utf-8
+            - headers/cross-origin-opener-policy:
+                - val: unsafe-none
+            - headers/date:
+                - val: 'Wed, 27 Sep 2023 07:00:58 GMT'
+            - headers/expires:
+                - val: 'Mon, 01 Jan 1990 00:00:00 GMT'
+            - headers/p3p:
+                - val: |-
+                    CP="This is not a P3P policy! See g.co/p3phelp for more info."
+            - headers/permissions-policy:
+                - val: 'ch-ua-arch=*, ch-ua-bitness=*, ch-ua-full-version=*, ch-ua-full-version-list=*,
+                    ch-ua-model=*, ch-ua-wow64=*, ch-ua-form-factor=*, ch-ua-platform=*,
+                    ch-ua-platform-version=*'
+            - headers/pragma:
+                - val: no-cache
+            - headers/server:
+                - val: ESF
+            - headers/set-cookie:
+                - val: 'SOCS=CAISHAgBEhJnd3NfMjAyMzA5MTktMF9SQzEaAmVuIAEaBgiA4c2oBg;
+                    Domain=.google.com; Expires=Sat, 26-Oct-2024 07:00:58 GMT; Path=/;
+                    Secure; SameSite=lax'
+            - headers/set-cookie:
+                - val: 'NID=511=afKLKKF6lzre5FczB2yi6MwDaUqYNhRJRqYT3NJJJX5snrHBhrv1w5zYTVwPxNtQsId3yl-ZSJLgouv5JtBGILOVZ30GnmKN-4wr_5HU9JIpApV3rhW3ZHETy-5K83yL7Se4gPp4WosnJTN3x5E9hyMMA1o6D370DEtjmgZ4020;
+                    expires=Sat, 26-Oct-2024 23:19:12 GMT; path=/; domain=.google.com;
+                    Secure; HttpOnly; SameSite=none'
+            - headers/set-cookie:
+                - val: '__Secure-ENID=delete; expires=Thu, 01-Jan-1970 00:00:00 GMT;
+                    path=/; domain=.google.com; Secure'
+            - headers/x-content-type-options:
+                - val: nosniff
+            - headers/x-frame-options:
+                - val: SAMEORIGIN
+            - headers/x-xss-protection:
+                - val: '0'
+      - request:
+          url: /gen_204?atyp=csi&ei=JtMTZffxIaGq1QH_iqfABg&s=webhp&t=fi&st=3239&fid=3&zx=1695798058281&opi=89978449
+          paths:
+            - headers/:authority:
+                - val: www.google.com
+            - headers/:method:
+                - val: POST
+            - headers/:path:
+                - val: /gen_204?atyp=csi&ei=JtMTZffxIaGq1QH_iqfABg&s=webhp&t=fi&st=3239&fid=3&zx=1695798058281&opi=89978449
+            - headers/:scheme:
+                - val: https
+            - headers/accept:
+                - val: '*/*'
+            - headers/accept-encoding:
+                - val: 'gzip, deflate, br'
+            - headers/accept-language:
+                - val: 'en-US,en;q=0.9'
+            - headers/content-length:
+                - val: '0'
+            - headers/cookie:
+                - val: AEC=Ackid1Q-b_NF1PladEwrWBXsRhhW3Cb4x-zxukWfRypIBoA78jpZCga0Jw
+            - headers/cookie:
+                - val: CONSENT=PENDING+376
+            - headers/cookie:
+                - val: SOCS=CAISHAgBEhJnd3NfMjAyMzA5MTktMF9SQzEaAmVuIAEaBgiA4c2oBg
+            - headers/cookie:
+                - val: NID=511=afKLKKF6lzre5FczB2yi6MwDaUqYNhRJRqYT3NJJJX5snrHBhrv1w5zYTVwPxNtQsId3yl-ZSJLgouv5JtBGILOVZ30GnmKN-4wr_5HU9JIpApV3rhW3ZHETy-5K83yL7Se4gPp4WosnJTN3x5E9hyMMA1o6D370DEtjmgZ4020
+            - headers/origin:
+                - val: https://www.google.com
+            - headers/referer:
+                - val: https://www.google.com/
+            - headers/sec-ch-ua:
+                - val: |-
+                    "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+            - headers/sec-ch-ua-arch:
+                - val: |-
+                    "x86"
+            - headers/sec-ch-ua-bitness:
+                - val: |-
+                    "64"
+            - headers/sec-ch-ua-full-version:
+                - val: |-
+                    "117.0.5938.92"
+            - headers/sec-ch-ua-full-version-list:
+                - val: |-
+                    "Google Chrome";v="117.0.5938.92", "Not;A=Brand";v="8.0.0.0", "Chromium";v="117.0.5938.92"
+            - headers/sec-ch-ua-mobile:
+                - val: ?0
+            - headers/sec-ch-ua-model:
+                - val: |-
+                    ""
+            - headers/sec-ch-ua-platform:
+                - val: |-
+                    "Windows"
+            - headers/sec-ch-ua-platform-version:
+                - val: |-
+                    "14.0.0"
+            - headers/sec-ch-ua-wow64:
+                - val: ?0
+            - headers/sec-fetch-dest:
+                - val: empty
+            - headers/sec-fetch-mode:
+                - val: no-cors
+            - headers/sec-fetch-site:
+                - val: same-origin
+            - headers/user-agent:
+                - val: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+                    (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
+            - headers/x-client-data:
+                - val: CPDZygE=
+        response:
+          paths:
+            - status-code:
+                - val: '204'
+            - headers/:status:
+                - val: '204'
+            - headers/alt-svc:
+                - val: 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'
+            - headers/content-length:
+                - val: '0'
+            - headers/content-security-policy:
+                - val: "object-src 'none';base-uri 'self';script-src 'nonce-dDCepGVPWw-IVVHZLIFaGA'\
+                    \ 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline'\
+                    \ https: http:;report-uri https://csp.withgoogle.com/csp/gws/other"
+            - headers/content-type:
+                - val: text/html; charset=UTF-8
+            - headers/cross-origin-opener-policy:
+                - val: |-
+                    same-origin-allow-popups; report-to="gws"
+            - headers/date:
+                - val: 'Wed, 27 Sep 2023 07:00:58 GMT'
+            - headers/origin-trial:
+                - val: Ap+qNlnLzJDKSmEHjzM5ilaa908GuehlLqGb6ezME5lkhelj20qVzfv06zPmQ3LodoeujZuphAolrnhnPA8w4AIAAABfeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJQZXJtaXNzaW9uc1BvbGljeVVubG9hZCIsImV4cGlyeSI6MTY4NTY2Mzk5OX0=
+            - headers/origin-trial:
+                - val: AvudrjMZqL7335p1KLV2lHo1kxdMeIN0dUI15d0CPz9dovVLCcXk8OAqjho1DX4s6NbHbA/AGobuGvcZv0drGgQAAAB9eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJCYWNrRm9yd2FyZENhY2hlTm90UmVzdG9yZWRSZWFzb25zIiwiZXhwaXJ5IjoxNjkxNTM5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZX0=
+            - headers/permissions-policy:
+                - val: unload=()
+            - headers/report-to:
+                - val: '{"group":"gws","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/gws/other"}]}'
+            - headers/server:
+                - val: gws
+            - headers/x-frame-options:
+                - val: SAMEORIGIN
+            - headers/x-xss-protection:
+                - val: '0'
+      - request:
+          url: /complete/search?q&cp=0&client=gws-wiz&xssi=t&gs_pcrt=2&hl=en-GB&authuser=0&psi=JtMTZffxIaGq1QH_iqfABg.1695798058298&dpr=1.25&nolsbt=1
+          paths:
+            - headers/:authority:
+                - val: www.google.com
+            - headers/:method:
+                - val: GET
+            - headers/:path:
+                - val: /complete/search?q&cp=0&client=gws-wiz&xssi=t&gs_pcrt=2&hl=en-GB&authuser=0&psi=JtMTZffxIaGq1QH_iqfABg.1695798058298&dpr=1.25&nolsbt=1
+            - headers/:scheme:
+                - val: https
+            - headers/accept:
+                - val: '*/*'
+            - headers/accept-encoding:
+                - val: 'gzip, deflate, br'
+            - headers/accept-language:
+                - val: 'en-US,en;q=0.9'
+            - headers/cookie:
+                - val: AEC=Ackid1Q-b_NF1PladEwrWBXsRhhW3Cb4x-zxukWfRypIBoA78jpZCga0Jw
+            - headers/cookie:
+                - val: CONSENT=PENDING+376
+            - headers/cookie:
+                - val: SOCS=CAISHAgBEhJnd3NfMjAyMzA5MTktMF9SQzEaAmVuIAEaBgiA4c2oBg
+            - headers/cookie:
+                - val: NID=511=afKLKKF6lzre5FczB2yi6MwDaUqYNhRJRqYT3NJJJX5snrHBhrv1w5zYTVwPxNtQsId3yl-ZSJLgouv5JtBGILOVZ30GnmKN-4wr_5HU9JIpApV3rhW3ZHETy-5K83yL7Se4gPp4WosnJTN3x5E9hyMMA1o6D370DEtjmgZ4020
+            - headers/referer:
+                - val: https://www.google.com/
+            - headers/sec-ch-ua:
+                - val: |-
+                    "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+            - headers/sec-ch-ua-arch:
+                - val: |-
+                    "x86"
+            - headers/sec-ch-ua-bitness:
+                - val: |-
+                    "64"
+            - headers/sec-ch-ua-full-version:
+                - val: |-
+                    "117.0.5938.92"
+            - headers/sec-ch-ua-full-version-list:
+                - val: |-
+                    "Google Chrome";v="117.0.5938.92", "Not;A=Brand";v="8.0.0.0", "Chromium";v="117.0.5938.92"
+            - headers/sec-ch-ua-mobile:
+                - val: ?0
+            - headers/sec-ch-ua-model:
+                - val: |-
+                    ""
+            - headers/sec-ch-ua-platform:
+                - val: |-
+                    "Windows"
+            - headers/sec-ch-ua-platform-version:
+                - val: |-
+                    "14.0.0"
+            - headers/sec-ch-ua-wow64:
+                - val: ?0
+            - headers/sec-fetch-dest:
+                - val: empty
+            - headers/sec-fetch-mode:
+                - val: cors
+            - headers/sec-fetch-site:
+                - val: same-origin
+            - headers/user-agent:
+                - val: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+                    (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
+            - headers/x-client-data:
+                - val: CPDZygE=
+        response:
+          paths:
+            - headers/:status:
+                - val: '200'
+            - headers/accept-ch:
+                - val: Sec-CH-UA-Platform
+            - headers/accept-ch:
+                - val: Sec-CH-UA-Platform-Version
+            - headers/accept-ch:
+                - val: Sec-CH-UA-Full-Version
+            - headers/accept-ch:
+                - val: Sec-CH-UA-Arch
+            - headers/accept-ch:
+                - val: Sec-CH-UA-Model
+            - headers/accept-ch:
+                - val: Sec-CH-UA-Bitness
+            - headers/accept-ch:
+                - val: Sec-CH-UA-Full-Version-List
+            - headers/accept-ch:
+                - val: Sec-CH-UA-WoW64
+            - headers/alt-svc:
+                - val: 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'
+            - headers/cache-control:
+                - val: 'private, max-age=3600'
+            - headers/content-disposition:
+                - val: |-
+                    attachment; filename="f.txt"
+            - headers/content-security-policy:
+                - val: "object-src 'none';base-uri 'self';script-src 'nonce-UkMRI6bPfw1K4_Pe9n3tmA'\
+                    \ 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline'\
+                    \ https: http:;report-uri https://csp.withgoogle.com/csp/gws/cdt1"
+            - headers/content-type:
+                - val: application/json; charset=UTF-8
+            - headers/cross-origin-opener-policy:
+                - val: |-
+                    same-origin-allow-popups; report-to="gws"
+            - headers/date:
+                - val: 'Wed, 27 Sep 2023 07:00:58 GMT'
+            - headers/expires:
+                - val: 'Wed, 27 Sep 2023 07:00:58 GMT'
+            - headers/origin-trial:
+                - val: Ap+qNlnLzJDKSmEHjzM5ilaa908GuehlLqGb6ezME5lkhelj20qVzfv06zPmQ3LodoeujZuphAolrnhnPA8w4AIAAABfeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJQZXJtaXNzaW9uc1BvbGljeVVubG9hZCIsImV4cGlyeSI6MTY4NTY2Mzk5OX0=
+            - headers/origin-trial:
+                - val: AvudrjMZqL7335p1KLV2lHo1kxdMeIN0dUI15d0CPz9dovVLCcXk8OAqjho1DX4s6NbHbA/AGobuGvcZv0drGgQAAAB9eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJCYWNrRm9yd2FyZENhY2hlTm90UmVzdG9yZWRSZWFzb25zIiwiZXhwaXJ5IjoxNjkxNTM5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZX0=
+            - headers/permissions-policy:
+                - val: unload=()
+            - headers/report-to:
+                - val: '{"group":"gws","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/gws/cdt1"}]}'
+            - headers/server:
+                - val: gws
+            - headers/strict-transport-security:
+                - val: max-age=31536000
+            - headers/x-content-type-options:
+                - val: nosniff
+            - headers/x-frame-options:
+                - val: SAMEORIGIN
+            - headers/x-xss-protection:
+                - val: '0'
+            - content:
+                - src: blob/j6wcno.json
+      - request:
+          url: '/gen_204?atyp=csi&ei=JtMTZffxIaGq1QH_iqfABg&s=webhp&t=all&wh=704&imn=7&ima=4&imad=0&imac=0&imf=0&aft=1&aftp=704&adh=&cls=0.0006895011580695878&ime=4&imex=4&imeh=3&imea=0&imeb=0&imel=0&scp=0&mem=ujhs.10,tjhs.14,jhsl.4295,dm.8&nv=ne.1,feid.3718c5e6-ef10-4bc6-bab5-23a23a6e6854&hp=&net=dl.7050,ect.4g,rtt.200&sys=hc.12&rt=aft.843,afti.843,prt.169,dcl.204,aftqf.844,ol.1455,xjsls.2826,xjses.3575,xjsee.3608,xjs.3608,lcp.475,fcp.275,wsrt.571,cst.307,dnst.0,rqst.461,rspt.203,sslt.125,rqstt.313,unt.2,cstt.5,dit.775&zx=1695798058308&opi=89978449'
+          paths:
+            - headers/:authority:
+                - val: www.google.com
+            - headers/:method:
+                - val: POST
+            - headers/:path:
+                - val: '/gen_204?atyp=csi&ei=JtMTZffxIaGq1QH_iqfABg&s=webhp&t=all&wh=704&imn=7&ima=4&imad=0&imac=0&imf=0&aft=1&aftp=704&adh=&cls=0.0006895011580695878&ime=4&imex=4&imeh=3&imea=0&imeb=0&imel=0&scp=0&mem=ujhs.10,tjhs.14,jhsl.4295,dm.8&nv=ne.1,feid.3718c5e6-ef10-4bc6-bab5-23a23a6e6854&hp=&net=dl.7050,ect.4g,rtt.200&sys=hc.12&rt=aft.843,afti.843,prt.169,dcl.204,aftqf.844,ol.1455,xjsls.2826,xjses.3575,xjsee.3608,xjs.3608,lcp.475,fcp.275,wsrt.571,cst.307,dnst.0,rqst.461,rspt.203,sslt.125,rqstt.313,unt.2,cstt.5,dit.775&zx=1695798058308&opi=89978449'
+            - headers/:scheme:
+                - val: https
+            - headers/accept:
+                - val: '*/*'
+            - headers/accept-encoding:
+                - val: 'gzip, deflate, br'
+            - headers/accept-language:
+                - val: 'en-US,en;q=0.9'
+            - headers/content-length:
+                - val: '0'
+            - headers/cookie:
+                - val: AEC=Ackid1Q-b_NF1PladEwrWBXsRhhW3Cb4x-zxukWfRypIBoA78jpZCga0Jw
+            - headers/cookie:
+                - val: CONSENT=PENDING+376
+            - headers/cookie:
+                - val: SOCS=CAISHAgBEhJnd3NfMjAyMzA5MTktMF9SQzEaAmVuIAEaBgiA4c2oBg
+            - headers/cookie:
+                - val: NID=511=afKLKKF6lzre5FczB2yi6MwDaUqYNhRJRqYT3NJJJX5snrHBhrv1w5zYTVwPxNtQsId3yl-ZSJLgouv5JtBGILOVZ30GnmKN-4wr_5HU9JIpApV3rhW3ZHETy-5K83yL7Se4gPp4WosnJTN3x5E9hyMMA1o6D370DEtjmgZ4020
+            - headers/origin:
+                - val: https://www.google.com
+            - headers/referer:
+                - val: https://www.google.com/
+            - headers/sec-ch-ua:
+                - val: |-
+                    "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+            - headers/sec-ch-ua-arch:
+                - val: |-
+                    "x86"
+            - headers/sec-ch-ua-bitness:
+                - val: |-
+                    "64"
+            - headers/sec-ch-ua-full-version:
+                - val: |-
+                    "117.0.5938.92"
+            - headers/sec-ch-ua-full-version-list:
+                - val: |-
+                    "Google Chrome";v="117.0.5938.92", "Not;A=Brand";v="8.0.0.0", "Chromium";v="117.0.5938.92"
+            - headers/sec-ch-ua-mobile:
+                - val: ?0
+            - headers/sec-ch-ua-model:
+                - val: |-
+                    ""
+            - headers/sec-ch-ua-platform:
+                - val: |-
+                    "Windows"
+            - headers/sec-ch-ua-platform-version:
+                - val: |-
+                    "14.0.0"
+            - headers/sec-ch-ua-wow64:
+                - val: ?0
+            - headers/sec-fetch-dest:
+                - val: empty
+            - headers/sec-fetch-mode:
+                - val: no-cors
+            - headers/sec-fetch-site:
+                - val: same-origin
+            - headers/user-agent:
+                - val: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+                    (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
+            - headers/x-client-data:
+                - val: CPDZygE=
+        response:
+          paths:
+            - status-code:
+                - val: '204'
+            - headers/:status:
+                - val: '204'
+            - headers/alt-svc:
+                - val: 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'
+            - headers/content-length:
+                - val: '0'
+            - headers/content-security-policy:
+                - val: "object-src 'none';base-uri 'self';script-src 'nonce-SqcmISCQZvA0NXvjkcORNg'\
+                    \ 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline'\
+                    \ https: http:;report-uri https://csp.withgoogle.com/csp/gws/other"
+            - headers/content-type:
+                - val: text/html; charset=UTF-8
+            - headers/cross-origin-opener-policy:
+                - val: |-
+                    same-origin-allow-popups; report-to="gws"
+            - headers/date:
+                - val: 'Wed, 27 Sep 2023 07:00:58 GMT'
+            - headers/origin-trial:
+                - val: Ap+qNlnLzJDKSmEHjzM5ilaa908GuehlLqGb6ezME5lkhelj20qVzfv06zPmQ3LodoeujZuphAolrnhnPA8w4AIAAABfeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJQZXJtaXNzaW9uc1BvbGljeVVubG9hZCIsImV4cGlyeSI6MTY4NTY2Mzk5OX0=
+            - headers/origin-trial:
+                - val: AvudrjMZqL7335p1KLV2lHo1kxdMeIN0dUI15d0CPz9dovVLCcXk8OAqjho1DX4s6NbHbA/AGobuGvcZv0drGgQAAAB9eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJCYWNrRm9yd2FyZENhY2hlTm90UmVzdG9yZWRSZWFzb25zIiwiZXhwaXJ5IjoxNjkxNTM5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZX0=
+            - headers/permissions-policy:
+                - val: unload=()
+            - headers/report-to:
+                - val: '{"group":"gws","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/gws/other"}]}'
+            - headers/server:
+                - val: gws
+            - headers/x-frame-options:
+                - val: SAMEORIGIN
+            - headers/x-xss-protection:
+                - val: '0'
+      - request:
+          url: '/xjs/_/js/k=xjs.s.en_GB.KNJ2J15-M6s.O/ck=xjs.s.Yq5JpkuwOQ0.L.W.O/am=CAAAAAAAAAAAAAAAAgCgBsIhgA0wQCAAAgAAEACAgAIRBDAAQIBH2UgMACABgBKYAOKAHABgCdUAAAAAAAj7IQIAAAAAFgABAFITwIAQsAgIAAAAgDwAAQ8AMIiwAAAAAAAAAAAAAAQwQTC4IAFQEAABAAAAAAAAAAAApLLJi4EE/d=1/exm=SNUn3,cEt90b,cdos,csi,d,dtl0hd,eHDfl,hsm,jsa,mb4ZUb,qddgKe,sTsDMc/ed=1/dg=2/br=1/rs=ACT90oE0TL1F1ZmxDjRk6vEG4wdTkMsVHQ/ee=AfeaP:TkrAjf;BMxAGc:E5bFse;BgS6mb:fidj5d;BjwMce:cXX2Wb;CxXAWb:YyRLvc;DULqB:RKfG5c;DpcR3d:zL72xf;EABSZ:MXZt9d;ESrPQc:mNTJvc;EVNhjf:pw70Gc;EmZ2Bf:zr1jrb;Erl4fe:FloWmf;F9mqte:UoRcbe;Fmv9Nc:O1Tzwc;G0KhTb:LIaoZ;G6wU6e:hezEbd;GleZL:J1A7Od;IoGlCf:b5lhvb;JXS8fb:Qj0suc;JsbNhc:Xd8iUd;K8vqCc:MyIcle;KQzWid:mB4wNe;KcokUb:KiuZBf;KpRAue:Tia57b;LBgRLc:SdcwHb,XVMNvd;LEikZe:byfTOb,lsjVmc;LsNahb:ucGLNb;Me32dd:MEeYgc;NPKaK:SdcwHb;NSEoX:lazG7b;Np8Qkd:Dpx6qc;Nyt6ic:jn2sGd;Oj465e:KG2eXe;Pjplud:EEDORb,PoEs9b;PqHfGe:im2cZe;Q1Ow7b:x5CSu;QGR0gd:Mlhmy;R2kc8b:ALJqWb;R4IIIb:QWfeKf;R9Ulx:CR7Ufe;SLtqO:Kh1xYe;SMDL4c:fTfGO,pnvXVc;SNUn3:ZwDk9d,x8cHvb;TxfV6d:YORN0b;U96pRd:FsR04;UDrY1c:eps46d;UVmjEd:EesRsb;UyG7Kb:wQd0G;V2HTTe:RolTY;VGRfx:VFqbr;VN6jIc:ddQyuf;VOcgDe:YquhTb;VxQ32b:k0XsBb;WCEKNd:I46Hvd;WDGyFe:jcVOxd;Wfmdue:g3MJlb;XUezZ:sa7lqb;YV5bee:IvPZ6d;ZWEUA:afR4Cf;ZrFutb:W4Cdfc;a56pNe:JEfCwb;aAJE9c:WHW6Ef;aZ61od:arTwJ;bFZ6gf:RsDQqe;bcPXSc:gSZLJb;cEt90b:ws9Tlc;cFTWae:gT8qnd;dIoSBb:ZgGg9b;dLlj2:Qqt3Gf;daB6be:lMxGPd;dtl0hd:lLQWFe;eBAeSb:Ck63tb;eBZ5Nd:audvde;eHDfl:ofjVkb;g8nkx:U4MzKc;gaub4:TN6bMe;gtVSi:ekUOYd;hK67qb:QWEO5b;hjRo6e:F62sG;iFQyKf:QIhFr,vfuNJf;imqimf:jKGL2e;io8t5d:sgY6Zb;jY0zg:Q6tNgc;kCQyJ:ueyPK;kMFpHd:OTA3Ae;kY7VAf:d91TEb;kbAm9d:MkHyGd;l8Azde:j4Ca9b;lkq0A:JyBE3e;lzgfYb:PI40bd;nAFL3:NTMZac,s39S4;oGtAuc:sOXFj;oSUNyd:fTfGO,pnvXVc;oUlnpc:RagDlc;okUaUd:wItadb;pNsl2d:j9Yuyc;pXdRYb:JKoKVe;pj82le:mg5CW;qGV2uc:HHi04c;qZx2Fc:j0xrE;qaS3gd:yiLg6e;qavrXe:mYbt1d,zQzcXe;qddgKe:d7YSfd,x4FYXe;rQSrae:C6D5Fc;sP4Vbe:VwDzFe;sTsDMc:kHVSUb;tH4IIe:Ymry6;tosKvd:ZCqP3;trZL0b:qY8PFe;uY49fb:COQbmf;uknmt:GkPrzb;uuQkY:u2V3ud;vfVwPd:lcrkwe;w3bZCb:ZPGaIb;w9w86d:dt4g2b;wQlYve:aLUfP;wR5FRb:O1Gjze,TtcOte;wV5Pjc:L8KGxe;whEZac:F4AmNb;xBbsrc:NEW1Qc;xbe2wc:wbTLEd;yGxLoc:FmAr0c;yxTchf:KUM7Z;z97YGf:oug9te;zOsCQe:Ko78Df/m=B2qlPe,DhPYme,EkevXb,GU4Gab,MpJwZc,NzU6V,UUJqVe,aa,abd,async,epYOx,ifl,ms4mZb,pHXghd,q0xTif,s39S4,sOXFj,sb_wiz,sf,sonic,spch?xjs=s1'
+          paths:
+            - headers/:authority:
+                - val: www.google.com
+            - headers/:method:
+                - val: GET
+            - headers/:path:
+                - val: '/xjs/_/js/k=xjs.s.en_GB.KNJ2J15-M6s.O/ck=xjs.s.Yq5JpkuwOQ0.L.W.O/am=CAAAAAAAAAAAAAAAAgCgBsIhgA0wQCAAAgAAEACAgAIRBDAAQIBH2UgMACABgBKYAOKAHABgCdUAAAAAAAj7IQIAAAAAFgABAFITwIAQsAgIAAAAgDwAAQ8AMIiwAAAAAAAAAAAAAAQwQTC4IAFQEAABAAAAAAAAAAAApLLJi4EE/d=1/exm=SNUn3,cEt90b,cdos,csi,d,dtl0hd,eHDfl,hsm,jsa,mb4ZUb,qddgKe,sTsDMc/ed=1/dg=2/br=1/rs=ACT90oE0TL1F1ZmxDjRk6vEG4wdTkMsVHQ/ee=AfeaP:TkrAjf;BMxAGc:E5bFse;BgS6mb:fidj5d;BjwMce:cXX2Wb;CxXAWb:YyRLvc;DULqB:RKfG5c;DpcR3d:zL72xf;EABSZ:MXZt9d;ESrPQc:mNTJvc;EVNhjf:pw70Gc;EmZ2Bf:zr1jrb;Erl4fe:FloWmf;F9mqte:UoRcbe;Fmv9Nc:O1Tzwc;G0KhTb:LIaoZ;G6wU6e:hezEbd;GleZL:J1A7Od;IoGlCf:b5lhvb;JXS8fb:Qj0suc;JsbNhc:Xd8iUd;K8vqCc:MyIcle;KQzWid:mB4wNe;KcokUb:KiuZBf;KpRAue:Tia57b;LBgRLc:SdcwHb,XVMNvd;LEikZe:byfTOb,lsjVmc;LsNahb:ucGLNb;Me32dd:MEeYgc;NPKaK:SdcwHb;NSEoX:lazG7b;Np8Qkd:Dpx6qc;Nyt6ic:jn2sGd;Oj465e:KG2eXe;Pjplud:EEDORb,PoEs9b;PqHfGe:im2cZe;Q1Ow7b:x5CSu;QGR0gd:Mlhmy;R2kc8b:ALJqWb;R4IIIb:QWfeKf;R9Ulx:CR7Ufe;SLtqO:Kh1xYe;SMDL4c:fTfGO,pnvXVc;SNUn3:ZwDk9d,x8cHvb;TxfV6d:YORN0b;U96pRd:FsR04;UDrY1c:eps46d;UVmjEd:EesRsb;UyG7Kb:wQd0G;V2HTTe:RolTY;VGRfx:VFqbr;VN6jIc:ddQyuf;VOcgDe:YquhTb;VxQ32b:k0XsBb;WCEKNd:I46Hvd;WDGyFe:jcVOxd;Wfmdue:g3MJlb;XUezZ:sa7lqb;YV5bee:IvPZ6d;ZWEUA:afR4Cf;ZrFutb:W4Cdfc;a56pNe:JEfCwb;aAJE9c:WHW6Ef;aZ61od:arTwJ;bFZ6gf:RsDQqe;bcPXSc:gSZLJb;cEt90b:ws9Tlc;cFTWae:gT8qnd;dIoSBb:ZgGg9b;dLlj2:Qqt3Gf;daB6be:lMxGPd;dtl0hd:lLQWFe;eBAeSb:Ck63tb;eBZ5Nd:audvde;eHDfl:ofjVkb;g8nkx:U4MzKc;gaub4:TN6bMe;gtVSi:ekUOYd;hK67qb:QWEO5b;hjRo6e:F62sG;iFQyKf:QIhFr,vfuNJf;imqimf:jKGL2e;io8t5d:sgY6Zb;jY0zg:Q6tNgc;kCQyJ:ueyPK;kMFpHd:OTA3Ae;kY7VAf:d91TEb;kbAm9d:MkHyGd;l8Azde:j4Ca9b;lkq0A:JyBE3e;lzgfYb:PI40bd;nAFL3:NTMZac,s39S4;oGtAuc:sOXFj;oSUNyd:fTfGO,pnvXVc;oUlnpc:RagDlc;okUaUd:wItadb;pNsl2d:j9Yuyc;pXdRYb:JKoKVe;pj82le:mg5CW;qGV2uc:HHi04c;qZx2Fc:j0xrE;qaS3gd:yiLg6e;qavrXe:mYbt1d,zQzcXe;qddgKe:d7YSfd,x4FYXe;rQSrae:C6D5Fc;sP4Vbe:VwDzFe;sTsDMc:kHVSUb;tH4IIe:Ymry6;tosKvd:ZCqP3;trZL0b:qY8PFe;uY49fb:COQbmf;uknmt:GkPrzb;uuQkY:u2V3ud;vfVwPd:lcrkwe;w3bZCb:ZPGaIb;w9w86d:dt4g2b;wQlYve:aLUfP;wR5FRb:O1Gjze,TtcOte;wV5Pjc:L8KGxe;whEZac:F4AmNb;xBbsrc:NEW1Qc;xbe2wc:wbTLEd;yGxLoc:FmAr0c;yxTchf:KUM7Z;z97YGf:oug9te;zOsCQe:Ko78Df/m=B2qlPe,DhPYme,EkevXb,GU4Gab,MpJwZc,NzU6V,UUJqVe,aa,abd,async,epYOx,ifl,ms4mZb,pHXghd,q0xTif,s39S4,sOXFj,sb_wiz,sf,sonic,spch?xjs=s1'
+            - headers/:scheme:
+                - val: https
+            - headers/accept:
+                - val: '*/*'
+            - headers/accept-encoding:
+                - val: 'gzip, deflate, br'
+            - headers/accept-language:
+                - val: 'en-US,en;q=0.9'
+            - headers/cookie:
+                - val: AEC=Ackid1Q-b_NF1PladEwrWBXsRhhW3Cb4x-zxukWfRypIBoA78jpZCga0Jw
+            - headers/cookie:
+                - val: CONSENT=PENDING+376
+            - headers/cookie:
+                - val: SOCS=CAISHAgBEhJnd3NfMjAyMzA5MTktMF9SQzEaAmVuIAEaBgiA4c2oBg
+            - headers/cookie:
+                - val: NID=511=afKLKKF6lzre5FczB2yi6MwDaUqYNhRJRqYT3NJJJX5snrHBhrv1w5zYTVwPxNtQsId3yl-ZSJLgouv5JtBGILOVZ30GnmKN-4wr_5HU9JIpApV3rhW3ZHETy-5K83yL7Se4gPp4WosnJTN3x5E9hyMMA1o6D370DEtjmgZ4020
+            - headers/referer:
+                - val: https://www.google.com/
+            - headers/sec-ch-ua:
+                - val: |-
+                    "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+            - headers/sec-ch-ua-arch:
+                - val: |-
+                    "x86"
+            - headers/sec-ch-ua-bitness:
+                - val: |-
+                    "64"
+            - headers/sec-ch-ua-full-version:
+                - val: |-
+                    "117.0.5938.92"
+            - headers/sec-ch-ua-full-version-list:
+                - val: |-
+                    "Google Chrome";v="117.0.5938.92", "Not;A=Brand";v="8.0.0.0", "Chromium";v="117.0.5938.92"
+            - headers/sec-ch-ua-mobile:
+                - val: ?0
+            - headers/sec-ch-ua-model:
+                - val: |-
+                    ""
+            - headers/sec-ch-ua-platform:
+                - val: |-
+                    "Windows"
+            - headers/sec-ch-ua-platform-version:
+                - val: |-
+                    "14.0.0"
+            - headers/sec-ch-ua-wow64:
+                - val: ?0
+            - headers/sec-fetch-dest:
+                - val: script
+            - headers/sec-fetch-mode:
+                - val: no-cors
+            - headers/sec-fetch-site:
+                - val: same-origin
+            - headers/user-agent:
+                - val: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+                    (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
+            - headers/x-client-data:
+                - val: CPDZygE=
+        response:
+          paths:
+            - headers/:status:
+                - val: '200'
+            - headers/accept-ranges:
+                - val: bytes
+            - headers/alt-svc:
+                - val: 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'
+            - headers/cache-control:
+                - val: 'public, immutable, max-age=31536000'
+            - headers/content-length:
+                - val: '487721'
+            - headers/content-security-policy-report-only:
+                - val: require-trusted-types-for 'script'; report-uri https://csp.withgoogle.com/csp/gws-team
+            - headers/content-type:
+                - val: text/javascript; charset=UTF-8
+            - headers/cross-origin-opener-policy:
+                - val: |-
+                    same-origin; report-to="gws-team"
+            - headers/cross-origin-resource-policy:
+                - val: cross-origin
+            - headers/date:
+                - val: 'Wed, 27 Sep 2023 07:00:58 GMT'
+            - headers/expires:
+                - val: 'Thu, 26 Sep 2024 07:00:58 GMT'
+            - headers/last-modified:
+                - val: 'Tue, 26 Sep 2023 20:53:43 GMT'
+            - headers/report-to:
+                - val: '{"group":"gws-team","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/gws-team"}]}'
+            - headers/server:
+                - val: sffe
+            - headers/vary:
+                - val: 'Accept-Encoding, Origin'
+            - headers/x-content-type-options:
+                - val: nosniff
+            - headers/x-xss-protection:
+                - val: '0'
+            - content:
+                - src: blob/oglcwp.bin
+      - request:
+          url: /xjs/_/js/md=1/k=xjs.s.en_GB.KNJ2J15-M6s.O/am=CAAAAAAAAAAAAAAAAgCgBsIhgA0wQCAAAgAAEACAgAIRBDAAQIBH2UgMACABgBKYAOKAHABgCdUAAAAAAAj7IQIAAAAAFgABAFITwIAQsAgIAAAAgDwAAQ8AMIiwAAAAAAAAAAAAAAQwQTC4IAFQEAABAAAAAAAAAAAApLLJi4EE/rs=ACT90oF7P6JrTrn_gIStHJmUIsNo_H8q_A
+          paths:
+            - headers/:authority:
+                - val: www.google.com
+            - headers/:method:
+                - val: GET
+            - headers/:path:
+                - val: /xjs/_/js/md=1/k=xjs.s.en_GB.KNJ2J15-M6s.O/am=CAAAAAAAAAAAAAAAAgCgBsIhgA0wQCAAAgAAEACAgAIRBDAAQIBH2UgMACABgBKYAOKAHABgCdUAAAAAAAj7IQIAAAAAFgABAFITwIAQsAgIAAAAgDwAAQ8AMIiwAAAAAAAAAAAAAAQwQTC4IAFQEAABAAAAAAAAAAAApLLJi4EE/rs=ACT90oF7P6JrTrn_gIStHJmUIsNo_H8q_A
+            - headers/:scheme:
+                - val: https
+            - headers/accept:
+                - val: '*/*'
+            - headers/accept-encoding:
+                - val: 'gzip, deflate, br'
+            - headers/accept-language:
+                - val: 'en-US,en;q=0.9'
+            - headers/cookie:
+                - val: AEC=Ackid1Q-b_NF1PladEwrWBXsRhhW3Cb4x-zxukWfRypIBoA78jpZCga0Jw
+            - headers/cookie:
+                - val: CONSENT=PENDING+376
+            - headers/cookie:
+                - val: SOCS=CAISHAgBEhJnd3NfMjAyMzA5MTktMF9SQzEaAmVuIAEaBgiA4c2oBg
+            - headers/cookie:
+                - val: NID=511=afKLKKF6lzre5FczB2yi6MwDaUqYNhRJRqYT3NJJJX5snrHBhrv1w5zYTVwPxNtQsId3yl-ZSJLgouv5JtBGILOVZ30GnmKN-4wr_5HU9JIpApV3rhW3ZHETy-5K83yL7Se4gPp4WosnJTN3x5E9hyMMA1o6D370DEtjmgZ4020
+            - headers/referer:
+                - val: https://www.google.com/
+            - headers/sec-ch-ua:
+                - val: |-
+                    "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+            - headers/sec-ch-ua-arch:
+                - val: |-
+                    "x86"
+            - headers/sec-ch-ua-bitness:
+                - val: |-
+                    "64"
+            - headers/sec-ch-ua-full-version:
+                - val: |-
+                    "117.0.5938.92"
+            - headers/sec-ch-ua-full-version-list:
+                - val: |-
+                    "Google Chrome";v="117.0.5938.92", "Not;A=Brand";v="8.0.0.0", "Chromium";v="117.0.5938.92"
+            - headers/sec-ch-ua-mobile:
+                - val: ?0
+            - headers/sec-ch-ua-model:
+                - val: |-
+                    ""
+            - headers/sec-ch-ua-platform:
+                - val: |-
+                    "Windows"
+            - headers/sec-ch-ua-platform-version:
+                - val: |-
+                    "14.0.0"
+            - headers/sec-ch-ua-wow64:
+                - val: ?0
+            - headers/sec-fetch-dest:
+                - val: empty
+            - headers/sec-fetch-mode:
+                - val: cors
+            - headers/sec-fetch-site:
+                - val: same-origin
+            - headers/user-agent:
+                - val: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+                    (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
+            - headers/x-client-data:
+                - val: CPDZygE=
+        response:
+          paths:
+            - headers/:status:
+                - val: '200'
+            - headers/accept-ranges:
+                - val: bytes
+            - headers/alt-svc:
+                - val: 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'
+            - headers/cache-control:
+                - val: 'public, immutable, max-age=31536000'
+            - headers/content-encoding:
+                - val: gzip
+            - headers/content-length:
+                - val: '112460'
+            - headers/content-security-policy-report-only:
+                - val: require-trusted-types-for 'script'; report-uri https://csp.withgoogle.com/csp/gws-team
+            - headers/content-type:
+                - val: text/javascript; charset=UTF-8
+            - headers/cross-origin-opener-policy:
+                - val: |-
+                    same-origin; report-to="gws-team"
+            - headers/cross-origin-resource-policy:
+                - val: cross-origin
+            - headers/date:
+                - val: 'Wed, 27 Sep 2023 07:00:58 GMT'
+            - headers/expires:
+                - val: 'Thu, 26 Sep 2024 07:00:58 GMT'
+            - headers/last-modified:
+                - val: 'Tue, 26 Sep 2023 20:53:43 GMT'
+            - headers/report-to:
+                - val: '{"group":"gws-team","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/gws-team"}]}'
+            - headers/server:
+                - val: sffe
+            - headers/vary:
+                - val: 'Accept-Encoding, Origin'
+            - headers/x-content-type-options:
+                - val: nosniff
+            - headers/x-xss-protection:
+                - val: '0'
+            - content:
+                - src: blob/x3xzds.bin
+      - request:
+          url: /client_204?atyp=i&biw=1036&bih=659&dpr=1.25&ei=JtMTZffxIaGq1QH_iqfABg&opi=89978449
+          paths:
+            - headers/:authority:
+                - val: www.google.com
+            - headers/:method:
+                - val: GET
+            - headers/:path:
+                - val: /client_204?atyp=i&biw=1036&bih=659&dpr=1.25&ei=JtMTZffxIaGq1QH_iqfABg&opi=89978449
+            - headers/:scheme:
+                - val: https
+            - headers/accept:
+                - val: 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+            - headers/accept-encoding:
+                - val: 'gzip, deflate, br'
+            - headers/accept-language:
+                - val: 'en-US,en;q=0.9'
+            - headers/cookie:
+                - val: AEC=Ackid1Q-b_NF1PladEwrWBXsRhhW3Cb4x-zxukWfRypIBoA78jpZCga0Jw
+            - headers/cookie:
+                - val: CONSENT=PENDING+376
+            - headers/cookie:
+                - val: SOCS=CAISHAgBEhJnd3NfMjAyMzA5MTktMF9SQzEaAmVuIAEaBgiA4c2oBg
+            - headers/cookie:
+                - val: NID=511=afKLKKF6lzre5FczB2yi6MwDaUqYNhRJRqYT3NJJJX5snrHBhrv1w5zYTVwPxNtQsId3yl-ZSJLgouv5JtBGILOVZ30GnmKN-4wr_5HU9JIpApV3rhW3ZHETy-5K83yL7Se4gPp4WosnJTN3x5E9hyMMA1o6D370DEtjmgZ4020
+            - headers/referer:
+                - val: https://www.google.com/
+            - headers/sec-ch-ua:
+                - val: |-
+                    "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+            - headers/sec-ch-ua-arch:
+                - val: |-
+                    "x86"
+            - headers/sec-ch-ua-bitness:
+                - val: |-
+                    "64"
+            - headers/sec-ch-ua-full-version:
+                - val: |-
+                    "117.0.5938.92"
+            - headers/sec-ch-ua-full-version-list:
+                - val: |-
+                    "Google Chrome";v="117.0.5938.92", "Not;A=Brand";v="8.0.0.0", "Chromium";v="117.0.5938.92"
+            - headers/sec-ch-ua-mobile:
+                - val: ?0
+            - headers/sec-ch-ua-model:
+                - val: |-
+                    ""
+            - headers/sec-ch-ua-platform:
+                - val: |-
+                    "Windows"
+            - headers/sec-ch-ua-platform-version:
+                - val: |-
+                    "14.0.0"
+            - headers/sec-ch-ua-wow64:
+                - val: ?0
+            - headers/sec-fetch-dest:
+                - val: image
+            - headers/sec-fetch-mode:
+                - val: no-cors
+            - headers/sec-fetch-site:
+                - val: same-origin
+            - headers/user-agent:
+                - val: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+                    (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
+            - headers/x-client-data:
+                - val: CPDZygE=
+        response:
+          paths:
+            - status-code:
+                - val: '204'
+            - headers/:status:
+                - val: '204'
+            - headers/alt-svc:
+                - val: 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'
+            - headers/content-length:
+                - val: '0'
+            - headers/content-security-policy:
+                - val: "object-src 'none';base-uri 'self';script-src 'nonce-IFKi83-QMQIEtbqF3BcQoQ'\
+                    \ 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline'\
+                    \ https: http:;report-uri https://csp.withgoogle.com/csp/gws/cdt1"
+            - headers/content-type:
+                - val: text/html; charset=UTF-8
+            - headers/cross-origin-opener-policy:
+                - val: |-
+                    same-origin-allow-popups; report-to="gws"
+            - headers/date:
+                - val: 'Wed, 27 Sep 2023 07:00:58 GMT'
+            - headers/origin-trial:
+                - val: Ap+qNlnLzJDKSmEHjzM5ilaa908GuehlLqGb6ezME5lkhelj20qVzfv06zPmQ3LodoeujZuphAolrnhnPA8w4AIAAABfeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJQZXJtaXNzaW9uc1BvbGljeVVubG9hZCIsImV4cGlyeSI6MTY4NTY2Mzk5OX0=
+            - headers/origin-trial:
+                - val: AvudrjMZqL7335p1KLV2lHo1kxdMeIN0dUI15d0CPz9dovVLCcXk8OAqjho1DX4s6NbHbA/AGobuGvcZv0drGgQAAAB9eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJCYWNrRm9yd2FyZENhY2hlTm90UmVzdG9yZWRSZWFzb25zIiwiZXhwaXJ5IjoxNjkxNTM5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZX0=
+            - headers/permissions-policy:
+                - val: unload=()
+            - headers/report-to:
+                - val: '{"group":"gws","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/gws/cdt1"}]}'
+            - headers/server:
+                - val: gws
+            - headers/strict-transport-security:
+                - val: max-age=31536000
+            - headers/x-frame-options:
+                - val: SAMEORIGIN
+            - headers/x-xss-protection:
+                - val: '0'

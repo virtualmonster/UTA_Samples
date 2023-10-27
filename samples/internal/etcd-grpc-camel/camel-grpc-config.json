@@ -1,0 +1,9 @@
+{
+   "protoDiscoveryRoot": "etcd-api/etcd/etcdserver/etcdserverpb",
+   "protoIncludeDirectories": [
+       "etcd-api/etcd/etcdserver/etcdserverpb", 
+       "etcd-api", 
+       "third-party-proto/vendor/github.com/gogo/protobuf", 
+       "third-party-proto/vendor/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis"
+   ]
+}

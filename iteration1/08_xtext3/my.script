@@ -1,0 +1,9 @@
+note: "important to get enough rest"
+disabled: false
+steps:
+  - do "#sleep"
+macros:
+  sleep:
+    note: 'best we rest'
+    steps:
+      - pause 3s

@@ -1,0 +1,13 @@
+note: 'See failingCascade_FailingParentShouldntCascade, dependent if FETCH_PATH gets
+  200 or 404 determines if cascade executes'
+steps:
+  - send:
+      request:
+        url: '${HTTP2SSL_ENDPOINT}${FETCH_PATH}'
+        paths:
+          - tls/ca-path:
+              - dir: ../server
+          - headers/accept:
+              - val: text/html
+      response:
+        message: page/failing-send-doesnt-cascade.dtm.yaml#responseMsg

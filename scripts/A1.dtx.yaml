@@ -1,0 +1,4 @@
+steps:
+  - log: Hello A1
+  - do: A2.dtx.yaml
+  - log: Goodbye A1

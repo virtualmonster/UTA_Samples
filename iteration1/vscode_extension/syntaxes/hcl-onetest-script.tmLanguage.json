@@ -1,0 +1,73 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "hcl-onetest-script",
+	"scopeName": "source.script",
+	"fileTypes": [".script"],
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#general"
+		},
+		{
+			"include": "#test"
+		}
+	],
+	"repository": {
+		"test": {
+			"patterns": [{
+				"name": "keyword.control.hcl-onetest-script",
+				"match": "disabled|note|handlers|values|macros|messages|blobs"
+			}]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.hcl-onetest-script",
+				"match": "\\b(if|while|for|return)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.hcl-onetest-script",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.hcl-onetest-script",
+					"match": "\\\\."
+				}
+			]
+		},
+		"general": {
+			"patterns": [
+				{
+					"include": "#linecomment"
+				},
+				{
+					"include": "#blockcomment"
+				},
+				{
+					"include": "#keyword"
+				}
+			]
+		},
+		"linecomment": {
+			"name": "comment.line.double-dash.hcl-onetest-script",
+			"begin": "(^[ \\t]+)?(?=//)",
+			"end": "(?=$)"
+		},
+		"blockcomment": {
+			"name": "comment.block.hcl-onetest-script",
+			"begin": "/\\*(\\*)?(?!/)",
+			"end": "\\*/"
+		},
+		"keyword": {
+			"name": "keyword.control.hcl-onetest-script",
+			"match": "\\b(entity|datatype)\\b|!"
+	 
+		}
+	}
+}

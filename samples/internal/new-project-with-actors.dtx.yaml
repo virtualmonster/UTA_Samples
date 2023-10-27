@@ -1,0 +1,70 @@
+note: this is an evolution of the test on github
+actors:
+  USER1: {}
+  USER2: {}
+steps:
+  - open:
+      url: '${DEPLOYMENT_URL}'
+      emulate:
+        - send:
+            request:
+              url: '${DEPLOYMENT_URL}'
+            response:
+              message: page/page_1.dtm.yaml#main
+  - do: modules/login-with-perf.dtx.yaml
+  - with:
+      actor: '#USER1'
+      steps:
+        - until:
+            target:
+              - properties:
+                  - type:
+                      - val: button
+                  - value:
+                      - val: new
+                  - focus:
+                      - val:
+                          category: verify
+                          expr: 'true'
+            steps:
+              - press: tab
+        - press: enter
+        - verify:
+            target:
+              - properties:
+                  - type:
+                      - val: input
+                  - label:
+                      - val: name
+                  - focus:
+                      - val:
+                          category: verify
+                          expr: 'true'
+        - type: '${PROJECT_NAME}'
+        - press: enter
+  - with:
+      actor: '#USER2'
+      steps:
+        - verify:
+            target:
+              - properties:
+                  - content:
+                      - regex: '.*${PROJECT_NAME}.*'
+            emulate:
+              - send:
+                  request:
+                    url: channel:1
+                  response:
+                    message: page/page_4.dtm.yaml#crawl
+                    paths:
+                      - headers/content-type:
+                          - val: text/plain;charset=US-ASCII
+                      - content:
+                          - val: see-notification-content
+vars:
+  DEPLOYMENT_URL: https://master-hcl.tp-k8s.nonprod.hclpnp.com
+  PROJECT_NAME: myproject
+  USERNAME__USER1: peter.taylor
+  _PASSWORD__USER1: peter.taylor
+  USERNAME__USER2: dawn
+  _PASSWORD__USER2: didntsay

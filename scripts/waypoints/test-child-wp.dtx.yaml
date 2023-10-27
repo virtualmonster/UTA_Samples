@@ -1,0 +1,6 @@
+steps:
+  - log: In test-child-wp
+  - do: modules/child-waypoint.dtx.yaml
+  - log: 'Back in test-child-wp. var X is ${X}'
+vars:
+  IN: hello

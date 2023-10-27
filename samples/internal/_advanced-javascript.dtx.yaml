@@ -1,0 +1,13 @@
+steps:
+  - log: if you define variables in the script blocks they leak - which is bad.
+  - if:
+      condition: |-
+        (function() {
+          let actual = "value";
+          return EXPECTED == actual;
+        })()
+      steps:
+        - log: You rang m'lord?
+  - log: This way we haven't leaked the actual value
+vars:
+  EXPECTED: value

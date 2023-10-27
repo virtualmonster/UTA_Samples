@@ -1,0 +1,56 @@
+steps:
+  - log: Generating certificate from vault
+  - send:
+      request:
+        url: '${VAULT_URL}'
+        paths:
+          - method:
+              - val: POST
+          - headers/content-type:
+              - val: application/json
+          - headers/X-Vault-Token:
+              - val: '${VAULT_TOKEN}'
+          - content:
+              - val: '{"common_name":"${SUBJECT}", "private_key_format":"pkcs8"}'
+      response:
+        paths:
+          - content/data/certificate:
+              - var: CERTIFICATE
+          - content/data/private_key:
+              - var: PRIVATE_KEY
+          - content/data/ca_chain/0:
+              - var: CA_CHAIN_0
+          - content/data/ca_chain/1:
+              - var: CA_CHAIN_1
+          - content/data/ca_chain/2:
+              - var: CA_CHAIN_2
+  - log: 'Saving key to ${KEY_FILE_URI}'
+  - send:
+      request:
+        url: '${KEY_FILE_URI}'
+        paths:
+          - headers/charset:
+              - val: US-ASCII
+          - content:
+              - var: PRIVATE_KEY
+  - log: 'Saving certs to ${CERT_FILE_URI}'
+  - send:
+      request:
+        url: '${CERT_FILE_URI}'
+        paths:
+          - headers/charset:
+              - val: US-ASCII
+          - content:
+              - val: |
+                  ${CERTIFICATE}
+                  ${CA_CHAIN_0||""}
+                  ${CA_CHAIN_1||""}
+                  ${CA_CHAIN_2||""}
+vars:
+  VAULT_URL: http://10.0.2.15.nip.io:8200/v1/pki_int/issue/uta-clients
+  VAULT_TOKEN: placeholder
+  SUBJECT: scriptuser@email.uta.test
+  KEY_FILE_URI:
+    modifier: in
+  CERT_FILE_URI:
+    modifier: in

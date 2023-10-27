@@ -1,0 +1,3 @@
+note: sleep is important
+steps:
+  - do: modules/sleep.dtx.yaml

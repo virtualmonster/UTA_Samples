@@ -1,0 +1,90 @@
+steps:
+  - send:
+      note: Basic HTTP GET request
+      request:
+        url: '${HTTP_ENDPOINT}/testserver/hello'
+      response:
+        message: page/basic-secure.dtm.yaml#verify
+  - send:
+      note: Basic HTTPS GET request
+      request:
+        url: '${HTTP1SSL_ENDPOINT}/testserver/hello'
+        paths:
+          - tls/ca-path:
+              - dir: server
+      response:
+        message: page/basic-secure.dtm.yaml#verify
+  - send:
+      note: Basic HTTPS H2 GET request
+      request:
+        url: '${HTTP2SSL_ENDPOINT}/testserver/hello'
+        paths:
+          - tls/ca-path:
+              - dir: server
+      response:
+        message: page/basic-secure.dtm.yaml#verify
+  - send:
+      note: Basic HTTP 404 GET request with content length
+      request:
+        url: '${HTTP_ENDPOINT}/testserver/notfound'
+        paths:
+          - tls/ca-path:
+              - dir: server
+      response:
+        paths:
+          - status-code:
+              - val: '404'
+  - send:
+      note: Basic POST request
+      request:
+        url: '${HTTP2SSL_ENDPOINT}/testserver/echo'
+        paths:
+          - tls/ca-path:
+              - dir: server
+          - headers/content-type:
+              - val: application/json
+          - content:
+              - val: '{"Hello": 5, "World": {"mykey": true}}'
+      response:
+        message: page/basic-secure.dtm.yaml#verify
+  - send:
+      note: Basic PUT request
+      request:
+        url: '${HTTP2SSL_ENDPOINT}/testserver/echo'
+        paths:
+          - tls/ca-path:
+              - dir: server
+          - method:
+              - val: PUT
+          - headers/content-type:
+              - val: application/json
+          - content:
+              - val: '{"Hello": "World"}'
+      response:
+        message: page/basic-secure.dtm.yaml#verify
+  - send:
+      note: Basic HTTP GET request
+      request:
+        url: '${HTTP_ENDPOINT}/testserver/head'
+        paths:
+          - tls/ca-path:
+              - dir: server
+          - method:
+              - val: HEAD
+      response:
+        message: page/basic-secure.dtm.yaml#verify
+  - send:
+      note: Basic parameters
+      request:
+        url: '${HTTP2SSL_ENDPOINT}/testserver/params?p1=value1&p2=value2'
+        paths:
+          - tls/ca-path:
+              - dir: server
+      response:
+        paths:
+          - status-code:
+              - val: '200'
+          - content/params/p1/0:
+              - val: value1
+          - content/params/p2/0:
+              - val: value2

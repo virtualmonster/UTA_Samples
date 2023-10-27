@@ -1,0 +1,30 @@
+steps:
+  - send:
+      request:
+        url: '${SYS_BASE_DIR_URI}/basic-no-namespaces.xml'
+      response:
+        paths:
+          - content:
+              - format: application/xml
+              - paths:
+                  - a/b:
+                      - var: A_B
+                  - a/b/@test:
+                      - var: A_B_TEST
+                  - a/c:
+                      - var: C
+                  - a/d:
+                      - var: D
+                  - a/e/f/g/h:
+                      - var: A_E_F_H
+  - verify:
+      - |-
+        A_B == 'b element'
+      - |-
+        A_B_TEST == 'test attribute'
+      - |-
+        C == ''
+      - |-
+        D == 'd element'
+      - |-
+        A_E_F_H == 'h element'

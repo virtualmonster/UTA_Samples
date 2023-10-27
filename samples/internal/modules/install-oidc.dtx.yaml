@@ -1,0 +1,32 @@
+steps:
+  - send:
+      note: create access-token for api calls
+      transport: ../transports/ca-transport.dtt.yaml
+      request:
+        url: '${DEPLOYMENT_URL}/rest/tokens/'
+        paths:
+          - headers:
+              - paths:
+                  - content-type:
+                      - val: application/x-www-form-urlencoded
+          - content:
+              - val: 'refresh_token=${_REFRESH_TOKEN}'
+      response:
+        paths:
+          - status-code:
+              - val: '200'
+          - content/access_token:
+              - var: _ACCESS_TOKEN
+  - intercept:
+      request:
+        paths:
+          - url:
+              - regex: '${DEPLOYMENT_URL}.*'
+          - headers/authorization:
+              - val:
+                  category: value
+                  expr: 'Bearer ${_ACCESS_TOKEN}'
+vars:
+  _REFRESH_TOKEN:
+    modifier: in
+  DEPLOYMENT_URL: https://master-hcl.tp-k8s.nonprod.hclpnp.com

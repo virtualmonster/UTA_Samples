@@ -1,0 +1,10 @@
+steps:
+  - send:
+      note: 'By default cascade elements are executed in parallel dependent on the
+        current connection policey. For example, a modern web-browser may use up to
+        6 concurrent connections per host/port for HTTP 1.1. For HTTP/2 a  single
+        connection is often used per host/port.'
+      request:
+        url: '${HTTP_ENDPOINT}/testserver/javatest/JavaTest.html'
+      response:
+        message: page/connection-keep-alive.dtm.yaml#page1

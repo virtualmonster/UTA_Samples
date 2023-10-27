@@ -1,0 +1,4 @@
+steps:
+  - pause: '${START}s'
+  - log: 'Hi there ${NAME}!'
+  - pause: '${FINISH}s'

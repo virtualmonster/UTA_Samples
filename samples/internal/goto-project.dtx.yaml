@@ -1,0 +1,14 @@
+note: 'The user, password and project are dummy values'
+steps:
+  - do: modules/ots-browser-login.dtx.yaml
+  - pause: 5s
+  - press:
+      target:
+        - properties:
+            - :xpath:
+                - val: "//*[@aria-label='Switch to project ${PROJECT}']"
+  - pause: 5s
+vars:
+  USER: utatest
+  _PASSWORD: passw0rdUTA
+  PROJECT: utap1

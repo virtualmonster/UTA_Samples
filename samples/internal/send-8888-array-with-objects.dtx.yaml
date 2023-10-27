@@ -1,0 +1,24 @@
+note: The 'name' of array elements ARE NOT treated as indexes.  They need to be unique
+  to prevent "equivalent" paths being merged.
+steps:
+  - send:
+      request:
+        url: http://localhost:8888/
+        paths:
+          - headers/content-type:
+              - val: application/json
+          - content/root:
+              - type: array
+              - paths:
+                  - first-element:
+                      - paths:
+                          - foo/bar:
+                              - val: hello
+                  - "2nd-element":
+                      - paths:
+                          - foo:
+                              - paths:
+                                  - bar:
+                                      - val: hello
+                                  - baz:
+                                      - val: world

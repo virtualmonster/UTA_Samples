@@ -1,0 +1,11 @@
+messages:
+  responseMsg:
+    cascade:
+      - note: No response automatically adds 2XX status verification
+        request:
+          url: '${CHILD_FETCH_PATH}?child'
+          paths:
+            - tls/ca-path:
+                - dir: ../../server
+            - headers/accept:
+                - val: image/gif

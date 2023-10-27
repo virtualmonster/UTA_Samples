@@ -1,0 +1,20 @@
+note: Grpc stub
+endpoints:
+  - url: '${GRPC_ENDPOINT}/${GREETING_NS}.Greeter/SayHello'
+    events:
+      - note: simple response
+        request:
+          paths:
+            - method:
+                - val: _camel
+            - content/name:
+                - var: NAME
+        response:
+          paths:
+            - headers/content-type:
+                - val: application/json
+            - content/message:
+                - val: 'Hello ${NAME}'
+vars:
+  GRPC_ENDPOINT: grpc://localhost:50051
+  GREETING_NS: helloworld

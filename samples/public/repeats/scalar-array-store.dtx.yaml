@@ -1,0 +1,24 @@
+steps:
+  - send:
+      request:
+        url: '${SYS_BASE_DIR_URI}/scalar-array.json'
+      response:
+        paths:
+          - content:
+              - format: application/json
+              - paths:
+                  - '*':
+                      - repeat: {}
+                      - var: VALUE
+  - verify:
+      note: double equals workaround for Rhino WrapFactory
+      expr:
+        - |-
+          VALUE[0] == "A"
+        - |-
+          VALUE[1] == "B"
+        - |-
+          VALUE[2] == "C"
+        - |-
+          VALUE[3] == "D"
+        - VALUE.length === 4

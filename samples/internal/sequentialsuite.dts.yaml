@@ -1,0 +1,4 @@
+note: simple suite that executes tests in sequence
+tests:
+  - value-types.dtx.yaml
+  - sleep-then-log.dtx.yaml

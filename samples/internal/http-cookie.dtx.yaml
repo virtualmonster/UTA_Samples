@@ -1,0 +1,28 @@
+note: HTTP cookies example
+steps:
+  - do: http-cookie.dtv.yaml
+  - log: After stub
+  - send:
+      note: /myapp/ sets a cookie on path /myapp/
+      request:
+        url: '${STUBBED_ENDPOINT}/myapp/'
+      response:
+        paths:
+          - status-code:
+              - val: '200'
+          - headers/set-cookie:
+              - val: MyAppCookie=CookieValue; Path=/myapp/
+  - send:
+      note: 200 returned if cookie is present
+      request:
+        url: '${STUBBED_ENDPOINT}/myapp/verifyCookie'
+      response:
+        message: page/http-cookie.dtm.yaml#verify
+  - send:
+      note: 200 returned if cookie NOT present
+      request:
+        url: '${STUBBED_ENDPOINT}/anotherapp/verifyCookie'
+      response:
+        message: page/http-cookie.dtm.yaml#verify
+vars:
+  STUBBED_ENDPOINT: http://127.0.0.1.nip.io:8080

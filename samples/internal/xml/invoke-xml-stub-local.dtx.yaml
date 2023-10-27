@@ -1,0 +1,7 @@
+note: Invoke xml stub locally
+steps:
+  - do:
+      flags:
+        - local
+      url: xml-stub.dtv.yaml
+  - do: send-receive-xml.dtx.yaml

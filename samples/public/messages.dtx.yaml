@@ -1,0 +1,21 @@
+note: Example of referencing messages
+steps:
+  - do:
+      note: |
+        A local stub will be run to simulate an add service.
+        For more details of stub execution see ...
+      flags:
+        - local
+      url: stubs/add.dtv.yaml
+  - send:
+      request:
+        url: http://add.127.0.0.1.nip.io
+        message: messages/json.dtm.yaml#json-post
+        paths:
+          - content:
+              - val: '{"x":10, "y":5}'
+      response:
+        message: messages/json.dtm.yaml#json-result
+  - log: 'Result was ${RESULT}'
+  - verify:
+      - RESULT === 15

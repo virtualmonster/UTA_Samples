@@ -1,0 +1,30 @@
+note: this is an evolution of the test on github
+steps:
+  - open:
+      url: https://www.google.com
+      emulate:
+        - send:
+            request:
+              url: https://www.google.com
+              paths:
+                - headers/accept:
+                    - val: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+            response:
+              message: page/google.dtm.yaml#main
+  - press:
+      note: accept google terms
+      target:
+        - properties:
+            - :xpath:
+                - val: "//button[div/text()='${COOKIE_TEXT}']"
+  - type:
+      target:
+        - properties:
+            - :xpath:
+                - val: "//*[@title='Search']"
+      value: today's news
+  - press: enter
+  - pause: 5s
+vars:
+  DEPLOYMENT_URL: https://master-hcl.tp-k8s.nonprod.hclpnp.com
+  COOKIE_TEXT: Accept all

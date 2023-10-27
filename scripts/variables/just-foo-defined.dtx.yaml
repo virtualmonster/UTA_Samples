@@ -1,0 +1,7 @@
+steps:
+  - do: modules/foo-bar-in.dtx.yaml
+  - verify:
+      - |
+        FOO_BAR_RESULT === 'MyFooBAR default'
+vars:
+  FOO: MyFoo

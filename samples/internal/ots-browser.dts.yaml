@@ -1,0 +1,3 @@
+tests:
+  - goto-project.dtx.yaml
+  - goto-cloud-credentials.dtx.yaml

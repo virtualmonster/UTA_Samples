@@ -1,0 +1,5 @@
+steps:
+  - do: modules/functions.dtx.yaml
+  - verify:
+      - |-
+        add_10(20) === 30 && say_hello('Bob') === 'Hello Bob'

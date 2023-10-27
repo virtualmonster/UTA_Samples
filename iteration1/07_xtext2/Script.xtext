@@ -1,0 +1,61 @@
+// Install Eclipse IDE for Java and DSL Developers (2021-03)
+// Follow https://www.eclipse.org/Xtext/documentation/340_lsp_support.html
+// New XText Project
+// project name: com.hcl.products.onetest.lang.script
+// lang name: com.hcl.products.onetest.lang.script.Script
+// extension: script
+// next>
+// disable facet: Eclipse plug-in
+// tick Generic IDE support
+// build system: Maven
+// build lang server: Fat Jar
+// source layout: Maven/Grandle
+// replace Script.xtext with below
+
+grammar com.hcl.products.onetest.lang.script.Script with org.eclipse.xtext.common.Terminals
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+generate script "http://www.hcl.com/products/onetest/lang/script/Script"
+
+Model:
+	{Model}
+	('note' ':' note=STRING)?
+	('disabled' ':' disabled=BOOLEAN)?
+	('handlers' ':' handlers+=Action* | 'steps' ':' steps+=Action*)
+	('values' ':' values+=Values*)?
+	('macros' ':' macros+=Macros*)?
+	('messages' ':' messages+=Messages*)?
+	('blobs' ':' blobs+=Blobs*)?;
+
+BOOLEAN returns ecore::EBoolean:
+	'true' | 'false';
+
+Action:
+	'-' (CallMacro | Pause);
+
+CallMacro:
+	'do' URL=STRING;
+
+Pause:
+	'pause' duration=INT unit=('ms' | 's' | 'm' | 'h');
+
+// TODO http://20000frames.blogspot.com/2010/09/working-with-emaps-in-xtext.html
+Messages returns StringToMessageMapEntry:
+	key=ID ':' value=Message;
+
+Message:
+	('payload' ':' payload=STRING)?;
+
+Macros returns StringToMacroMapEntry:
+	key=ID ':' value=Macro;
+
+Macro:
+	('note' ':' note=STRING)?
+	('steps' ':' steps+=Action*)?
+	('values' ':' values+=Values*)?;
+
+Values://; returns ecore::EStringToStringMapEntry:
+	key=ID ':' value=STRING;
+
+Blobs://; returns ecore::EStringToStringMapEntry:
+	key=ID ':' value=STRING;

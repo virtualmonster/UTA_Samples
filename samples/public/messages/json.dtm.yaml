@@ -1,0 +1,16 @@
+messages:
+  json-post:
+    paths:
+      - method:
+          - val: POST
+      - headers/accept:
+          - val: application/json
+      - headers/content-type:
+          - val: application/json
+      - content: []
+  json-result:
+    paths:
+      - headers/content-type:
+          - val: application/json
+      - content/result:
+          - var: RESULT

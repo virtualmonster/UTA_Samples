@@ -1,0 +1,17 @@
+steps:
+  - do: simple-stub.dtv.yaml
+  - send:
+      note: Basic GET request
+      request:
+        url: '${UNIT_TEST_ENDPOINT}/test.html'
+        paths:
+          - tls/ca-path:
+              - dir: '${TRUST_DIR}'
+          - proxy/host:
+              - val: localhost
+          - proxy/port:
+              - val: '${UNIT_TEST_PROXY_PORT}'
+      response:
+        paths:
+          - status-code:
+              - val: '200'

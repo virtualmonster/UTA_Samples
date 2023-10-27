@@ -1,0 +1,3 @@
+note: for the staging environment
+vars:
+  URL: http://localhost

@@ -1,0 +1,29 @@
+flags:
+  - waypoint
+steps:
+  - open:
+      url: '${DEPLOYMENT_URL}'
+  - type:
+      target:
+        - properties:
+            - :xpath:
+                - val: "//*[@name='username']"
+      value: '${USER}'
+  - type:
+      target:
+        - properties:
+            - :xpath:
+                - val: "//*[@name='password']"
+      value: '${_PASSWORD}'
+  - pause: 5s
+  - press:
+      target:
+        - properties:
+            - :xpath:
+                - val: "//*[@name='login']"
+vars:
+  DEPLOYMENT_URL: https://master-hcl.tp-k8s.nonprod.hclpnp.com
+  USER:
+    modifier: in
+  _PASSWORD:
+    modifier: in
